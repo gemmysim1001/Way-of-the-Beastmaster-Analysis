@@ -5145,9 +5145,14 @@ We would greatly appreciate any assistance is ridding the town of the bandits. I
 
 &lt;==
 
-You're a little unsure if this is up your alley. Perhaps it's best to try this at another time when you have a bit more combat experience under your belt.
+(if:$SQ3D is &gt;=1)[You have already completed this quest.
 
-[[Return-&gt;SIB]]</tw-passagedata><tw-passagedata pid="300" name="SQ4" tags="" position="2000,2050" size="100,100">You see a pamphlet on the board buried underneath some others, and you rip it from the board to read it.
+[[Return-&gt;SIB]]](else:)[200 gold is a decent amount. Bandits shouldn't be too difficult, right? You look down at Kami, who sniffs the parchment.
+
+|Kami&gt;["I can track them, Master. If we enquire at the guardhouse, we may get more information."]
+
+[[Accept the Quest.-&gt;SQ3Start]]
+[[Leave it for now.-&gt;SIB]]]</tw-passagedata><tw-passagedata pid="300" name="SQ4" tags="" position="2000,2050" size="100,100">You see a pamphlet on the board buried underneath some others, and you rip it from the board to read it.
 
 =&gt;&lt;= 
 
@@ -5163,9 +5168,14 @@ You will be paid handsomely, and be provided accommodation and travel where appr
 
 &lt;==
 
-300 gold is nothing to scoff at, you know that much. Yet, you cant help feel that something about this 'request' isn't quite right. For now, you decide to leave it.
+(if:$SQ4D is &gt;=1)[You have already completed this quest.
 
-[[Decline.-&gt;SIB]]</tw-passagedata><tw-passagedata pid="301" name="MQu2" tags="" position="1996,1302" size="100,100">(enchant: ?KingQ, (text-colour: yellow))You lean up to examine the uppermost flyer, which seems to be yet another decree from the Monarch of Holstein. You read it.
+[[Return-&gt;SIB]]](else:)[300 gold is nothing to scoff at, you know that much. Yet, you can't help feel that something about this 'request' isn't quite right. Kami sniffs the paper and his ears flatten.
+
+|Kami&gt;["This does not feel right, Master. 'Seeking children'... I urge caution."]
+
+[[Accept the Quest.-&gt;SQ4Start]]
+[[Decline.-&gt;SIB]]]</tw-passagedata><tw-passagedata pid="301" name="MQu2" tags="" position="1996,1302" size="100,100">(enchant: ?KingQ, (text-colour: yellow))You lean up to examine the uppermost flyer, which seems to be yet another decree from the Monarch of Holstein. You read it.
 
 (align:"=&gt;&lt;=")[(css:"border: 1px solid black")[|KingQ&gt;[**Calling any and all Adventurers.**]
 
@@ -8092,7 +8102,181 @@ You kiss him. He melts into you. His arms wrap around your waist and he holds on
 
 Kami watches from the doorway, his tail wagging slowly. Even he looks pleased.(set:$inv to it + (a:&amp;quot;Master-forged Dirk Sheath&amp;quot;))
 
-[[Return-&gt;HansRHub]]</tw-passagedata></tw-storydata>
+[[Return-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="518" name="SQ3Start" tags="dnsc dnsi" position="100,4300" size="100,100">You make your way to the barracks and find Frederick in his office. He looks up from a map spread across his desk and nods when you mention the bounty.
+
+&amp;quot;Good. I was hoping someone would take that on.&amp;quot; He leans back and crosses his arms. &amp;quot;Bandits set up in the forest west of here after we cleared the animals. Opportunists. They&amp;#x27;ve been hitting supply caravans between Scarhaven and the capital.&amp;quot;
+
+He taps a point on the map.
+
+&amp;quot;Their camp is somewhere in this area. My patrols have tracked them this far, but the forest is thick and they keep moving. You, however...&amp;quot; He looks at Kami. &amp;quot;You have certain advantages.&amp;quot;
+
+|Kami&gt;[&amp;quot;I can track their scent, Master. If we get close enough.&amp;quot;]
+
+Frederick nods. &amp;quot;Be careful, $name. These aren&amp;#x27;t common thugs. Some of them are ex-military. Deserters.&amp;quot;
+
+He hands you a rough sketch of the forest paths and you head out.
+
+[[Continue.-&gt;SQ3Travel]]</tw-passagedata><tw-passagedata pid="519" name="SQ3Travel" tags="dnsc dnsi" position="200,4300" size="100,100">The forest west of Scarhaven is dense and overgrown. The path narrows quickly, and soon you&amp;#x27;re pushing through branches and stepping over roots. Kami moves ahead, nose to the ground, tail stiff.
+
+You find the first sign within an hour: an overturned cart, half-hidden in the undergrowth. Broken crates spill their contents across the forest floor-- grain, cloth, a shattered bottle of wine staining the leaves dark red.
+
+Further on, bootprints in the mud. Fresh.
+
+|Kami&gt;[&amp;quot;Several of them, Master. At least six. They went this way.&amp;quot;]
+
+You follow Kami deeper into the forest. The canopy thickens overhead, blocking out the sun. You can hear birds, insects, the rustle of small animals. You reach out with your green mist, gently sensing the creatures around you. A lookout bird sits on a branch overhead, trained to screech at intruders. You calm it with a tendril of magic, and it ruffles its feathers and settles.
+
+|Kami&gt;[&amp;quot;Well done, Master. We are close.&amp;quot;]
+
+[[Continue.-&gt;SQ3Camp]]</tw-passagedata><tw-passagedata pid="520" name="SQ3Camp" tags="dnsc dnsi" position="300,4300" size="100,100">The bandit camp sits in a shallow ravine, hidden by the terrain and the thick canopy. Crude tents fashioned from stolen canvas. A fire pit, still smoking. Crates of stolen goods stacked haphazardly. Six or seven figures move about-- some sharpening weapons, some sleeping, one keeping watch from a raised platform.
+
+They look ragged. Thin. Their clothes are patched and worn. These aren&amp;#x27;t wealthy criminals. They&amp;#x27;re survivors.
+
+At the centre of the camp sits a larger tent, its flap closed. That&amp;#x27;s where the leader will be.
+
+|Kami&gt;[&amp;quot;How shall we approach, Master?&amp;quot;]
+
+You consider your options.
+
+[[Walk in openly. Show no fear.-&gt;SQ3Leader]]
+[[Use your powers to subdue the camp first.-&gt;SQ3PowerEntry]]</tw-passagedata><tw-passagedata pid="521" name="SQ3PowerEntry" tags="dnsc dnsi" position="400,4300" size="100,100">You reach out with the green mist, extending your senses. The forest is full of animals-- wolves, foxes, birds-- and they respond to your presence. You call to them silently.
+
+Within minutes, the treeline around the camp begins to rustle. Wolves emerge from the shadows, eyes gleaming. Foxes sit at the perimeter. Birds settle on every branch. The bandits notice, and their hands go to their weapons.
+
+&amp;quot;What the fuck--&amp;quot;
+
+&amp;quot;Stand down.&amp;quot; Your voice is calm. The green mist crackles at your fingertips. Every animal in the clearing turns to face the bandits, and not one of them looks friendly.
+
+The bandits freeze. Weapons lower. The lookout nearly falls from his platform.
+
+You walk into the camp. Nobody moves.
+
+[[Continue.-&gt;SQ3Leader]]</tw-passagedata><tw-passagedata pid="522" name="SQ3Leader" tags="dnsc dnsi" position="500,4300" size="100,100">The leader emerges from the central tent. He&amp;#x27;s a scarred, grizzled Wolf-- older than you expected, with grey streaking through his brown fur and a jagged scar across his muzzle. His eyes are sharp, calculating, but tired. So tired.
+
+&amp;quot;A kid?&amp;quot; He looks you up and down, then at Kami, then at the animals surrounding his camp (if the power entry was used). His jaw tightens.
+
+&amp;quot;Roth,&amp;quot; he says, extending a hand. You&amp;#x27;re not sure if it&amp;#x27;s a greeting or a surrender. &amp;quot;I&amp;#x27;m the one you&amp;#x27;re looking for.&amp;quot;
+
+He sits down on a crate and gestures for you to do the same. He looks... exhausted.
+
+&amp;quot;I fought in the war, boy. Four years. When it was over, they threw us out. No pension. No thanks. No home to go back to.&amp;quot; He gestures at his men. &amp;quot;These aren&amp;#x27;t criminals. They&amp;#x27;re soldiers who got left behind.&amp;quot;
+
+A lean, wiry fox with amber fur and sharp eyes leans against a tree nearby, watching you with an intensity that makes your skin prickle. That must be his lieutenant.
+
+[[Capture him by force.-&gt;SQ3Fight]]
+[[Negotiate his surrender.-&gt;SQ3Talk]]
+[[Ask about his lieutenant.-&gt;SQ3Deal]]</tw-passagedata><tw-passagedata pid="523" name="SQ3Fight" tags="dnsc dnsi" position="600,4300" size="100,100">You didn&amp;#x27;t come here to listen to excuses. You reach out with the green mist, and every animal in the surrounding forest responds. Wolves snarl. The camp is surrounded.
+
+Roth sees it happening. He doesn&amp;#x27;t fight. He drops his weapon and puts his hands up.
+
+&amp;quot;You&amp;#x27;ve got your father&amp;#x27;s gift, boy. The green mist...&amp;quot; He stares at you with something between fear and recognition. &amp;quot;I&amp;#x27;ve seen it before. A long time ago.&amp;quot;
+
+You don&amp;#x27;t ask what he means. You tie his hands and march him and his men out of the forest.
+
+|Kami&gt;[&amp;quot;He mentioned the green mist, Master. He has seen a Magister before.&amp;quot;]
+
+Something about that doesn&amp;#x27;t sit right with you.
+
+[[Continue.-&gt;SQ3Return]]</tw-passagedata><tw-passagedata pid="524" name="SQ3Talk" tags="dnsc dnsi" position="700,4300" size="100,100">You tell Roth that you don&amp;#x27;t want to fight. He looks surprised.
+
+&amp;quot;Then what do you want?&amp;quot;
+
+You tell him to turn himself in to Frederick. Frederick is a fair man. He won&amp;#x27;t execute surrendered soldiers. You promise his men will get work-- the barracks always needs hands, and Scarhaven needs builders.
+
+Roth is quiet for a long time. He looks at his men. The wiry fox-- his lieutenant-- catches his eye and gives a barely perceptible nod.
+
+&amp;quot;And my men? What happens to them?&amp;quot;
+
+You give your word. Roth studies your face, then slowly stands. He unbuckles his sword belt and holds it out to you.
+
+&amp;quot;I&amp;#x27;m trusting a kid. God help me.&amp;quot;
+
+[[Continue.-&gt;SQ3Return]]</tw-passagedata><tw-passagedata pid="525" name="SQ3Deal" tags="dnsc dnsi" position="800,4300" size="100,100">Your eyes drift to the fox leaning against the tree. He&amp;#x27;s lean, wiry, with amber fur that catches the dappled light. Sharp cheekbones. A thin scar across his lip that pulls his mouth into a permanent half-smirk. He notices you looking.
+
+&amp;quot;That&amp;#x27;s Cade,&amp;quot; Roth says. &amp;quot;My lieutenant. Best scout I&amp;#x27;ve got.&amp;quot;
+
+Cade pushes off the tree and saunters closer. He&amp;#x27;s taller than you, but not by much. He circles you once, like a predator sizing up prey.
+
+&amp;quot;So you&amp;#x27;re the one they sent? Cute.&amp;quot; His voice is low, teasing. His tail flicks behind him.
+
+He leans close to your ear.
+
+&amp;quot;I can convince the captain to surrender. But it&amp;#x27;ll cost you.&amp;quot;
+
+His hand brushes your hip, deliberately.
+
+&amp;quot;My tent. Five minutes.&amp;quot;
+
+[[Follow Cade.-&gt;SQ3DealSS]]
+[[Refuse. Find another way.-&gt;SQ3Talk]]</tw-passagedata><tw-passagedata pid="526" name="SQ3DealSS" tags="dnsc dnsi" position="100,4400" size="100,100">Cade&amp;#x27;s tent is small and dark, lit by a single candle. Stolen furs cover the ground. He&amp;#x27;s already shirtless when you duck inside, the candlelight catching the lean muscles of his chest and the amber sheen of his fur.
+
+&amp;quot;Relax, Magister.&amp;quot; He closes the tent flap behind you. &amp;quot;I don&amp;#x27;t bite. ...Much.&amp;quot;
+
+Kami stays outside. You can hear him growling softly through the canvas.
+
+Cade pushes you down onto the furs and straddles your hips. His hands are quick, efficient-- pulling your tunic over your head, tugging at your shorts. His cock is already hard, sliding free from his vulpine sheath-- long, tapered, knotted at the base. Fox anatomy. He&amp;#x27;s experienced and he shows it.
+
+&amp;quot;Don&amp;#x27;t overthink it, kid.&amp;quot; He positions himself between your legs and pushes in without ceremony. The stretch is sharp-- he&amp;#x27;s not gentle, and he doesn&amp;#x27;t pretend to be. His hips snap forward and you grip the furs beneath you, gasping.
+
+(if:$KamiExped is &gt;=3)[You could suppress Kami&amp;#x27;s consciousness and offer him to Cade as well.
+
+[[Let Cade use Kami too.-&gt;SQ3DealSSKami]]](else:)[&lt;!--Do Nothing--&gt;]
+
+[[Continue.-&gt;SQ3DealSS2]]</tw-passagedata><tw-passagedata pid="527" name="SQ3DealSS2" tags="dnsc dnsi" position="200,4400" size="100,100">Cade fucks like he fights-- quick, dirty, and ruthlessly efficient. His hips snap against yours with a steady, driving rhythm, his vulpine cock pushing deep into you with each thrust. His knot bumps against your entrance, growing fatter, more insistent.
+
+Your own (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock is hard and leaking against your stomach](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member strains from your sheath, slick with pre](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock juts from your slit, twitching with each thrust](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member pulses from your cloaca, dripping pre]. The friction of his stomach against yours drives you closer to the edge.
+
+Cade cums with a bitten-off grunt, his hips slamming forward as his knot half-pops inside you. His cock pulses, hot and thick, filling you. He grips your hips hard enough to leave marks.
+
+Your own orgasm hits moments later-- the pressure of his knot, the warmth of his seed, the //wrongness// of it all. You cum across your own stomach with a gasp, your muscles clenching around him.
+
+Cade pulls out before the knot locks fully. He buttons up without a word, runs a hand through his headfur, and flicks the tent flap open.
+
+&amp;quot;A deal&amp;#x27;s a deal.&amp;quot; He walks out to talk to Roth.
+
+Kami is sitting outside the tent, not looking at you. His tail is still.
+
+[[Get dressed and follow.-&gt;SQ3Return]]</tw-passagedata><tw-passagedata pid="528" name="SQ3DealSSKami" tags="dnsc dnsi" position="300,4400" size="100,100">You raise your hand. The green mist curls toward Kami outside the tent. Through the canvas, you see him stiffen, then slump. His body goes limp. Glassy-eyed. Breathing, but gone.
+
+Cade watches through the tent flap, his eyes widening.
+
+&amp;quot;What the fuck did you just do to him?&amp;quot; He stares at the unconscious Wolf, then back at you. &amp;quot;He&amp;#x27;s completely out?&amp;quot;
+
+You nod. Cade grins slowly. It&amp;#x27;s not a kind grin.
+
+&amp;quot;That&amp;#x27;s useful.&amp;quot;
+
+He drags Kami into the tent by the scruff and positions the limp Wolf on the furs. Kami&amp;#x27;s body is malleable, warm, unresisting. Cade runs a hand along his flank, testing, then kneels behind him and lifts his hindquarters.
+
+Cade pushes into Kami without preamble. The Wolf&amp;#x27;s body responds despite his absent mind-- you watch his sheath swell, the pink tip of his canine member sliding free, engorging steadily with each of Cade&amp;#x27;s thrusts. His hind legs twitch reflexively. A thin whine escapes his slack jaw.
+
+Cade is rough and fast, his vulpine cock pistoning into Kami while you watch from the furs, aroused and ashamed in equal measure. Kami&amp;#x27;s cock hangs heavy and hard beneath him, swinging with each thrust, pre-cum drooling from the tip.
+
+Cade finishes with a grunt, his hips slamming forward. You see Kami&amp;#x27;s body jerk at the intrusion, his cock twitching uselessly.
+
+You withdraw the green mist. Kami stirs. His eyes blink open, confused.
+
+|Kami&gt;[&amp;quot;Master...? I believe I was struck. Did the bandit attack me?&amp;quot;]
+
+His hindquarters are sore. He shifts uncomfortably but doesn&amp;#x27;t question it further.
+
+&amp;quot;Something like that,&amp;quot; you say.
+
+[[Get dressed and follow.-&gt;SQ3Return]]</tw-passagedata><tw-passagedata pid="529" name="SQ3Return" tags="dnsc dnsi" position="400,4400" size="100,100">Roth and his men march out of the forest with you. Some are bound, some walk freely-- depending on which path you took. Cade walks at the rear, occasionally catching your eye with that half-smirk.
+
+Frederick is waiting at the barracks. He takes one look at the procession and nods approvingly.
+
+&amp;quot;Good work, $name.&amp;quot;
+
+He takes Roth aside. You hear low, clipped conversation-- soldier to soldier. Frederick is firm but fair, exactly as you promised. Roth&amp;#x27;s men are assigned bunks and work detail. Nobody is executed.
+
+Frederick returns to you and holds out a pouch of gold.
+
+&amp;quot;200, as promised.&amp;quot; He pauses. &amp;quot;The Strange Man... nothing new. But the border patrols have been uneasy. Something is coming. I can feel it.&amp;quot;
+
+Cade lingers at the barracks entrance. He catches your eye, winks, and disappears inside.(set:$SQ3D to 1)(set:$coin to $coin + 200)
+
+[[Return.-&gt;ScarInn]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
