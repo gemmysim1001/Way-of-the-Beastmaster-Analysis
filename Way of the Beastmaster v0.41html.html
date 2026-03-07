@@ -58,8 +58,37 @@ body, tw-story
   font-family: 'Oxygen', sans-serif;
   font-size: 16px;
   background-color: #033700;
-  width: 900px;
+  max-width: 900px;
+  width: 100%;
   padding: 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  body, tw-story {
+    padding: 15px;
+    font-size: 15px;
+    max-width: 100%;
+  }
+  tw-story {
+    padding: 3% 5% !important;
+  }
+  .img-container-kami,
+  .img-container-contest,
+  .img-container-pn,
+  .img-container-inv {
+    position: static;
+    float: none;
+    width: 100%;
+    height: auto;
+    margin: 0.5em 0;
+    left: auto;
+    top: auto;
+  }
+  tw-sidebar {
+    display: none;
+  }
 }
 tw-sidebar tw-icon.redo {
 	display: none;
@@ -282,8 +311,37 @@ body, tw-story
   font-family: 'Oxygen', sans-serif;
   font-size: 16px;
   background-color: #033700;
-  width: 900px;
+  max-width: 900px;
+  width: 100%;
   padding: 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  body, tw-story {
+    padding: 15px;
+    font-size: 15px;
+    max-width: 100%;
+  }
+  tw-story {
+    padding: 3% 5% !important;
+  }
+  .img-container-kami,
+  .img-container-contest,
+  .img-container-pn,
+  .img-container-inv {
+    position: static;
+    float: none;
+    width: 100%;
+    height: auto;
+    margin: 0.5em 0;
+    left: auto;
+    top: auto;
+  }
+  tw-sidebar {
+    display: none;
+  }
 }
 tw-sidebar tw-icon.redo {
 	display: none;
