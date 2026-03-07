@@ -1242,7 +1242,8 @@ The room is quaint. There is a window opposite you that looks out onto the coury
 
 (link:"Rest for the $DN.")[(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)(goto:"InnStaySleep")]
 [[Ask Kami for sex.-&gt;KamiSS1]]
-[[Change Kami's Equipment.-&gt;HolsteinKEquip]]](elseif:$innsc is &gt;=1)[You head upstairs and wander down to hall to your room number, remember it from the last time you were here. You stop outside Room $RN and slip the key into the lock. You twist it, and step inside.
+[[Change Kami's Equipment.-&gt;HolsteinKEquip]]
+(if:$pk is &gt;=1)[[[Experiment with your powers on Kami.-&gt;KamiExp1]]]](elseif:$innsc is &gt;=1)[You head upstairs and wander down to hall to your room number, remember it from the last time you were here. You stop outside Room $RN and slip the key into the lock. You twist it, and step inside.
 
 All the rooms are the same, so you're unsurprised to find a Bed, a small table to place your things, and a window showing the street below. Kami seems just as familiar with the abode and settles down on the bed, tilting his head at you.
 
@@ -1250,7 +1251,8 @@ All the rooms are the same, so you're unsurprised to find a Bed, a small table t
 
 (link:"Rest for the $DN.")[(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)(goto:"InnStaySleep")]
 [[Ask Kami for sex.-&gt;KamiSS1]]
-[[Change Kami's Equipment.-&gt;HolsteinKEquip]]]
+[[Change Kami's Equipment.-&gt;HolsteinKEquip]]
+(if:$pk is &gt;=1)[(if:$KamiExped is 0)[[[Experiment with your powers on Kami.-&gt;KamiExp1]]](elseif:$KamiExped is 1)[[[Experiment with your powers on Kami again.-&gt;KamiExp2]]](elseif:$KamiExped is &gt;=2)[[[Use your powers on Kami.-&gt;KamiExp3]]]]]
 (if:$inv contains "Zexir's Amulet")[[[Use Zexir's Amulet to reach the Isle of Dragons.-&gt;OrbathAmulet]]](else:)[&lt;!--Do Nothing--!&gt;]</tw-passagedata><tw-passagedata pid="49" name="KamiSS1" tags="dnsc dnsi" position="597,458" size="100,100">(if:$FuckedKami is false)[You found yourself asking before your brain had even caught up. Clearly, you were thinking a little more with your dick, rather than with your head. Kami seems to slowly turn his head towards you, blinking with those ocean blue eyes. Dogs, especially Wolves, were never very good as expressing themselves. You couldn't tell if he was mad, or flattered.
 
 |Kami&gt;["As you wish, Master $name."] The Wolf replies with every degree of professionalism. He trots towards you and stands there, his tail limp as his head cranes to stare at you right in the face.
@@ -3092,6 +3094,8 @@ He currently has $KMH Maximum Health, $KA Attack, $KS Speed and $KR Armour.
 (set:$inv to it + (a:"Strange Mushroom"))
 
 (set:$Spells to (a:))(set:$Spells to it + (a:"Calm"))
+(set:$KamiExped to 0)(set:$KamiBonded to false)
+(set:$RalnMet to false)(set:$RalnTrain to 0)(set:$SQ3D to 0)(set:$SQ4D to 0)(set:$IoDQ1D to 0)(set:$IoDQ2D to 0)(set:$RowanMet to false)(set:$PellFreed to false)
 (set:$inv to it + (a:"Zexir's Amulet"))</tw-passagedata><tw-passagedata pid="158" name="KEquipHelm" tags="dnsc dnsi" position="25,1868" size="100,100">You look through the gear you currently own to see what you can equip Kami's head with.
 
 (if: $KGH's length &gt; 0)[(print: $KGH.join(", ")).](else:)[You have no gear to equip.]
@@ -3957,6 +3961,7 @@ Kami trots into the room and turns to stare at you, sitting on his haunches and 
 (link:"Rest for the $DN.")[(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)(goto:"SIIKRS")]
 [[Ask Kami for sex.-&gt;KamiSS1]]
 [[Change Kami's Equipment.-&gt;SHKEquip]]
+(if:$pk is &gt;=1)[(if:$KamiExped is 0)[[[Experiment with your powers on Kami.-&gt;KamiExp1]]](elseif:$KamiExped is 1)[[[Experiment with your powers on Kami again.-&gt;KamiExp2]]](elseif:$KamiExped is &gt;=2)[[[Use your powers on Kami.-&gt;KamiExp3]]]](else:)[&lt;!--Do Nothing--!&gt;]
 (if:$inv contains "Zexir's Amulet")[[[Use Zexir's Amulet to reach the Isle of Dragons.-&gt;OrbathAmulet]]](else:)[&lt;!--Do Nothing--!&gt;]</tw-passagedata><tw-passagedata pid="219" name="SHKEquip" tags="" position="1291,1200" size="100,100">You glance down at Kami, and suggest changing equipment for the journey ahead, whilst you have the time. He agrees, and gets into a suitable position.
 
 |Kami&gt;["Take your time in choosing, Master."]
@@ -6322,7 +6327,9 @@ From the main chamber, he takes you to the left into the rooms hidden around the
 In the comfort of a small room that seems reasonably familiar, you prepare yourself to rest. Kami is already getting settled on the bed.]
 
 (link:"Rest for the $DN.")[(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)(goto:"IoDStaySleep")]
+[[Ask Kami for sex.-&gt;KamiSS1]]
 [[Change Kami's Equipment.-&gt;IoDKEquip]]
+(if:$pk is &gt;=1)[(if:$KamiExped is 0)[[[Experiment with your powers on Kami.-&gt;KamiExp1]]](elseif:$KamiExped is 1)[[[Experiment with your powers on Kami again.-&gt;KamiExp2]]](elseif:$KamiExped is &gt;=2)[[[Use your powers on Kami.-&gt;KamiExp3]]]](else:)[&lt;!--Do Nothing--!&gt;]
 (if:$inv contains "Zexir's Amulet")[(link:"Use Zexir's Amulet to go to Holstein.")[(set:$AmmyTP to 1)(goto:"IoDAmulet")]](else:)[&lt;!--Do Nothing--!&gt;]
 (if:$inv contains "Zexir's Amulet")[(link:"Use Zexir's Amulet to go to Scarhaven.")[(set:$AmmyTP to 2)(goto:"IoDAmulet")]](else:)[&lt;!--Do Nothing--!&gt;]</tw-passagedata><tw-passagedata pid="387" name="TeleporterC" tags="dnsi" position="995,2911" size="100,100">(if:$inv contains "Zexir's Amulet")[You thought about attending the house with the teleporter that sits beside the Council Chambers, but you quickly remember that you own Zexir's amulet.
 
@@ -7304,7 +7311,114 @@ He winks and you can't help but smirk, just a little. You bid him farewell and s
 
 [[Continue.-&gt;Hub]]</tw-passagedata><tw-passagedata pid="465" name="Heart Ring" tags="" position="239,1334" size="100,100">(enchant: ?u, (text-style:'underline'))
 |u&gt;[Heart Ring]
-A small silver ring with a heart-shaped setting on top. The housing is filled with a heart-shaped ruby. When you wear it on your finger, you get a tingling feeling in your stomach. (if:$Single is true)[You feel a hum, before the feeling fades.](else:)[Immediately, you think of $Relationship. A number appears in your head... $LoveMeter, out of 1000, peculiarly.]&lt;br/&gt;</tw-passagedata></tw-storydata>
+A small silver ring with a heart-shaped setting on top. The housing is filled with a heart-shaped ruby. When you wear it on your finger, you get a tingling feeling in your stomach. (if:$Single is true)[You feel a hum, before the feeling fades.](else:)[Immediately, you think of $Relationship. A number appears in your head... $LoveMeter, out of 1000, peculiarly.]&lt;br/&gt;</tw-passagedata><tw-passagedata pid="466" name="KamiExp1" tags="dnsc dnsi" position="100,3500" size="100,100">You&amp;#x27;ve been thinking about your powers. The green mist, the way animals respond to your presence, the way they bend to your will... you&amp;#x27;ve calmed wolves, pacified wild beasts. But you&amp;#x27;ve never tried to push //deeper//. You&amp;#x27;ve never tried to see just how far your control goes.
+
+Kami is curled up on the bed beside you, his tail draped over his nose, breathing softly. He looks peaceful. You extend your hand towards him, and the green mist curls lazily from your fingertips, drifting through the air like smoke.
+
+His ears twitch. His breathing slows. His body goes slack-- completely limp, like a puppet with its strings cut. His eyes are half-open, glassy and unseeing, reflecting the candlelight but not registering it. His jaw hangs slightly ajar, tongue resting limply against his lower teeth.
+
+You press your palm to his chest. His heart beats steadily beneath his ribs. Warm. Alive. But //he// isn&amp;#x27;t there. Just the body.
+
+A thrill runs through you. Your heart hammers against your ribs. You shouldn&amp;#x27;t be doing this. But your hand is already moving.
+
+You roll him onto his back. His legs splay without resistance, limbs loose and malleable like warm clay. You position his hind legs apart, spreading them, and arrange his forepaws above his head as if pinned. He doesn&amp;#x27;t resist. He can&amp;#x27;t.
+
+You sit back on your heels and look at what you&amp;#x27;ve done. Kami, the proud Wolf who served the Great Forest God Pan for years, splayed out on the bed like a toy. A hot flush creeps up your neck and settles behind your ears.
+
+Your fingers trail down his belly fur, lower. You wrap your hand around his sheath and squeeze gently. A heartbeat passes. Then another. Slowly, the tapered pink tip emerges-- his body responding even without his mind. You stroke the emerging shaft with your thumb, feeling it pulse and swell with blood. Within moments, Kami&amp;#x27;s canine member is at half-mast, glistening faintly with watery pre-cum, the knot beginning to form at the base.
+
+You build a rhythm, slow and deliberate. His cock throbs in your hand, fully hard now, the knot fat and swollen against your fingers. His hind legs twitch involuntarily-- a muscle reflex, nothing more. Pre-cum beads at the tip, slick and warm, and you spread it with your thumb, slicking the entire shaft until it glistens.
+
+You can feel the tension building in his body. Muscles tightening. Hindquarters shifting in micro-thrusts against nothing. He&amp;#x27;s close. The body knows, even if the mind doesn&amp;#x27;t.
+
+You release your grip.
+
+His cock pulses once, twice-- a dry, empty throb. His hips shift uselessly against nothing. The orgasm crests but doesn&amp;#x27;t break. His member twitches and aches in the open air, pulsing dryly, a bead of pre-cum drooling from the tip and sliding down the shaft. His hind legs kick once, weakly, and a thin whine escapes his throat-- barely audible, even unconscious.
+
+You watch it happen. The denied climax. His cock bobs, desperate for a touch that isn&amp;#x27;t coming. You feel a guilty, giddy heat between your own legs, your own (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[member stiffening](elseif:$fcock is &amp;quot;sheath&amp;quot;)[sheath swelling](elseif:$fcock is &amp;quot;slit&amp;quot;)[slit tingling](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[cloaca pulsing] at the sight of what you&amp;#x27;ve done.
+
+You withdraw the green mist. Kami&amp;#x27;s body tenses. His eyes blink rapidly, pupils contracting. He lifts his head, disoriented, looking around the room as if he&amp;#x27;s forgotten where he is. He shakes himself and stretches, his still-hard member slowly retreating into his sheath. If he notices, he doesn&amp;#x27;t mention it.
+
+|Kami&gt;[&amp;quot;Master...? I... appear to have fallen asleep. My sincerest apologies. I shall try to remain more vigilant.&amp;quot;]
+
+He nuzzles against your leg, none the wiser. You scratch behind his ear, and his tail thumps against the bed.(set:$KamiExped to 1)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+(link:&amp;quot;Rest.&amp;quot;)[(if:$location is &amp;quot;Holstein&amp;quot;)[(goto:&amp;quot;InnStaySleep&amp;quot;)](elseif:$location is &amp;quot;Scarhaven&amp;quot;)[(goto:&amp;quot;SIIKRS&amp;quot;)](else:)[(goto:&amp;quot;IoDStaySleep&amp;quot;)]]</tw-passagedata><tw-passagedata pid="467" name="KamiExp2" tags="dnsc dnsi" position="200,3500" size="100,100">You do it again.
+
+Kami was mid-sentence, something about the weather outside-- how the clouds look like a sheep he once knew-- when the green mist curls from your fingers and drifts toward him. His ears twitch. His words trail off into nothing. His body crumples gently and you catch him, lowering him to the floor.
+
+His glassy eyes stare at nothing. His chest rises and falls steadily. He&amp;#x27;s breathing. But he&amp;#x27;s not here.
+
+This time, you&amp;#x27;re bolder. You know what his body can do now. You know what it //wants//, even when his mind isn&amp;#x27;t there to want it. A pleasant shudder runs through you as you consider your options.
+
+(link:&amp;quot;Roll him onto all fours. Tail up, head down.&amp;quot;)[(set:$KExpPose to 1)(goto:&amp;quot;KamiExp2SS&amp;quot;)]
+(link:&amp;quot;On his back. Legs spread. Belly exposed.&amp;quot;)[(set:$KExpPose to 2)(goto:&amp;quot;KamiExp2SS&amp;quot;)]
+(link:&amp;quot;On his side. Curl his body around yours.&amp;quot;)[(set:$KExpPose to 3)(goto:&amp;quot;KamiExp2SS&amp;quot;)]</tw-passagedata><tw-passagedata pid="468" name="KamiExp2SS" tags="dnsc dnsi" position="300,3500" size="100,100">(if:$KExpPose is 1)[You push his hindquarters up, tucking his front legs under him. His head rests against the floor, muzzle pressed to the wood. His tail hangs limp-- you lift it yourself, draping it over his back. His pucker and sheath are completely exposed, dark-skinned and warm to the touch. You trace a finger along his perineum and watch his cock slide free, the tapered pink tip emerging without any input from his mind. Just the touch. Just the position. His body knows what this posture means.](elseif:$KExpPose is 2)[His belly fur is soft under your hands as you roll him over. You spread his hind legs wider, hooking them over the edge of the bed. His member begins to emerge without any prompting-- just the position, the exposure, is enough. The tapered tip slides from his sheath, already slick. His balls hang heavy and loose between his spread thighs. He looks so //vulnerable// like this.](elseif:$KExpPose is 3)[You curl up behind him, pressing your chest against his back. His fur is warm and soft against your $skin. You reach around his hip, fingers finding his sheath. He&amp;#x27;s warm against you, his heartbeat slow and steady against your chest. You squeeze his sheath gently and feel the tip emerge against your palm. Intimate. Close. His unconscious warmth is intoxicating.]
+
+You stroke him to full hardness again. It doesn&amp;#x27;t take long-- his body remembers. The knot swells fat and firm in your grip. Pre-cum slicks your fingers, warm and watery, and you coat his shaft with it. Each stroke makes his cock throb harder. His hind legs twitch. His hips shift in tiny, involuntary micro-thrusts.
+
+You build him up slowly this time. Savouring it. Feeling every pulse, every twitch of his muscles, every helpless buck of his hips against your hand. The knot is fully swollen now, bulging between your fingers. He&amp;#x27;s close. You can feel the tension coiling through his body like a spring.
+
+(link:&amp;quot;Deny him again.&amp;quot;)[(set:$KExpFinish to 0)(goto:&amp;quot;KamiExp2End&amp;quot;)]
+(link:&amp;quot;Let him finish this time.&amp;quot;)[(set:$KExpFinish to 1)(goto:&amp;quot;KamiExp2End&amp;quot;)]</tw-passagedata><tw-passagedata pid="469" name="KamiExp2End" tags="dnsc dnsi" position="400,3500" size="100,100">(if:$KExpFinish is 0)[You pull your hand away.
+
+His cock throbs emptily in the air, the knot pulsing and aching. His hind legs kick once-- a sharp, involuntary jerk. A whine escapes his throat, thin and pitiful, the sound of an animal denied release even in unconsciousness. His hips buck weakly against nothing, his member twitching and straining, desperate for stimulation that isn&amp;#x27;t there.
+
+You watch it happen. The denied climax. His cock pulses dryly, once, twice, three times. A thick bead of pre-cum oozes from the tip and slides down the shaft, but that&amp;#x27;s all. No release. Just the ache.
+
+You feel a rush that makes your own body throb. You did that. You //controlled// it. You could have given him what his body was begging for, and you chose not to. The power of it makes your head swim.](elseif:$KExpFinish is 1)[You stroke through. Your hand tightens around his shaft and you pump him with a steady, firm rhythm. His hips buck against your hand-- once, twice-- and then his body seizes.
+
+His cock erupts. Thick ropes of canine cum splatter across his own belly fur, pooling in the hollow of his hip. The knot throbs powerfully against your palm with each spurt, pulsing and swelling. You milk him through it, feeling each convulsion, each jet, each desperate throb. His hind legs kick and tremble. A long, low whine escapes his throat-- not distress, just the body expressing what the mind cannot.
+
+You keep going until the last pulse fades and his cock softens in your grip. His belly is a mess, white ropes streaked through grey fur. You&amp;#x27;ll need to clean him before he wakes.
+
+You fetch a cloth and carefully wipe the evidence away, smoothing his fur until he looks untouched. Your own (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock is achingly hard](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member is straining against your sheath](elseif:$fcock is &amp;quot;slit&amp;quot;)[slit is swollen and leaking](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[cloaca is throbbing with need] from what you&amp;#x27;ve just done.]
+
+You withdraw the green mist. Kami stirs. His eyes flutter open. He blinks, slowly, and lifts his head.
+
+(if:$KExpFinish is 0)[|Kami&gt;[&amp;quot;I... Master, I believe I lost consciousness. Was there an enemy? I feel... strange.&amp;quot;]
+
+He shifts uncomfortably, his sheath still visibly swollen. He glances down at himself, tilts his head in confusion, then looks back at you. He doesn&amp;#x27;t understand why his body feels the way it does. You tell him everything is fine, and he accepts it without question.](elseif:$KExpFinish is 1)[|Kami&gt;[&amp;quot;Master? What happened? I appear to have lost consciousness. Forgive me, I should be more vigilant.&amp;quot;]
+
+He sniffs the air and tilts his head. Something smells different, but he can&amp;#x27;t place it. He looks at you with those trusting ocean blue eyes, and you scratch behind his ear. His tail wags.]
+
+He nuzzles against your leg. The bond between you holds. It always does.(set:$KamiExped to 2)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+(link:&amp;quot;Rest.&amp;quot;)[(if:$location is &amp;quot;Holstein&amp;quot;)[(goto:&amp;quot;InnStaySleep&amp;quot;)](elseif:$location is &amp;quot;Scarhaven&amp;quot;)[(goto:&amp;quot;SIIKRS&amp;quot;)](else:)[(goto:&amp;quot;IoDStaySleep&amp;quot;)]]</tw-passagedata><tw-passagedata pid="470" name="KamiExp3" tags="dnsc dnsi" position="500,3500" size="100,100">The green mist curls from your fingers. You&amp;#x27;ve done this enough times now that it feels natural-- like breathing. Kami&amp;#x27;s ears twitch. His body goes slack. He slumps onto his side, glassy-eyed, breathing slow and deep.
+
+You position him on all fours, tail raised, hindquarters presented. His body is malleable, warm, familiar. You&amp;#x27;ve touched every inch of it by now. You know the way his muscles tense, the way his sheath responds, the way his knot swells.
+
+This time, you don&amp;#x27;t just use your hand.
+
+You kneel behind him, running your hands along his flanks. His fur is soft under your palms. You slide one hand beneath his belly and feel his cock already beginning to emerge-- his body anticipating what&amp;#x27;s coming, even without a mind to guide it. You wrap your fingers around his swelling shaft and give it a few slow strokes, pre-cum slicking your grip.
+
+Your own (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock is throbbing, painfully hard.](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member slides from your sheath, already at full mast.](elseif:$fcock is &amp;quot;slit&amp;quot;)[member pushes free from your slit, slick and rigid.](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[cock emerges from your cloaca, pulsing with need.] You spit into your hand and slick yourself up, pressing the (if:$cock is &amp;quot;canine&amp;quot; or &amp;quot;fox&amp;quot;)[tapered tip](elseif:$cock is &amp;quot;dragon&amp;quot;)[ridged head](else:)[head of your cock] against his dark-skinned pucker.
+
+You push into him. The tightness is familiar from the conscious KamiSS scenes you&amp;#x27;ve shared before-- that exquisite clench of muscle around your shaft-- but the //feeling// is different. There is no |Kami&gt;[&amp;quot;As you wish, Master.&amp;quot;] here. No wagging tail. No ocean blue eyes looking back at you. Just the body, warm and yielding and obedient.
+
+You thrust deeper, inch by inch, feeling his inner muscles grip and pulse around you involuntarily. His body responds the way an animal&amp;#x27;s body responds to stimulation: automatically, without thought or consent. His cock swings beneath him with each thrust, fully hard and leaking pre-cum onto the sheets. His hindquarters rock gently with the motion.
+
+You set a rhythm. Slow at first, savouring the heat, the tightness, the forbidden thrill of it. Then faster, harder, your hips slapping against his haunches. His claws knead the sheets reflexively. A thin, unconscious whine drifts from his slack jaw-- not distress, just the body making sounds the mind would never permit.
+
+The pressure builds. You can feel your orgasm approaching, that familiar tightening in your loins. You grip his hips and thrust harder, (if:$cock is &amp;quot;canine&amp;quot; or &amp;quot;fox&amp;quot;)[your knot beginning to swell, bumping against his entrance with each thrust. You push harder, and with a wet pop, your knot slides inside, locking you together. The sudden tightness around your base is enough to send you over the edge.](elseif:$cock is &amp;quot;dragon&amp;quot;)[burying your ridged cock to the hilt, feeling his muscles grip every ridge. The stimulation is overwhelming.](else:)[burying yourself to the base inside him, feeling the warmth envelop every inch.]
+
+You cum inside him with a shuddering groan, your cock pulsing and throbbing, filling his insides with warmth. Your hips roll in shallow thrusts as you ride out the orgasm, fingers digging into his fur. His cock twitches beneath him, oozing pre, but he doesn&amp;#x27;t finish. His body wanted to, but without a mind to push it over the edge, it just... aches.
+
+You pull out slowly, (if:$cock is &amp;quot;canine&amp;quot; or &amp;quot;fox&amp;quot;)[waiting for your knot to deflate before carefully withdrawing,](else:)[sliding free with a wet sound,] and watch a thin trickle leak from his used entrance. You clean him carefully with a cloth, wiping away the evidence, smoothing his fur, repositioning him on his side as if he&amp;#x27;d simply been sleeping.
+
+You withdraw the green mist. Kami stirs.
+
+He blinks. Stretches. Yawns. Looks up at you with those trusting blue eyes.
+
+|Kami&gt;[&amp;quot;I must have dozed off again, Master. My sincerest apologies. I shall endeavour to stay more alert.&amp;quot;]
+
+He stands and stretches his back legs, one at a time. His hindquarters are slightly sore, and you see him shift his weight, a brief look of puzzlement crossing his face.
+
+|Kami&gt;[&amp;quot;Perhaps the bed is not as comfortable as I first thought.&amp;quot;]
+
+He settles back down beside you and rests his head on your lap. You stroke his fur and feel his tail thump gently against the mattress. The bond between you holds. He trusts you completely.(set:$KamiExped to 3)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+(link:&amp;quot;Rest.&amp;quot;)[(if:$location is &amp;quot;Holstein&amp;quot;)[(goto:&amp;quot;InnStaySleep&amp;quot;)](elseif:$location is &amp;quot;Scarhaven&amp;quot;)[(goto:&amp;quot;SIIKRS&amp;quot;)](else:)[(goto:&amp;quot;IoDStaySleep&amp;quot;)]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
