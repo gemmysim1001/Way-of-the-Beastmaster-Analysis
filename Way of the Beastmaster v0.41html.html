@@ -3405,6 +3405,8 @@ You ponder whether it's a good idea to go in and see him or not.]
 
 You make your way around the back of the house and stop, surprised at what you find.
 
+(if:$SQ4D is &gt;=1 and $PellFreed is false)[[[Visit the Von Aldersant Estate again.-&gt;SQ4Revisit]]](else:)[&lt;!--Do Nothing--&gt;]
+
 (if:(history:) contains "FMBc12" or "FMBc22")[You pause and are greeted to the sight of Dillan, a rather slimly built, cream and black furred Fox who you've seen, and molested. You don't know much about the boy, but he seems to urinate a lot. He's leant against the back of the house, peeing towards the ground once more. His gaze drifts up and his eyes widen when he sees you. You can see his cheeks growing flushed.
 
 "H-Hey." He grins awkwardly in response, and a wide grin spreads across your face.
@@ -9504,6 +9506,7 @@ Beside her, a young male with dusty brown scales and no wings-- like Hran, a fli
 
 [[Approach the female drake.-&gt;ValleyFemale]]
 [[Wake the sleeping male.-&gt;ValleyMale]]
+[[Go deeper into the hatchling caves.-&gt;ValleyCavesDeep]]
 [[Return.-&gt;IoDHouses]]</tw-passagedata><tw-passagedata pid="609" name="ValleyFemale" tags="dnsc dnsi" position="600,5700" size="100,100">The green-scaled female tilts her head as you approach. She's pretty-- in the way that a well-crafted blade is pretty. Sharp, elegant, with eyes that miss nothing.
 
 "The Magister." Her voice is light, musical. "I've heard about you. You train with Raln, yes?"
@@ -9668,7 +9671,252 @@ You clean Soot. Wake him.
 "...Yes," Erel says faintly. "Same time next week."(set:$LoveMeter to it + 10)
 
 [[Continue experiments.-&gt;ErelCollabSubjects]]
-[[Return.-&gt;IoDHub]]</tw-passagedata></tw-storydata>
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="620" name="SQ4Revisit" tags="dnsc dnsi" position="100,6000" size="100,100">You make the familiar walk back to the Von Aldersant estate. The iron gates are still open. The overgrown gardens haven't changed.
+
+(if:(history:) contains "SQ4BasementIn")[You know what's down there. The cages, the collars, the overseer. Your stomach churns, but something draws you back.
+
+The front door is unlocked. Yven is in his study, the same cold yellow eyes watching you from behind his desk.
+
+"Back again? I didn't expect a return visit." He gestures to the chair. "Perhaps you've reconsidered our arrangement?"
+
+[[Go to the basement.-&gt;SQ4RevisitBasement]]
+[[Talk to Yven.-&gt;SQ4RevisitYven]]
+[[Leave.-&gt;ScarHub]]](else:)[The manor looks the same as before. You could explore more thoroughly this time.
+
+[[Explore the manor.-&gt;SQ4Basement]]
+[[Leave.-&gt;ScarHub]]]</tw-passagedata><tw-passagedata pid="621" name="SQ4RevisitBasement" tags="dnsc dnsi" position="200,6000" size="100,100">You descend the stairs. The cages are still there. The fox and the rabbit are still inside-- the same hollow eyes, the same flinching when they see movement.
+
+The overseer is not here right now. The basement is quiet. Just you, Kami, and the captives.
+
+The fox watches you through the bars. His dull orange fur is matted, his thin frame curled tight.
+
+"You came back," he whispers. Not accusation. Just... observation.
+
+[[Free them this time.-&gt;SQ4Intervene]]
+[[Wait for the overseer.-&gt;SQ4RevisitWatch]]
+[[Use your powers on the captives.-&gt;SQ4RevisitPower]]
+[[Leave.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="622" name="SQ4RevisitWatch" tags="dnsc dnsi" position="300,6000" size="100,100">You hide in the shadows again. This time, you choose to watch.
+
+The overseer arrives within the hour-- the same burly Boar, the same bored expression. He unlocks the fox's cage this time. The boy doesn't resist. He knows the routine.
+
+The overseer bends the slim fox over the bench. The boy's thin body barely covers the surface. His cream-coloured tail is lifted roughly aside. What follows is the same mechanical, dispassionate use you witnessed before, but this time you watch without the shock. The fox's small member stiffens against the bench despite himself, his slim hips rocking involuntarily with each thrust. His face is turned toward you, though he doesn't know you're there. His eyes are open but seeing nothing.
+
+The overseer finishes and shoves the fox back toward his cage. The boy stumbles on thin legs, catches himself on the bars, and crawls inside.
+
+You could intervene. You could leave. Or you could stay.
+
+[[Intervene.-&gt;SQ4Intervene]]
+[[Leave.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="623" name="SQ4RevisitPower" tags="dnsc dnsi" position="400,6000" size="100,100">You extend the green mist toward the fox in the cage. His dull eyes glaze over. His thin body goes slack, slumping against the bars. He's unconscious-- the same suppression you've used on Kami.
+
+You open the cage. His slim body is light-- barely anything to him. Thin orange fur over narrow bones. You lift him out and lay him on the bench.
+
+Kami watches from the stairs, his tail low.
+
+His servant's tunic rides up, exposing his thin thighs and the small sheath between them. You run your fingers along it and feel the response-- even unconscious, the body answers. His small member emerges, humanoid and thin, already stiffening from the touch.
+
+You stroke him slowly. His slim hips twitch on the bench. Pre-cum beads at the tip-- thin, clear, watery. His body builds toward a climax he won't remember.
+
+(link:"Deny him.")[(set:$SQ4RC to 0)(goto:"SQ4RevisitPowerEnd")]
+(link:"Let him finish.")[(set:$SQ4RC to 1)(goto:"SQ4RevisitPowerEnd")]
+(link:"Use him yourself.")[(set:$SQ4RC to 2)(goto:"SQ4RevisitPowerEnd")]</tw-passagedata><tw-passagedata pid="624" name="SQ4RevisitPowerEnd" tags="dnsc dnsi" position="500,6000" size="100,100">(if:$SQ4RC is 0)[You pull your hand away at the peak. His thin cock pulses dryly-- once, twice-- empty, aching throbs against nothing. A whimper escapes his slack mouth. His slim hips shift uselessly on the bench, seeking touch that isn't there. Then the tension fades, and his body goes still. Unsatisfied. Denied.
+
+You put him back in the cage.](elseif:$SQ4RC is 1)[You stroke through. His thin cock throbs in your hand and spurts-- thin, clear fluid, barely more than a trickle, streaking across his flat stomach. His whole slim body shudders with the release, legs twitching, tail limp. A small, unconscious sigh escapes him.
+
+You clean him carefully and put him back in the cage.](elseif:$SQ4RC is 2)[You position yourself between his thin legs. He's small-- far smaller than you-- and when you push into him, his slim body barely shifts on the bench. His inner muscles clench weakly around you, reflexive, unconscious. His thin cock emerges and stiffens against his belly as you thrust, pre-cum beading clear and watery.
+
+You cum inside him with a stifled groan, feeling the warmth spread through his small body. His cock twitches but doesn't finish-- left aching, full, denied even as you use him.
+
+You pull out and clean up. Put him back in the cage.]
+
+You withdraw the green mist. The fox stirs. Blinks. Looks around the cage, confused. He doesn't know what happened. Doesn't know you were inside him.
+
+He curls up and closes his eyes. You climb the stairs.
+
+[[Leave the manor.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="625" name="SQ4RevisitYven" tags="" position="600,6000" size="100,100">Yven studies you from behind his desk.
+
+"You intrigue me, Magister. Most adventurers take the gold and never return. Yet here you are."
+
+He steeples his fingers.
+
+"If you're here for the servants, they're still in the basement. I have no quarrel with you visiting, so long as you don't damage the merchandise."
+
+The word //merchandise// makes your skin crawl. But Yven is watching you with those cold yellow eyes, and you realise he's giving you permission.
+
+[[Go to the basement.-&gt;SQ4RevisitBasement]]
+[[Leave.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="626" name="ValleyCavesDeep" tags="" position="100,6100" size="100,100">Beyond the main valley, the caves go deeper. Smaller entrances, barely large enough for you to squeeze through. These are the hatchling caves-- where the youngest dragons live, those too small for their own proper dens.
+
+The air is warm, almost humid. You can hear the rustle of scales on stone, the soft chirping of small voices. Candlelight flickers from several openings.
+
+[[Enter Cave 47 -- the sounds of distress.-&gt;ValleyCave47]]
+[[Enter Cave 89 -- quiet, a single candle.-&gt;ValleyCave89]]
+[[Enter Cave 112 -- two voices, giggling.-&gt;ValleyCave112]]
+[[Return.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="627" name="ValleyCave47" tags="dnsc dnsi" position="200,6100" size="100,100">You squeeze through the narrow entrance of Cave 47 and follow the passage down. The sounds grow clearer-- not chirping. Whimpering. Small, strained, rhythmic whimpering.
+
+You round a corner and stop.
+
+A young drake-- barely larger than you, with pale green scales and a narrow, delicate build-- is pinned against the cave wall by a larger dragon. The larger one is twice his size, dark-scaled, with heavy muscles and thick horns. His hips drive forward in a steady, relentless rhythm.
+
+The smaller drake's legs are splayed wide, his thin body pressed flat against the stone, his claws scraping uselessly at the rock. His slit is stretched around the larger dragon's ridged member, the glistening shaft pumping in and out with mechanical determination. The small drake's own member has slipped free from his slit-- thin, pink, ridged, dripping clear fluid in a steady stream that pools on the cave floor between his spread legs.
+
+His whimpers are high and breathy, each one forced out of him by the impact of the larger dragon's thrusts. His narrow body rocks against the wall with each push. He's not fighting. He's not calling for help. He's enduring, the way someone endures weather.
+
+The larger dragon grunts, his pace increasing. The small drake's back arches and his thin cock pulses-- a forced climax, clear fluid spurting weakly against the wall, his slim body shuddering through it while the larger dragon continues to use him without pause.
+
+[[Keep watching.-&gt;ValleyCave47b]]
+[[Intervene.-&gt;ValleyCave47c]]
+[[Leave quietly.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="628" name="ValleyCave47b" tags="dnsc dnsi" position="300,6100" size="100,100">You press yourself against the cave wall and watch.
+
+The larger dragon finishes with a deep growl, his hips slamming forward one final time. His ridged cock pulses visibly inside the smaller drake's stretched slit, and you can see the younger one's belly shift slightly from the volume pumped into him. The small drake lets out a long, shaky exhale, his thin legs trembling.
+
+The larger dragon pulls out without ceremony. Thick fluid oozes from the small drake's stretched slit, dripping down his inner thighs. He slides down the wall until he's sitting on the cave floor, his slim body shaking. His thin cock is still out, half-hard, glistening with his own clear release.
+
+The larger dragon lumbers past you without a word, not caring that you saw. The small drake sits there for a long moment, catching his breath. Then he notices you.
+
+His pale green eyes are wide but not afraid. Just... tired.
+
+"It happens," he says quietly. His voice is small, reedy. "The bigger ones get urges. We're... convenient."
+
+[[Comfort him.-&gt;ValleyCave47SS]]
+[[Offer to command Kami to keep him company.-&gt;ValleyCave47Kami]]
+[[Leave.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="629" name="ValleyCave47SS" tags="dnsc dnsi" position="400,6100" size="100,100">You kneel beside him. He's thin-- you can count his ribs through his pale scales. His narrow snout barely reaches your shoulder. Up close, he's almost fragile-looking, with delicate features and wide, expressive eyes. His tail curls around his own ankles, the way Hans curls his legs when he's nervous.
+
+"I'm Ash," he offers, his voice barely above a whisper. "You're the Magister, right? Hran talks about you."
+
+You sit beside him and he leans into you without prompting, his thin body pressing against yours. He's warm, but trembling. You wrap an arm around his narrow shoulders and feel the ridges of his spine through his scales.
+
+His slit is still parted, the soft inner flesh swollen and pink, slick with the larger dragon's release. His thin cock rests against his thigh, slowly softening. He doesn't try to hide himself from you. There's no shame in dragon culture, you've learned. Bodies are bodies.
+
+You reach down and gently cup his slit with your palm. He shivers at the contact but doesn't pull away. Your fingers slide along the soft, warm opening, and you feel his cock stir again-- the thin, ridged shaft pushing free, already responding to your gentle touch. So different from the rough use he just endured.
+
+"That's... nice," he murmurs, his head resting on your shoulder. "Nobody's ever been gentle before."
+
+You stroke him slowly, carefully, your fingers tracing each small ridge on his slim member. He's sensitive-- every touch makes him twitch, his thin tail curling and uncurling. Clear fluid beads at the tip, warm and slick, coating your fingers.
+
+His climax comes softly-- not the forced, wrenching orgasm from before, but a gentle wave. His thin cock pulses in your hand, spurting thin, clear streams across his pale belly. His whole slim body shudders, and he presses his face into your neck, a high trill muffled against your skin.
+
+You hold him until the trembling stops.
+
+"Thank you," he whispers. "Will you come back?"
+
+[[Promise to.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="630" name="ValleyCave47Kami" tags="dnsc dnsi" position="500,6100" size="100,100">You look at Kami, then at Ash. The small drake tilts his head, curious.
+
+"Your wolf? He's pretty."
+
+(if:$KamiExped is &gt;=3)[You extend the green mist. Kami goes limp, his eyes glazing over. You position him beside Ash, hindquarters raised.
+
+Ash blinks. "Is he... asleep?"
+
+You nod. Ash looks at the unconscious wolf, then at you, then back at Kami. His thin tail swishes once.
+
+"Can I... touch him?"
+
+You gesture for him to go ahead. Ash's thin, clawed hands explore Kami's body-- running along his fur, tracing the line of his belly, finding his sheath. His touch is careful, curious. Clinical, almost, the way Erel touches.
+
+Kami's sheath swells under the small dragon's attention. The tapered pink tip emerges, and Ash makes a soft sound of fascination.
+
+"He's warm," Ash murmurs. His own thin cock is hardening again, ridged and dripping, as he wraps both hands around Kami's emerging member and strokes with gentle, inexperienced fingers.
+
+Kami's body responds-- his knot swelling, his hips twitching. Ash strokes faster, his own member bobbing against his pale belly. The wolf's cock throbs and erupts-- thick white ropes splattering across Ash's thin, pale-scaled hands and wrists. The small drake gasps, his own cock pulsing in sympathy, thin clear fluid dripping.
+
+You withdraw the mist. Kami wakes, blinking.
+
+|Kami&gt;["Master...? I had the most peculiar dream."]
+
+Ash giggles. It's the first time you've heard him laugh.](else:)[Kami pads over and sniffs Ash. The small drake reaches out a thin hand and strokes behind the wolf's ears. Kami's tail wags.
+
+"He's soft," Ash murmurs, his face brightening for the first time. "I've never touched fur before."
+
+The two of them sit together, Ash's thin body curled around Kami, the wolf's warmth seeping into the small drake's cool scales. It's not sexual. Just... comfort.]
+
+[[Return.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="631" name="ValleyCave47c" tags="" position="600,6100" size="100,100">You step forward and the green mist crackles at your fingertips. The larger dragon freezes, his muscles locking. He turns his massive head toward you.
+
+"Mind your own business, Nomad."
+
+But your power holds him. He can't move. The small drake slides free and crumples to the floor, gasping. You release the larger dragon and he snarls, but backs away. He knows what you are.
+
+"Magisters," he growls. "Always interfering." He lumbers out of the cave.
+
+The small drake-- Ash-- looks up at you with wide, grateful eyes.
+
+"Thank you," he whispers.
+
+[[Comfort him.-&gt;ValleyCave47SS]]
+[[Leave.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="632" name="ValleyCave89" tags="dnsc dnsi" position="700,6100" size="100,100">Cave 89 is small and warm. A single candle flickers on a stone shelf. Curled on a pile of furs is one of the smallest drakes you've seen on the island-- barely 3 feet long from snout to tail tip, with iridescent silver scales and enormous violet eyes. She lifts her head when you enter, her thin tail curling around her body.
+
+"Oh! A Nomad!" Her voice is high, musical, like a bird's. She's a hatchling-- young, even by IoD standards. Her body is slim and narrow, with a long neck and delicate limbs. Her wings are tiny, barely-formed nubs on her back.
+
+"I'm Flicker," she chirps. "Are you lost? This is the hatchling section. You're very big."
+
+She's tiny. You could hold her in your arms. Her silver scales catch the candlelight, shimmering.
+
+She tilts her head, studying you with those enormous violet eyes.
+
+"Hran says you're nice. Are you nice?"
+
+[[Talk to Flicker.-&gt;ValleyCave89Chat]]
+[[Leave.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="633" name="ValleyCave89Chat" tags="" position="800,6100" size="100,100">You sit on the floor and Flicker immediately climbs into your lap. She's light-- barely heavier than a cat-- and her scales are smooth and warm against your legs. Her thin tail curls around your wrist.
+
+"I like Nomads," she announces. "You're soft. Dragons are hard and scratchy."
+
+She tells you about her life. She's one of the youngest on the island. Her parents are both fliers-- large, powerful dragons who are often away on patrol. She spends most of her time alone in this cave, reading the books Valia brings her.
+
+"Valia is nice," Flicker says. "She brings me stories. Raln brings me food. Zexir brings me..." She pauses. "Actually, Zexir just talks. A lot."
+
+She giggles and nuzzles against your chest. Kami settles beside you and Flicker reaches out to pet him, her tiny claws combing through his fur.
+
+"Can I keep him?" She asks, looking up at you with those enormous eyes.
+
+|Kami&gt;["I am not a pet, young one."]
+
+Flicker squeaks in delight. "He TALKS!"
+
+You spend a pleasant hour with the hatchling before heading back.
+
+[[Return.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="634" name="ValleyCave112" tags="dnsc dnsi" position="100,6200" size="100,100">Cave 112 is deeper than the others, with a winding passage that opens into a surprisingly spacious chamber lit by two magical orbs. Two young drakes are inside-- both slim, both wingless, both around Hran's age.
+
+One is a sleek blue drake with a narrow build and sharp features-- all angles and lean muscle. The other is a warmer brown with soft eyes and a rounder snout. They're pressed close together, their long tails intertwined, and it takes you a moment to realise what they're doing.
+
+The blue drake is on his back, his slim legs wrapped around the brown one's waist. The brown drake's hips rock in a slow, gentle rhythm, his ridged cock sliding in and out of the blue one's slit. The movement is unhurried, tender-- nothing like the rough scene in Cave 47. These two are //together//.
+
+The blue drake's own member has slipped free from his slit, thin and ridged, pressed between their bellies, each thrust from the brown one making it bob and drip clear fluid. His eyes are closed, his claws kneading the brown one's shoulders.
+
+"I love you," the blue one whispers.
+
+"I know," the brown one replies, and pushes deeper.
+
+[[Watch quietly.-&gt;ValleyCave112b]]
+[[Leave them be.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="635" name="ValleyCave112b" tags="dnsc dnsi" position="200,6200" size="100,100">You settle silently near the entrance and watch. Kami sits beside you, his tail still.
+
+The brown drake's pace builds-- still gentle, but more urgent. The blue one arches beneath him, his slim body bowing, his thin tail lashing. Their slits press together at the deepest point of each thrust-- the blue one's stretched around the brown one's ridged shaft, both producing slick natural lubricant that glistens in the magical light.
+
+The blue drake cums first-- his thin cock pulsing between their pressed bellies, spurting clear, watery fluid that smears across both their scales. His slit clenches around the brown one's member and the sensation drags the brown drake over the edge. He pushes deep, his body shuddering, and you can see the blue one's belly shift slightly as warmth fills him.
+
+They stay locked together for a long moment, foreheads pressed, breathing each other's air. Then the brown one pulls out slowly and rolls onto his side, pulling the blue one against him. They curl together, tails intertwined, a puddle of clear fluid pooling on the furs beneath them.
+
+The brown drake notices you at the entrance. He doesn't startle-- just smiles.
+
+"Enjoy the show, Magister?"
+
+[[Apologise and leave.-&gt;ValleyCavesDeep]]
+[[Ask to join.-&gt;ValleyCave112SS]]</tw-passagedata><tw-passagedata pid="636" name="ValleyCave112SS" tags="dnsc dnsi" position="300,6200" size="100,100">The brown drake grins. The blue one opens one eye, studies you, then shrugs his slim shoulders.
+
+"Sure. You're cute."
+
+They make room on the furs. Both their slim bodies are still slick, scales glistening. The blue drake reaches for you first, his thin clawed hands pulling at your clothes with a surprising gentleness. The brown one moves behind you.
+
+You end up between them-- the blue drake's mouth on yours (his tongue is long, thin, slightly forked), the brown drake pressed against your back, his ridged cock sliding between your thighs, seeking entry.
+
+The brown one pushes into you from behind while the blue one wraps his thin legs around your waist, guiding your (if:$fcock is "flaccid cock")[cock](elseif:$fcock is "sheath")[member](elseif:$fcock is "slit")[slick cock](elseif:$fcock is "cloaca")[member] into his still-stretched slit. The heat is incredible-- dragon slits are furnace-warm.
+
+Sandwiched between two slim, writhing drakes, you lose yourself. The brown one thrusts into you while you thrust into the blue one, a chain of bodies and warmth and slick friction. Both their thin cocks bob between you, dripping clear fluid across your $skin.
+
+The blue one finishes first-- again-- his slit clenching around you, his thin cock spurting clear against your stomach. The tightness pulls you over, and you cum deep inside his slit with a groan. The brown one follows, his ridged cock pulsing inside you, his arms wrapped tight around your chest.
+
+The three of you collapse onto the furs, panting, slick with sweat and dragon fluids. The blue drake pecks a kiss on your cheek with his narrow snout.
+
+"Come back anytime, Magister."(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Return.-&gt;ValleyCavesDeep]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
