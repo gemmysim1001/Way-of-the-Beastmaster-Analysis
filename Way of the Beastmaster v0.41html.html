@@ -8276,6 +8276,307 @@ Frederick returns to you and holds out a pouch of gold.
 
 Cade lingers at the barracks entrance. He catches your eye, winks, and disappears inside.(set:$SQ3D to 1)(set:$coin to $coin + 200)
 
+[[Return.-&gt;ScarInn]]</tw-passagedata><tw-passagedata pid="530" name="SQ4Start" tags="dnsc dnsi" position="100,4500" size="100,100">The Von Aldersant estate sits an hour&amp;#x27;s walk east of Scarhaven, down a narrow path overgrown with weeds. Iron gates loom at the entrance, rusted but sturdy. Beyond them, an imposing manor of dark stone rises above overgrown gardens. Dead rose bushes claw at the walls.
+
+Kami growls low in his throat, the fur on his neck bristling.
+
+|Kami&gt;[&amp;quot;I do not like this place, Master. Something is wrong here. I can smell... fear. Old fear.&amp;quot;]
+
+You push through the gates and make your way up the path. The front door opens before you reach it. A young mouse boy stands in the doorway-- small, thin, wearing a servant&amp;#x27;s uniform a size too large. A collar around his neck has a small bell that jingles when he moves. He flinches visibly when he sees you raise your hand to wave.
+
+&amp;quot;You... you must be the adventurer,&amp;quot; he says quietly. His name badge reads //Pell//. &amp;quot;The master is expecting you. Follow me, please.&amp;quot;
+
+He leads you inside. Kami stays close to your heel.
+
+[[Continue.-&gt;SQ4Manor]]</tw-passagedata><tw-passagedata pid="531" name="SQ4Manor" tags="dnsc dnsi" position="200,4500" size="100,100">The interior of the manor is opulent but wrong. Marble floors, velvet curtains, oil paintings of children lining the hallway-- but too many locks on the doors. Bars on some of the windows. Pell walks ahead with his head down, the bell on his collar jingling with each step. You notice scuff marks on his wrists. Old ones.
+
+Portraits stare down at you from the walls. Children of various species, all painted with the same flat, hollow expression. Not smiling. Not frowning. Just... present. Owned.
+
+Pell leads you down a long corridor and stops outside a heavy oak door. He knocks twice.
+
+&amp;quot;Your guest, sir.&amp;quot;
+
+A voice from within: &amp;quot;Send them in.&amp;quot;
+
+Pell opens the door and steps aside, not meeting your eyes.
+
+[[Enter the study.-&gt;SQ4Yven]]
+(if:$pk is &gt;=1)[[[Explore the manor first.-&gt;SQ4Basement]]](else:)[&lt;!--Do Nothing--&gt;]</tw-passagedata><tw-passagedata pid="532" name="SQ4Yven" tags="dnsc dnsi" position="300,4500" size="100,100">Yven Von Aldersant sits behind a massive desk of dark wood. He is an elderly Lizard-- greying scales the colour of dried mud, yellow eyes that follow you with cold precision. His fingers are steepled beneath his chin.
+
+&amp;quot;Ah. The adventurer.&amp;quot; His voice is silk over gravel. He looks you up and down, lingering.
+
+&amp;quot;I require someone of... smaller stature. Adults are too conspicuous for what I need.&amp;quot;
+
+He explains: servants have been disappearing from his estate. He suspects bandits in the caves east of the property. He wants you to investigate and bring them back.
+
+&amp;quot;They are //my// property,&amp;quot; he says. Not //employees//. Not //staff//. Property. The word sits in the air like a stone.
+
+300 gold if you return them. He doesn&amp;#x27;t say &amp;quot;rescue.&amp;quot; He says &amp;quot;bring them back.&amp;quot;
+
+Kami&amp;#x27;s claws click on the marble. His growl is barely audible.
+
+|Kami&gt;[&amp;quot;I do not trust this man, Master.&amp;quot;]
+
+[[Accept and head to the caves.-&gt;SQ4Travel]]
+(if:(history:) contains &amp;quot;SQ4Basement&amp;quot;)[&lt;!--Already explored--&gt;](else:)[(if:$pk is &gt;=1)[[[Explore the manor before leaving.-&gt;SQ4Basement]]]]</tw-passagedata><tw-passagedata pid="533" name="SQ4Basement" tags="dnsc dnsi" position="400,4500" size="100,100">Pell tries to steer you toward the exit. &amp;quot;You should go now, sir. The master doesn&amp;#x27;t like guests wandering.&amp;quot;
+
+But something draws you deeper into the manor. A door at the end of the corridor, heavy oak reinforced with iron bands. Locked. Your Dirk hums at your hip-- you can feel it resonating. Magister magic was used here. The lock is enchanted.
+
+You press your hand to the lock and push with the green mist. The enchantment resists, then cracks like ice under pressure. The door swings open to reveal stone steps descending into darkness.
+
+Pell&amp;#x27;s face drains of colour.
+
+&amp;quot;Sir, please... you shouldn&amp;#x27;t go down there.&amp;quot;
+
+[[Descend.-&gt;SQ4BasementIn]]
+[[Leave. Investigate the caves instead.-&gt;SQ4Travel]]</tw-passagedata><tw-passagedata pid="534" name="SQ4BasementIn" tags="dnsc dnsi" position="500,4500" size="100,100">The basement is cold and damp. Stone walls slick with moisture. Your eyes adjust to the dim light from a single torch guttering on the wall.
+
+What you find makes your stomach turn.
+
+Cages. Small ones, built for small bodies. Iron bars bolted into the stone floor. Some have threadbare blankets and straw pallets. Others are bare. Chains hang from the walls, manacles sized for thin wrists. A rack near the far wall holds a row of collars-- identical to the one around Pell&amp;#x27;s neck.
+
+Two of the cages are occupied.
+
+A young fox, maybe your age, with dull orange fur matted with grime. He presses himself against the back of the cage when he sees you, eyes wide. Beside him, in the next cage, a smaller rabbit with cream-coloured fur, hugging his knees to his chest. Both wear collars. Both have marks on their wrists.
+
+The fox speaks first, his voice barely a whisper.
+
+&amp;quot;Are you here to take us to him? Please... not again.&amp;quot;
+
+Kami snarls. The sound echoes off the stone walls, raw and furious.
+
+|Kami&gt;[&amp;quot;Master, this man is... I cannot express my revulsion. This is evil.&amp;quot;]
+
+[[Free them now.-&gt;SQ4Intervene]]
+[[Leave them. You need more information.-&gt;SQ4Travel]]
+[[Hide and see what happens.-&gt;SQ4BasementWatch]]</tw-passagedata><tw-passagedata pid="535" name="SQ4BasementWatch" tags="dnsc dnsi" position="600,4500" size="100,100">You pull Kami into the shadows behind a stone column, pressing a hand to his muzzle to silence his growling. He obeys, but his body is rigid with anger, trembling against your leg.
+
+You wait.
+
+Footsteps echo from a side passage. A door opens and a figure enters-- a burly Boar in a leather vest, thick arms scarred from old fights. The overseer. He doesn&amp;#x27;t notice you in the dark.
+
+He walks to one of the cages. The rabbit. He unlocks it with a key from his belt, reaches in, and drags the boy out by his collar. The rabbit doesn&amp;#x27;t fight. His eyes are vacant, staring at nothing. He&amp;#x27;s been through this before.
+
+The overseer bends him over a wooden bench near the wall. The rabbit&amp;#x27;s small body goes limp against the wood. The overseer tugs the boy&amp;#x27;s trousers down without a word and unbuckles his own belt.
+
+What follows is rough, mechanical, dispassionate. The overseer uses the rabbit with the bored efficiency of someone performing a chore. The rabbit stares at the wall. His small body rocks with each thrust. Despite everything, despite the emptiness in his eyes, his body responds-- his small member stiffens against the bench, his muscles clenching involuntarily. The overstimulation draws reluctant physical reactions that he clearly cannot control.
+
+You feel Kami pressing harder against your leg, shaking with rage. Or you can--
+
+[[Intervene.-&gt;SQ4Intervene]]
+[[Keep watching.-&gt;SQ4BasementWatch2]]</tw-passagedata><tw-passagedata pid="536" name="SQ4BasementWatch2" tags="dnsc dnsi" position="700,4500" size="100,100">The overseer finishes with a grunt and shoves the rabbit back toward his cage. The boy stumbles, catches himself on the bars, and crawls inside without being told. His small member is still stiff, wet at the tip, his body shaking.
+
+The overseer buckles his belt and turns toward the stairs. His eyes sweep the shadows and land directly on you.
+
+&amp;quot;Who the fuck--&amp;quot;
+
+He crosses the distance in two strides and grabs you by the front of your tunic. He&amp;#x27;s strong-- far stronger than you. Your feet leave the ground.
+
+Kami lunges. The overseer&amp;#x27;s boot connects with Kami&amp;#x27;s ribs with a sickening thud. Kami yelps-- a sharp, pained sound-- and crumples, his legs buckling. He tries to rise, but his front paw gives out and he collapses, wheezing.
+
+The overseer pins you against the stone wall, one meaty hand around your wrists, the other fumbling with your clothes. You can smell stale sweat and cheap ale on his breath.
+
+&amp;quot;Another little pet for the master, eh?&amp;quot; He chuckles.
+
+He yanks your shorts down and forces you around, pressing your face against the cold stone. You feel him pushing between your legs from behind, thick and blunt and insistent. Your body betrays you-- the curse, the Magister&amp;#x27;s pheromones-- and your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock stiffens against the wall despite yourself](elseif:$fcock is &amp;quot;sheath&amp;quot;)[sheath swells and your member begins to emerge against your will](elseif:$fcock is &amp;quot;slit&amp;quot;)[slit throbs and your member pushes free despite your mind screaming otherwise](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[cloaca pulses and your member extends, responsive to the stimulation you don&amp;#x27;t want]. You hate that it responds. You hate it.
+
+Across the room, through tear-blurred vision, you see a second figure enter from the side passage. A servant-- a lean, scarred jackal. He approaches the dazed Kami. The wolf tries to scramble up but the jackal pushes him down, pressing a knee into his back. Kami whines, his claws scraping uselessly on the stone floor.
+
+The jackal lifts Kami&amp;#x27;s hindquarters and mounts him from behind. Kami&amp;#x27;s ears flatten completely. A thin, high whine escapes his throat-- not the controlled, reluctant acceptance of the Dragon Whelps. This is fear. His legs kick weakly, but the jackal holds him down.
+
+Despite everything-- despite the fear, the pain, the violation-- Kami&amp;#x27;s knotted member slides from his sheath, engorging slowly, steadily, with each thrust from behind. The curse. His body betraying him the same way yours is betraying you. His cock hangs heavy and swollen beneath him, twitching with each impact, pre-cum dripping onto the stone.
+
+The jackal increases his pace. Kami&amp;#x27;s whines become strained, broken. His hips begin to buck involuntarily-- not reciprocating, just the body doing what the body does when it&amp;#x27;s pushed past its limits. And then his cock pulses-- thick, white ropes splattering the stone beneath him. A forced release. His whole body shudders with it, legs trembling through the aftershocks. A pitiful, broken whimper escapes him.
+
+You watch it happen through your own tears, the overseer still pounding into you from behind.
+
+[[Continue.-&gt;SQ4BasementAfter]]</tw-passagedata><tw-passagedata pid="537" name="SQ4BasementAfter" tags="dnsc dnsi" position="800,4500" size="100,100">The overseer finishes. Pulls out. Leaves you slumped against the wall.
+
+The jackal is already gone. Kami lies on the stone floor, panting, his fur slick with sweat. His member slowly retreats into his sheath. He won&amp;#x27;t meet your eyes.
+
+You pull your clothes back on with shaking hands. Your body aches. So does your pride.
+
+|Kami&gt;[&amp;quot;...Master.&amp;quot;] His voice is barely a whisper. He limps toward you and presses his nose against your hand. He doesn&amp;#x27;t know what to say. Neither do you.
+
+The fox in the cage is watching you through the bars. His eyes are not hollow anymore. They&amp;#x27;re desperate.
+
+&amp;quot;Please,&amp;quot; he whispers. &amp;quot;Please get us out of here.&amp;quot;
+
+[[Free them.-&gt;SQ4Intervene]]
+[[Leave. Come back with Frederick.-&gt;SQ4Travel]]</tw-passagedata><tw-passagedata pid="538" name="SQ4Intervene" tags="dnsc dnsi" position="100,4600" size="100,100">The green mist surges from your hands. You&amp;#x27;re not gentle about it. The power floods outward and every animal within the estate responds-- the horses in the stable, the rats in the walls, the birds on the roof. They answer you.
+
+If the overseer is present, his muscles lock rigid. He can&amp;#x27;t move. Can&amp;#x27;t speak. His eyes widen with terror as you hold him in place with nothing but your will.
+
+You break the cage locks with your hands, the enchantments crumbling under your magic. The captives stumble out-- the fox, the rabbit, and anyone else held below. They cling to you, small hands gripping your clothes, shaking.
+
+Kami stands at your side, bruised but resolute. He nuzzles the youngest captive gently.
+
+|Kami&gt;[&amp;quot;You are safe now. I give you my word.&amp;quot;]
+
+[[Confront Yven.-&gt;SQ4Confront]]</tw-passagedata><tw-passagedata pid="539" name="SQ4Travel" tags="dnsc dnsi" position="200,4600" size="100,100">You head east into the forest. Kami moves ahead, nose to the ground, though he&amp;#x27;s moving more stiffly than usual. He doesn&amp;#x27;t complain.
+
+The caves are a 20-minute walk through dense undergrowth. You find them easily-- a series of openings in a low cliff face, partially concealed by hanging moss.
+
+The entrance is guarded by animals: wolves, a large stag, a brown bear dozing at the mouth. They respond to your green mist, but there&amp;#x27;s confusion in them. You can feel the residual signature of //another// Magister&amp;#x27;s command layered over their instincts.
+
+|Kami&gt;[&amp;quot;Another Magister was here, Master. I can smell it. The green residue... it is old, but unmistakable.&amp;quot;]
+
+You calm the guardians and enter.
+
+[[Continue.-&gt;SQ4CaveKami]]</tw-passagedata><tw-passagedata pid="540" name="SQ4CaveKami" tags="dnsc dnsi" position="300,4600" size="100,100">Inside the cave, you find evidence of habitation. Crude bedding. Drawings on the walls in charcoal-- houses, trees, smiling faces. A child&amp;#x27;s journal, half-filled in shaky handwriting.
+
+//&amp;quot;The green man says we&amp;#x27;re safe here. He feeds us with the animals. The wolves keep us warm at night. I miss the manor sometimes but I don&amp;#x27;t miss the master.&amp;quot;//
+
+The Hooded Mage was here. He //rescued// these people. Used his Beastmaster powers to carry them away and left animal guardians to protect them.
+
+As you explore deeper, the stag from the entrance follows you inside. Its nostrils flare. It&amp;#x27;s not looking at you-- it&amp;#x27;s looking at Kami. The curse pheromones. Your presence amplifies them.
+
+The stag approaches Kami, snorting, pawing at the ground.
+
+|Kami&gt;[&amp;quot;Master...&amp;quot;] His voice is tight. He knows what&amp;#x27;s happening.
+
+[[Let it happen.-&gt;SQ4CaveKamiSS]]
+[[Command the stag away.-&gt;SQ4CaveDeep]]</tw-passagedata><tw-passagedata pid="541" name="SQ4CaveKamiSS" tags="dnsc dnsi" position="400,4600" size="100,100">Kami circles away, but the stag is persistent. It follows him step for step, head lowered, nostrils working. The curse pheromones are thick in the enclosed space.
+
+Kami looks at you with those ocean blue eyes. Not asking for help. Not pleading. Just... accepting. He knows this is part of what he is now. What you both are.
+
+He stops circling. Stands still. His ears flatten and his tail tucks.
+
+The stag mounts. Its weight drives Kami&amp;#x27;s front end down, his chin hitting the stone. His hind legs buckle, then brace. A thin whine escapes his throat-- high, thin, broken.
+
+The stag thrusts with mechanical rhythm, heavy and rhythmic. Each impact rocks Kami&amp;#x27;s entire body forward. His claws scrape the stone.
+
+And, as always, his body betrays him. His knotted member slides from his sheath despite his resistance, engorging steadily with each thrust. The dark pink shaft swells and twitches, pre-cum beading at the tapered tip, dripping onto the cave floor. His hind legs tremble.
+
+The stag increases its pace. Kami&amp;#x27;s whines grow strained. His hips shift involuntarily-- not responding, just the body reacting to sustained overstimulation from behind.
+
+The stag finishes inside with a deep grunt and pulls out. Warm fluid trickles down Kami&amp;#x27;s inner thighs. The stag trots away as if nothing happened.
+
+Kami stands shakily. His member is still hard, achingly so, dripping and swollen. He didn&amp;#x27;t finish. Left on the edge, aching.
+
+He says nothing. Nuzzles against your leg. Continues walking. The bond between you doesn&amp;#x27;t break. It never does.
+
+[[Continue.-&gt;SQ4CaveDeep]]</tw-passagedata><tw-passagedata pid="542" name="SQ4CaveDeep" tags="dnsc dnsi" position="500,4600" size="100,100">Deeper in the cave, you find more green residue on the walls. Claw marks-- massive ones, far too large for any animal you know. Kami sniffs them.
+
+|Kami&gt;[&amp;quot;Dragon claws, Master. A very large one.&amp;quot;]
+
+Korrath. The Dark Dragon. He was here too.
+
+The escaped servants are gone-- moved further away. The Hooded Mage anticipated that Yven would send someone looking. He planned ahead.
+
+You stand in the empty cave and think. The Hooded Mage commanded the Dark Dragon at the mountain. He was terrifying. Powerful. Dangerous. But here... he was //protecting// people. Using the same powers you have to shield captives from a monster.
+
+What separates you from him? The question hangs in the air like the green mist still lingering on your fingers.
+
+|Kami&gt;[&amp;quot;Master... the other Magister. He is not what I expected.&amp;quot;]
+
+Neither is Yven.
+
+[[Return to the manor.-&gt;SQ4Pell]]</tw-passagedata><tw-passagedata pid="543" name="SQ4Pell" tags="dnsc dnsi" position="600,4600" size="100,100">You return to the manor. Pell meets you at the gate, his bell jingling as he runs to catch you. His eyes are wide.
+
+&amp;quot;Did you find them? Please... please don&amp;#x27;t bring them back.&amp;quot;
+
+His voice cracks. He grabs your sleeve and his small hands are shaking.
+
+&amp;quot;The master... he hurts us. He&amp;#x27;s always hurt us. The green man-- the one who took the others-- he tried to take me too. But I was too scared to leave. Too scared of what the master would do if he found out.&amp;quot;
+
+Tears stream down his mousy cheeks. Kami nuzzles his hand gently.
+
+|Kami&gt;[&amp;quot;He is just a boy, Master. This place is evil.&amp;quot;]
+
+[[Comfort Pell.-&gt;SQ4PellSS]]
+[[Tell Pell to come with you.-&gt;SQ4Choice]]</tw-passagedata><tw-passagedata pid="544" name="SQ4PellSS" tags="dnsc dnsi" position="700,4600" size="100,100">You pull Pell into the garden shed beside the gate. It&amp;#x27;s small, dusty, filled with rusted tools. But it&amp;#x27;s private. Kami sits outside, watching the path.
+
+Pell is shaking. You hold him against your chest and feel his heartbeat hammering through his thin frame. He clings to your tunic, face buried in the fabric.
+
+&amp;quot;Nobody ever listens,&amp;quot; he whispers. &amp;quot;Nobody ever cares.&amp;quot;
+
+You tell him you care. His grip tightens.
+
+What happens next is tender and slow. Pell is experienced-- Yven has used him, you realise with a sickening clarity-- but this is the first time someone is //gentle// with him. He doesn&amp;#x27;t know what to do with kindness. When you touch him softly, he flinches. When you don&amp;#x27;t pull away, he melts.
+
+He&amp;#x27;s small. Mouse-thin. Trembling hands that fumble with buttons. You let him set the pace, and he goes slowly, hesitatingly, as if waiting for the pain that doesn&amp;#x27;t come.
+
+He finishes quietly-- barely a sound, just a full-body shudder and a soft exhale against your neck. His small hands grip yours, tight, as if letting go means losing the only kindness he&amp;#x27;s ever known.
+
+[[Continue.-&gt;SQ4PellSS2]]</tw-passagedata><tw-passagedata pid="545" name="SQ4PellSS2" tags="dnsc dnsi" position="800,4600" size="100,100">&amp;quot;Nobody has ever been gentle with me before.&amp;quot;
+
+His voice cracks. He&amp;#x27;s still holding your hand. You brush a tear from his cheek with your thumb, and he leans into the touch like a plant leaning toward sunlight.
+
+You sit together in the dusty shed for a long time. He doesn&amp;#x27;t let go of your hand.
+
+|Kami&gt;[&amp;quot;Master.&amp;quot;] Kami&amp;#x27;s voice comes from outside the shed, low and solemn. [&amp;quot;We must make a decision about the Reptile.&amp;quot;]
+
+He&amp;#x27;s right. Time to face Yven.
+
+[[Continue.-&gt;SQ4Choice]]</tw-passagedata><tw-passagedata pid="546" name="SQ4Choice" tags="dnsc dnsi" position="100,4700" size="100,100">You stand outside the manor. Pell is behind you, wringing his hands. Kami sits at your side, bruised but resolute. The question is simple.
+
+What do you do about Yven Von Aldersant?
+
+[[Tell Yven the caves are empty. Take the gold. Leave.-&gt;SQ4Lie]]
+[[Confront Yven. Free everyone.-&gt;SQ4Confront]]
+[[Report Yven to Frederick.-&gt;SQ4Frederick]]</tw-passagedata><tw-passagedata pid="547" name="SQ4Lie" tags="dnsc dnsi" position="200,4700" size="100,100">You walk into Yven&amp;#x27;s study and tell him the caves were empty. His yellow eyes narrow, but he can&amp;#x27;t prove otherwise. He slides a pouch of gold across the desk.
+
+&amp;quot;Disappointing. But you have my thanks.&amp;quot;
+
+300 gold. It sits heavy in your hand.
+
+You walk away from the manor with heavy pockets and a heavier conscience. The iron gates close behind you with a clang. Through the bars, you can see Pell watching from the doorway. His bell jingles as the door closes.
+
+|Kami&gt;[&amp;quot;...Master. Are we truly leaving them?&amp;quot;]
+
+His voice is quiet. Not accusing. Just... sad.
+
+You don&amp;#x27;t answer.(set:$SQ4D to 1)(set:$coin to $coin + 300)
+
+[[Return.-&gt;ScarInn]]</tw-passagedata><tw-passagedata pid="548" name="SQ4Confront" tags="dnsc dnsi" position="300,4700" size="100,100">You walk into Yven&amp;#x27;s study and the green mist is already crackling at your fingertips. Every animal on the estate responds to your presence-- horses stamping, birds circling, even the rats in the walls freezing in their tracks. They are yours.
+
+&amp;quot;You are not a good man, Von Aldersant.&amp;quot;
+
+Yven&amp;#x27;s face goes cold. &amp;quot;You overstep, child.&amp;quot;
+
+&amp;quot;I&amp;#x27;ve seen the basement.&amp;quot;
+
+The room goes very still. Yven&amp;#x27;s jaw works. His hand drifts toward a bell on his desk-- to summon the overseer-- but Kami plants his front paws on the desk and bares his fangs, inches from the Lizard&amp;#x27;s face. Yven freezes.
+
+The captives are freed. The collars are removed. Pell walks out of the manor gates with you, blinking in the sunlight as if seeing it for the first time.
+
+You don&amp;#x27;t get paid. But Pell is free, and the fox and the rabbit cling to Kami&amp;#x27;s fur as you walk back to Scarhaven.(set:$SQ4D to 1)(set:$PellFreed to true)
+
+[[Return.-&gt;SQ4End]]</tw-passagedata><tw-passagedata pid="549" name="SQ4Frederick" tags="dnsc dnsi" position="400,4700" size="100,100">You go straight to Frederick.
+
+You tell him everything. The basement. The cages. The collars. The overseer. Frederick&amp;#x27;s expression doesn&amp;#x27;t change as you speak, but you can see the muscle in his jaw tightening with every word.
+
+When you finish, he stands. Slowly. Deliberately.
+
+&amp;quot;That reptile has been under my nose this entire time.&amp;quot;
+
+He calls for soldiers. Within the hour, a squad marches on the Von Aldersant estate. Yven is dragged from his study in chains, sputtering about his rights and his lineage. Nobody listens.
+
+The captives are freed. The overseer is arrested. Frederick hands you a pouch of gold from the barracks coffers.
+
+&amp;quot;200. It&amp;#x27;s all I can spare, but you&amp;#x27;ve earned it ten times over.&amp;quot;
+
+Pell stands beside you, blinking in the sun. For the first time, you see him smile.(set:$SQ4D to 1)(set:$PellFreed to true)(set:$coin to $coin + 200)
+
+[[Continue.-&gt;SQ4End]]</tw-passagedata><tw-passagedata pid="550" name="SQ4End" tags="dnsc dnsi" position="500,4700" size="100,100">(if:$PellFreed is true)[Pell walks with you back to Scarhaven. He doesn&amp;#x27;t say much, but his small hand finds yours as you walk, and he doesn&amp;#x27;t let go until you reach the inn.
+
+Wes takes one look at the boy and nods. &amp;quot;I could use another hand around here. You any good at carrying trays, kid?&amp;quot;
+
+Pell nods so fast his bell jingles. Wes reaches over and unclips the collar, tossing it into the fire.
+
+&amp;quot;You won&amp;#x27;t be needing that.&amp;quot;
+
+Pell touches his bare neck and tears streak down his face. But he&amp;#x27;s smiling.](else:)[You return to Scarhaven alone. The gold is heavy in your pocket. Kami walks beside you in silence.]
+
+The quest is done. But the questions linger. The &amp;quot;green man&amp;quot; who rescued Yven&amp;#x27;s captives was the Hooded Mage-- the same figure who commanded the Dark Dragon on the mountain. He used the same powers you have. The same green mist. The same control over animals.
+
+He was protecting people.
+
+|Kami&gt;[&amp;quot;Master... the other Magister. Perhaps he is not the enemy we thought.&amp;quot;]
+
+Or perhaps he is. But the line between you and him grows thinner with every passing day.
+
 [[Return.-&gt;ScarInn]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
