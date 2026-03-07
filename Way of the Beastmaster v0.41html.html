@@ -3258,6 +3258,9 @@ An unknown, white-furred child sits in the far corner.
 [[Speak to the Innkeeper.-&gt;SIIK]]
 [[Check the Bounty Board.-&gt;SIB]]
 [[Check out the Stables outside.-&gt;SISt]]
+(if:(history:) contains "AdpMerchant")[&lt;!--Already met--&gt;](else:)[A hooded figure sits alone in the far corner, nursing a drink. Their features are hidden, but the cut of their robes is foreign.
+
+[[Approach the hooded figure.-&gt;AdpMerchant]]]
 [[Leave.-&gt;ScarHub]]]</tw-passagedata><tw-passagedata pid="171" name="ScarBarracks" tags="" position="1146,1439" size="100,100">(if:(history:) contains "SBaF" or "SBaB")[You're back at the barracks. It's about as busy as you expected it to be, no matter what time of the day it is. There always seems to be people who aren't on shift, and people who are. Either way, you have your options before you.
 
 You can tell the guards are giving you some suspicious looks, but you can understand that. Very rarely would a child wander into a guardsmen's barracks unnanounced. But you're here for a reason, surely.
@@ -3274,6 +3277,7 @@ You ponder whether it's a good idea to go in and see him or not.]
 
 [[Go to the Captain's Door.-&gt;SBaF]]
 [[Go to the bathroom.-&gt;SBaB]]
+(if:$DN is "night")[(if:(history:) contains "SBaF")[[[Frederick's light is still on.-&gt;FrederickN]]](else:)[&lt;!--Do Nothing--&gt;]](else:)[&lt;!--Do Nothing--&gt;]
 [[Leave.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="172" name="ScarOther" tags="" position="999,1000" size="100,100">(if:$DN is "day")[You decide to explore a little whilst the sun is still high in the sky. There isn't much for you to be exploring in such a small town, but you're admittedly a little curious.
 
 You make your way around the back of the house and stop, surprised at what you find.
@@ -3292,9 +3296,20 @@ His head snaps to meet your gaze, his blue eyes blinking.
 (if:$age is &gt;=13)[[[Molest him.-&gt;FBM1]]](else:)[&lt;!--Do Nothing--!&gt;]
 [[Leave.-&gt;ScarHub]]]](elseif:$DN is "night")[You explore a little in the dim light, and eventually find yourself around the back of a house. The place looks remarkably empty.
 
-There honestly doesn't seem to be a lot of people outside at night time. You're not too surprised, of course. After all, it is a small town. Many of them will be sleeping. Perhaps you should do, instead of skulking about.
+(if:$RowanMet is false)[You explore in the dim light, making your way around the back of the houses. The town is quiet. Then you hear it: a low groan from the shadows.
 
-[[Head back.-&gt;ScarHub]]]</tw-passagedata><tw-passagedata pid="173" name="SBSK" tags="" position="1634,1425" size="100,100">(if:$HansBU is true)[Hans seems to take the brief request of work to coddle your companion, a little bit. He crouches down, and Kami trots forward, allowing himself to be displayed. 
+A figure is slumped against the wall. A young buck with tawny fur, lean and handsome despite the gash on his forehead. His travelling clothes are torn. Blood.
+
+&amp;quot;Please...&amp;quot; He raises a trembling hand. &amp;quot;Animals... on the road. Controlled. Green eyes. They came out of nowhere.&amp;quot;
+
+|Kami&gt;[&amp;quot;Green eyes, Master. Like the ones in the forest.&amp;quot;]
+
+His name is Rowan. He was travelling from Seahome.
+
+[[Help tend his wounds.-&gt;ScarOtherN]]
+[[Head back.-&gt;ScarHub]]](else:)[The night is quiet. Not much to do out here.
+
+[[Head back.-&gt;ScarHub]]]]</tw-passagedata><tw-passagedata pid="173" name="SBSK" tags="" position="1634,1425" size="100,100">(if:$HansBU is true)[Hans seems to take the brief request of work to coddle your companion, a little bit. He crouches down, and Kami trots forward, allowing himself to be displayed. 
 
 Hans spends a great deal of time just petting Kami all over, and you shuffle awkwardly in place. After a few minutes, he gets up and grabs a selection of armour from a large chest, placing it on one of the nearby wooden tables. He wordlessly gestures to the pile for you to choose from.](else:)["Stuff for your dog, is it? No worries, take a look. I don't have a lot in at the moment, but give me a while and I can probably make some new things for you, in time."
 
@@ -8576,6 +8591,191 @@ He was protecting people.
 |Kami&gt;[&amp;quot;Master... the other Magister. Perhaps he is not the enemy we thought.&amp;quot;]
 
 Or perhaps he is. But the line between you and him grows thinner with every passing day.
+
+[[Return.-&gt;ScarInn]]</tw-passagedata><tw-passagedata pid="551" name="ScarOtherN" tags="dnsc dnsi" position="100,4800" size="100,100">You kneel beside Rowan and press a cloth to the gash on his head. He winces but holds still. In the moonlight, you can see him more clearly: lean, young-- maybe 18 or 19-- with short antlers just beginning to branch. Handsome, despite the blood.
+
+&amp;quot;Thank you,&amp;quot; he breathes. &amp;quot;I thought I was done for. The animals... they weren&amp;#x27;t normal. Their eyes were glowing. Green.&amp;quot;
+
+|Kami&gt;[&amp;quot;The Magister&amp;#x27;s influence, Master. It reaches further than we thought.&amp;quot;]
+
+Rowan looks at Kami with surprise, then back at you. &amp;quot;A talking wolf. Huh. Seahome is gonna be pissed they missed this.&amp;quot;
+
+You bandage his wound as best you can. He&amp;#x27;s grateful-- almost desperately so. His hand finds yours and squeezes.
+
+&amp;quot;I owe you my life, kid. Let me... show my appreciation.&amp;quot; His eyes are warm, earnest, a little glazed with pain and something else.
+
+[[Accept.-&gt;ScarOtherNSS]]
+[[Decline. Tell him to rest.-&gt;ScarOtherNEnd]](set:$RowanMet to true)</tw-passagedata><tw-passagedata pid="552" name="ScarOtherNEnd" tags="" position="200,4800" size="100,100">Rowan nods, understanding. He leans against the wall and closes his eyes.
+
+&amp;quot;If you&amp;#x27;re ever in Seahome, look for me. Name&amp;#x27;s Rowan. I won&amp;#x27;t forget this.&amp;quot;
+
+He settles in to rest. You head back to the centre of town.
+
+[[Head back.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="553" name="ScarOtherNSS" tags="dnsc dnsi" position="300,4800" size="100,100">In the shadow of the house, with the moon overhead and the town sleeping, Rowan pulls you close. His grip is strong despite his wound. His breath is hot against your neck.
+
+It&amp;#x27;s quick, standing, urgent-- the gratitude of someone who thought he was going to die. His back against the wall, your body pressed against his. His hands grip your hips and he fumbles with his trousers, freeing a lean, stiffening member-- cervine, tapered, already slick.
+
+He lifts you against him-- he&amp;#x27;s strong for his build-- and pushes into you with a shaky exhale. The stretch is smooth, his member long and curved, hitting deep. He thrusts with a desperate, uneven rhythm, his antlers scraping the stone behind him.
+
+Kami sits nearby, watching with those blue eyes. His tail thumps once.
+
+(if:$KamiExped is &gt;=1)[[[Invite Kami to join.-&gt;ScarOtherNSSKami]]](else:)[&lt;!--Do Nothing--&gt;]
+
+[[Continue.-&gt;ScarOtherNSS2]]</tw-passagedata><tw-passagedata pid="554" name="ScarOtherNSS2" tags="dnsc dnsi" position="400,4800" size="100,100">Rowan cums with a bitten-off groan, his hips jerking erratically as he finishes inside you. His member pulses, warm and deep, and his legs tremble with the effort of holding you up. Your own orgasm follows-- the angle, the depth, the adrenaline-- your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock spurting between your bodies](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member erupting from your sheath](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock pulsing from your slit](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member throbbing from your cloaca].
+
+He sets you down gently and leans his forehead against yours, breathing hard.
+
+&amp;quot;If you&amp;#x27;re ever in Seahome... look for me. Name&amp;#x27;s Rowan.&amp;quot; He smiles weakly. &amp;quot;I won&amp;#x27;t forget this.&amp;quot;
+
+He leaves at dawn. You watch him go from the edge of town.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Head back.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="555" name="ScarOtherNSSKami" tags="dnsc dnsi" position="500,4800" size="100,100">Kami pads over at your gesture. Rowan blinks in surprise but doesn&amp;#x27;t object-- he&amp;#x27;s beyond the point of caring about convention.
+
+Rowan sets you down and turns around, bracing against the wall. You position Kami behind him, and the wolf mounts with practiced efficiency, forepaws locking around the buck&amp;#x27;s hips. Rowan gasps as Kami&amp;#x27;s tapered canine cock finds its mark and pushes in.
+
+You take Rowan from the front, his cervine member slipping into your mouth. A chain-- Kami thrusting into Rowan, Rowan rocking forward into you. The rhythm builds quickly, urgent, outdoors, the risk of being heard adding an electric edge.
+
+Kami cums first, his knot popping half-in and his cock pulsing. Rowan follows seconds later, his member throbbing in your mouth, warm and sweet. You swallow and feel your own release building, stroking yourself to completion between them.
+
+The three of you separate, panting, sweating in the cool night air. Rowan leans against the wall, dazed.
+
+&amp;quot;Your dog is... something else.&amp;quot; He manages a weak laugh.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Head back.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="556" name="FrederickN" tags="dnsc dnsi" position="600,4800" size="100,100">The light in Frederick&amp;#x27;s office is still on. You knock softly. A pause, then:
+
+&amp;quot;Come in.&amp;quot;
+
+The office is different at night. Candlelight casts warm shadows across the map-covered walls. Frederick sits behind his desk, his cape draped over the back of his chair, his collar undone, the top buttons of his uniform open. Pren is asleep on the desk, curled into a small blue-red ball, snoring faintly.
+
+Frederick looks up. His expression softens when he sees you.
+
+&amp;quot;Can&amp;#x27;t sleep either, huh?&amp;quot; He gestures to the chair across from him. &amp;quot;Pull up a seat. I could use the company.&amp;quot;
+
+He looks tired. The bags under his eyes are darker than you&amp;#x27;ve seen them. Maps are spread across every surface, covered in pins and notes in his neat handwriting.
+
+[[Ask about the investigation.-&gt;FrederickNc1]]
+[[Ask about him personally.-&gt;FrederickNc2]]
+[[&amp;quot;You look tense.&amp;quot;-&gt;FrederickNSS]]
+[[Leave.-&gt;ScarBarracks]]</tw-passagedata><tw-passagedata pid="557" name="FrederickNc1" tags="" position="700,4800" size="100,100">Frederick leans forward, elbows on the desk, and rubs his temples.
+
+&amp;quot;Between you and me... I&amp;#x27;m scared, $name.&amp;quot;
+
+He&amp;#x27;s never said that before. The candlelight catches the worry lines around his eyes.
+
+&amp;quot;The sightings are getting more frequent. The Strange Man-- or whatever he is-- has been seen near the roads between here and Seahome. Animals acting strangely. Green residue on the trees. It&amp;#x27;s like the forest all over again.&amp;quot;
+
+He pushes a map toward you. Pins mark a pattern: a line of sightings heading northeast, toward Seahome and The Bridge.
+
+&amp;quot;I don&amp;#x27;t have the men to send a proper patrol. And the Spire...&amp;quot; He shakes his head. &amp;quot;The Spire doesn&amp;#x27;t care about a frontier village.&amp;quot;
+
+He looks at you with something vulnerable in his expression.
+
+&amp;quot;I&amp;#x27;m glad you&amp;#x27;re here.&amp;quot;
+
+[[Ask about him personally.-&gt;FrederickNc2]]
+[[&amp;quot;You look tense.&amp;quot;-&gt;FrederickNSS]]
+[[Leave.-&gt;ScarBarracks]]</tw-passagedata><tw-passagedata pid="558" name="FrederickNc2" tags="" position="800,4800" size="100,100">Frederick leans back and stares at the ceiling. At night, without the cape and the formal posture, he looks younger. Smaller.
+
+&amp;quot;Hans and I... he&amp;#x27;s like a little brother. I&amp;#x27;d die for that idiot.&amp;quot; A faint smile crosses his lips. &amp;quot;When his parents died, I was the only one who came. I sat with him in the workshop all night. Didn&amp;#x27;t know what to say. Just... sat there.&amp;quot;
+
+He scratches behind one grey-furred ear.
+
+&amp;quot;The uniform keeps people at a distance, you know? Nobody wants to get close to the captain. They see the rank, not the person.&amp;quot;
+
+He looks at you.
+
+&amp;quot;You&amp;#x27;re one of the few who doesn&amp;#x27;t seem to care about the rank.&amp;quot;
+
+[[Ask about the investigation.-&gt;FrederickNc1]]
+[[&amp;quot;You look tense.&amp;quot;-&gt;FrederickNSS]]
+[[Leave.-&gt;ScarBarracks]]</tw-passagedata><tw-passagedata pid="559" name="FrederickNSS" tags="dnsc dnsi" position="100,4900" size="100,100">You tell Frederick he looks tense. He lets out a short, humourless laugh.
+
+&amp;quot;Tense. That&amp;#x27;s one word for it.&amp;quot;
+
+You walk around the desk and put your hands on his shoulders. He stiffens-- then slowly, reluctantly, relaxes. His muscles are like knotted rope beneath his uniform.
+
+&amp;quot;We shouldn&amp;#x27;t...&amp;quot; He begins. &amp;quot;I&amp;#x27;m your superior. This is...&amp;quot;
+
+But he doesn&amp;#x27;t pull away. Your fingers work the knots in his shoulders and he groans quietly, his head dropping forward. His hands grip the edge of the desk.
+
+Your hands slide lower. Down his chest, past the open buttons of his uniform. His breath catches. You can feel his heartbeat under your palm-- rapid, despite his composed exterior.
+
+He turns in the chair and looks up at you. His yellow-green eyes are conflicted. Duty and desire, pulling in opposite directions.
+
+&amp;quot;$name...&amp;quot;
+
+(if:$KamiExped is &gt;=1)[[[Tell him Kami is going to do more than watch.-&gt;FrederickNSSKami]]](else:)[&lt;!--Do Nothing--&gt;]
+
+[[Kiss him.-&gt;FrederickNSS2]]
+[[Pull back. You shouldn&amp;#x27;t.-&gt;ScarBarracks]]</tw-passagedata><tw-passagedata pid="560" name="FrederickNSS2" tags="dnsc dnsi" position="200,4900" size="100,100">You kiss him. He resists for exactly one second before his hand comes up to grip the back of your neck and he kisses you back, hard, desperate-- like a dam breaking.
+
+He stands, pushing the chair back with a screech. Maps scatter. Pren stirs, mumbles something about &amp;quot;five more minutes,&amp;quot; and rolls over, still asleep. Frederick doesn&amp;#x27;t notice.
+
+He lifts you onto the desk. His hands are precise, military, efficient-- unbuttoning, unfastening, removing obstacles. His own uniform comes off piece by piece, revealing a lean, toned feline body beneath-- grey and blue fur, a long tail that lashes behind him.
+
+His member is feline-- barbed, slender, elegant. It curves upward from a sheath of blue-grey fur, already fully erect. He positions himself between your legs and pushes in with controlled precision. Even now, even like //this//, he&amp;#x27;s measured. Calculated. Every thrust deliberate.
+
+&amp;quot;This... this didn&amp;#x27;t happen,&amp;quot; he breathes against your neck between thrusts. &amp;quot;Understood?&amp;quot;
+
+You nod, but you&amp;#x27;re too far gone to care about protocol. His barbed member hits a spot inside you that makes you see stars, and you grip his shoulders, claws--fingers--whatever you have-- digging into his fur.
+
+He cums with military precision-- a sharp exhale, a single hard thrust, and his cock pulses inside you, the barbs catching as he withdraws slightly and pushes back in. The sensation of the barbs dragging is uniquely intense. You cum moments later, your body clenching around him, your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock spurting across his uniform](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member erupting between you](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock pulsing from your slit](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member throbbing from your cloaca].
+
+He pulls out and buttons his uniform immediately. The professional mask slides back into place like it was never gone.
+
+&amp;quot;This absolutely did not happen. None of it.&amp;quot;
+
+But his hand lingers on your shoulder as you dress. And when you reach the door, he clears his throat.
+
+&amp;quot;...Thank you.&amp;quot;(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Leave.-&gt;ScarBarracks]]</tw-passagedata><tw-passagedata pid="561" name="FrederickNSSKami" tags="dnsc dnsi" position="300,4900" size="100,100">You whistle softly. Kami, who was waiting outside the office, pads in through the door. Frederick&amp;#x27;s eyes widen.
+
+&amp;quot;Is he going to watch?&amp;quot;
+
+You tell Frederick that Kami is going to do more than watch. The captain&amp;#x27;s composure cracks for the first time-- his mouth opens, closes, opens again. He looks from you, to Kami, back to you.
+
+&amp;quot;...I&amp;#x27;m a captain in the King&amp;#x27;s guard. I should not be doing this.&amp;quot;
+
+But he doesn&amp;#x27;t say no.
+
+You guide Frederick to lean over the desk. His tail rises instinctively as you position Kami behind him. The wolf mounts, forepaws locking around the feline&amp;#x27;s lean waist, hips already thrusting, searching.
+
+Kami finds his mark and pushes in. Frederick&amp;#x27;s composure shatters-- his claws dig into the desk, scattering maps, and a sound escapes his throat that is decidedly //not// military. His body rocks forward with each of Kami&amp;#x27;s thrusts.
+
+You take the front, kneeling on the desk, offering yourself to Frederick&amp;#x27;s mouth. His tongue is rough-- feline-- and skilled. The three of you find a rhythm: Kami driving Frederick forward, Frederick&amp;#x27;s mouth working on you, the desk creaking dangerously.
+
+Pren sleeps through the entire thing. Somehow.
+
+Kami cums first, his knot locking inside Frederick with a wet pop. The captain lets out a strangled sound and his own feline cock erupts beneath him, barbed member pulsing against the underside of the desk. You finish in his mouth moments later, and he swallows without comment.
+
+When Kami pulls out and pads back to the door, Frederick straightens his uniform with trembling hands. His face is scarlet beneath his fur.
+
+&amp;quot;This //absolutely// did not happen. //None// of it.&amp;quot;(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Leave.-&gt;ScarBarracks]]</tw-passagedata><tw-passagedata pid="562" name="AdpMerchant" tags="" position="400,4900" size="100,100">The hooded figure watches you approach. As you draw closer, they lower their hood to reveal a sleek, dark-furred feline with sharp amber eyes and a thin golden chain around their neck. Their robes are finely made-- silk, embroidered with patterns you don&amp;#x27;t recognise.
+
+&amp;quot;Ah. A visitor.&amp;quot; Their voice carries an accent-- clipped vowels, rolling consonants. &amp;quot;I am a merchant from Adplagam. The eastern continent.&amp;quot;
+
+They study you with interest.
+
+&amp;quot;You have an... interesting aura, child. In Adplagam, your kind are revered. And feared.&amp;quot;
+
+They know what you are. Your hand drifts to the Dirk at your hip.
+
+&amp;quot;Relax. I am not your enemy. I trade in goods, not secrets.&amp;quot; They smile thinly. &amp;quot;Though I //do// hear interesting things, from time to time.&amp;quot;
+
+They offer a single item for sale: Adplagam Incense. &amp;quot;Burns with a purple flame. Calms the mind. 20 gold.&amp;quot;
+
+(if:$coin is &gt;=20)[(link:&amp;quot;Purchase Adplagam Incense. (20 gold)&amp;quot;)[(set:$coin to $coin - 20)(set:$inv to it + (a:&amp;quot;Adplagam Incense&amp;quot;))You purchase the incense. It smells of sandalwood and something sharper, exotic. The merchant nods approvingly.
+
+&amp;quot;Burn it when the world is too loud. It will help.&amp;quot;
+
+[[Return.-&gt;ScarInn]]]](else:)[You can&amp;#x27;t afford it. The merchant shrugs.]
+
+&amp;quot;If you travel east... be careful. The bridge is not what it seems.&amp;quot;
+
+They pull their hood back up. The conversation is over.
 
 [[Return.-&gt;ScarInn]]</tw-passagedata></tw-storydata>
 
