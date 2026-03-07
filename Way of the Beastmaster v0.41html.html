@@ -6287,6 +6287,8 @@ All around you are caves and mountains, none of them bearing any sort of paths l
 You can't really get up to much around here, but there are a handful of caves nearby to choose from. You'd better be careful about 'breaking in' to a Dragon's house, though.
 
 (if:(history:) contains "HranSS3")[[[Visit Hran at his house.-&gt;Cave203]]](else:)[&lt;!--Do Nothing--!&gt;]
+(if:(history:) contains "Cave124")[[[Visit Cave 124 again.-&gt;Cave124Visit]]](else:)[&lt;!--Do Nothing--!&gt;]
+[[Visit the lower valley caves.-&gt;ValleyCaves]]
 [[Pick a random cave to enter.-&gt;IoDCaves]]
 [[Leave.-&gt;IoDHub]]](elseif:$DN is "night")[It's the middle of the night. As much as you'd love to explore, it's very difficult to really see where you're going.
 
@@ -6438,7 +6440,7 @@ As you step into the room, you're greeted to a chamber about the size of the act
 [[Ask if he can teach you how to fight.-&gt;Zexir1DFight]]
 (if:$Spells contains "Volition Light")[[[Ask if he can teach you more magic.-&gt;Zexir1DMagic3]]](else:)[[[Ask if he can teach you Magic.-&gt;Zexir1DMagic]]]
 [[Ask if he can teach you about the Isle.-&gt;Zexir1DIsle]]
-[[Take your leave.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="391" name="Zexir1N" tags="dnsi" position="996,3016" size="100,100">(if:(either:1,2) is 1)[(goto:"ZexirAltSS1")](else:)[It's probably not wise, but you decide to visit Zexir at this time of the night. You step into the council chambers and note a number of willing and able volunteers nearby, but they don't notice you in the dark, even with their torches. You move past them towards the end of the hall and turn right, hoping that it's the right way to go.
+[[Take your leave.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="391" name="Zexir1N" tags="dnsi" position="996,3016" size="100,100">(set:$ZexNight to (random:1,3))(if:$ZexNight is 1)[(goto:"ZexirAltSS1")](elseif:$ZexNight is 2)[(goto:"ZexirAltSS3")](else:)[It's probably not wise, but you decide to visit Zexir at this time of the night. You step into the council chambers and note a number of willing and able volunteers nearby, but they don't notice you in the dark, even with their torches. You move past them towards the end of the hall and turn right, hoping that it's the right way to go.
 
 Your journey leads you towards a small door at the end of a hallway, and Kami moves in beside you, keeping himself low to the ground. You approach the door and listen intently, hearing nothing beyond. Slowly, you grasp the handle and open the door, sneaking inside, with Kami weaving in from between your legs.
 
@@ -9181,7 +9183,9 @@ His voice drops.
 
 [[Experiment with Pip the gecko.-&gt;ErelCollabPip]]
 [[Experiment with Tern the drake.-&gt;ErelCollabTern]]
-[[Use Kami as the first subject.-&gt;ErelCollabKami]]
+[[Experiment with Wisk the canine.-&gt;ErelCollabCanine]]
+[[Experiment with Soot the young dragon.-&gt;ErelCollabDrake]]
+[[Use Kami as the subject.-&gt;ErelCollabKami]]
 [[Not today.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="594" name="ErelCollabPip" tags="dnsc dnsi" position="100,5500" size="100,100">Pip arrives at the clinic-- a tiny gecko, barely 3 feet tall, with bright green scales and enormous golden eyes. He&amp;#x27;s thin, almost fragile-looking, with a long prehensile tail that curls nervously.
 
 &amp;quot;Erel said you needed me for a study?&amp;quot; His voice is high and reedy. He looks nervous but trusting.
@@ -9318,7 +9322,227 @@ She looks at you over her spectacles.
 
 The words hang in the air. You think about the green mist. About Kami. About the experiments. About control.
 
-[[Ask something else.-&gt;ValiaChat]]</tw-passagedata></tw-storydata>
+[[Ask something else.-&gt;ValiaChat]]</tw-passagedata><tw-passagedata pid="604" name="Cave124Visit" tags="dnsc dnsi" position="100,5700" size="100,100">You climb up to Cave 124, the one you peeked into before. This time, you knock on the stone wall at the entrance and call out. A deep, rumbling voice answers from within.
+
+&amp;quot;Come in, little Nomad. We don&amp;#x27;t bite.&amp;quot;
+
+You step inside. The cave is warm, lit by the same magical orb you saw before. Two dragons lounge on cushions-- the same pair from your voyeur encounter. The top is a broad, dark-scaled male with amber eyes and thick horns. The bottom-- who you now see clearly-- is slimmer, younger, with matching scales but a more delicate build. His tail curls around his legs when he sees you, and a flush of heat colours his neck scales.
+
+&amp;quot;I remember you,&amp;quot; the younger one says quietly. &amp;quot;You were watching us.&amp;quot;
+
+The older drake grins, showing rows of white teeth. &amp;quot;Don&amp;#x27;t be shy, little one. If you came back, you clearly want more than a peek.&amp;quot;
+
+[[&amp;quot;I want to join.&amp;quot;-&gt;Cave124SS]]
+[[&amp;quot;I was just curious.&amp;quot;-&gt;IoDHouses]]</tw-passagedata><tw-passagedata pid="605" name="Cave124SS" tags="dnsc dnsi" position="200,5700" size="100,100">The older drake chuckles and gestures you closer. The younger one unfurls from his cushion, his slim body stretching out-- lithe, lean, with smooth scales that catch the light. He&amp;#x27;s about twice your height but his frame is slender, almost delicate for a drake.
+
+&amp;quot;How do you want him?&amp;quot; the older one asks, nodding at his companion.
+
+The younger drake rolls onto his back, exposing his underside. Between his hind legs, you can see his genital slit-- a smooth seam of softer scales. It parts slightly as you approach, glistening with natural lubricant.
+
+[[Take him in his slit.-&gt;Cave124SSSlit]]
+[[Take him from behind.-&gt;Cave124SSAss]]</tw-passagedata><tw-passagedata pid="606" name="Cave124SSSlit" tags="dnsc dnsi" position="300,5700" size="100,100">You kneel between the young drake&amp;#x27;s spread hind legs. His slit parts wider as you press your fingers against it, warm and slick, the natural lubricant coating your digits. Inside, the walls are smooth, ridged with soft muscle that clenches gently around your touch.
+
+You position your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[hardened cock](elseif:$fcock is &amp;quot;sheath&amp;quot;)[extended member](elseif:$fcock is &amp;quot;slit&amp;quot;)[rigid cock](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[throbbing member] against his slit and push. The drake gasps, his claws kneading the cushion beneath him, his slim body arching. The heat inside is incredible-- far warmer than anything you&amp;#x27;ve felt. His internal muscles ripple around you, squeezing and releasing in waves.
+
+&amp;quot;Nngh... Nomads are so //small//,&amp;quot; he whimpers, but not in complaint. His own ridged member begins to emerge from within, sliding out alongside your shaft, the two pressed together inside his slit. The sight is obscene-- your cock and his, side by side in the wet heat of his opening.
+
+The older drake watches from his cushion, stroking himself lazily. &amp;quot;That&amp;#x27;s it, little whelp. Take the Magister nice and deep.&amp;quot;
+
+You thrust deeper, and the young drake&amp;#x27;s member fully emerges, ridged and dripping clear fluid. His hips rock to meet yours. The pleasure is overwhelming-- the heat, the tightness, the slick friction of his slit gripping you.
+
+You cum with a shuddering groan, your cock pulsing inside him, filling his slit with warmth. The drake follows seconds later-- his ridged cock pulsing alongside yours, thin jets of clear, watery fluid splattering across his own belly. His whole body shakes, tail lashing, claws scarring the cushion.
+
+The older drake finishes into his own claws with a satisfied grunt, watching.
+
+&amp;quot;Come back anytime, Magister.&amp;quot;(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Return.-&gt;IoDHouses]]</tw-passagedata><tw-passagedata pid="607" name="Cave124SSAss" tags="dnsc dnsi" position="400,5700" size="100,100">The young drake rolls onto all fours, lowering his front, raising his slim hindquarters. His tail lifts and drapes over his back, exposing his dark-scaled pucker beneath the base of his tail. It&amp;#x27;s tight, smooth, glistening faintly with natural moisture.
+
+You position yourself and push in. The drake lets out a long, low croon, his claws digging into the stone. He&amp;#x27;s tight but yielding, his slim body rocking forward with each of your thrusts. The older drake moves around behind you, and you feel his massive, warm breath on the back of your neck.
+
+&amp;quot;Don&amp;#x27;t mind me,&amp;quot; the older one rumbles. You feel his thick, ridged tongue slide along your back, tasting your $skin, before he settles nearby to watch.
+
+The young drake&amp;#x27;s member has emerged fully from his slit, hanging rigid beneath him, ridged and dripping clear fluid with each thrust you deliver. He whimpers and pushes back against you, his inner muscles clenching rhythmically.
+
+You cum deep inside him, your cock pulsing, and the drake&amp;#x27;s whole body shudders. His own member throbs beneath him, releasing thin streams of clear, watery seed onto the cave floor. His legs tremble through the aftershocks.
+
+&amp;quot;Mm. Good Magister,&amp;quot; the older drake purrs.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Return.-&gt;IoDHouses]]</tw-passagedata><tw-passagedata pid="608" name="ValleyCaves" tags="" position="500,5700" size="100,100">You take a path down into the lower valley, where the smaller caves cluster together. These belong to the younger dragons-- drakes, hatchlings, and the slimmer members of the colony. The caves here are smaller, cosier, lit by candles rather than magical orbs.
+
+Several young dragons lounge near the cave entrances in the afternoon sun. You recognise a few from the arena-- Raln&amp;#x27;s training students.
+
+A slim female drake with iridescent green scales and golden eyes watches you approach. She&amp;#x27;s small for a dragon-- barely taller than you-- with a delicate snout and graceful, tapered horns. Her belly is pale cream, her wings folded neatly against her back.
+
+Beside her, a young male with dusty brown scales and no wings-- like Hran, a flightless type-- dozes in a patch of sunlight. He&amp;#x27;s lean, wiry, all muscle and bone. His tail twitches in his sleep.
+
+[[Approach the female drake.-&gt;ValleyFemale]]
+[[Wake the sleeping male.-&gt;ValleyMale]]
+[[Return.-&gt;IoDHouses]]</tw-passagedata><tw-passagedata pid="609" name="ValleyFemale" tags="dnsc dnsi" position="600,5700" size="100,100">The green-scaled female tilts her head as you approach. She&amp;#x27;s pretty-- in the way that a well-crafted blade is pretty. Sharp, elegant, with eyes that miss nothing.
+
+&amp;quot;The Magister.&amp;quot; Her voice is light, musical. &amp;quot;I&amp;#x27;ve heard about you. You train with Raln, yes?&amp;quot;
+
+She introduces herself as Lyra. She&amp;#x27;s a scout-- one of the few dragons who leaves the island to gather intelligence from the mainland. She&amp;#x27;s slim because she has to be. Speed over strength.
+
+&amp;quot;You&amp;#x27;re smaller than I expected,&amp;quot; she remarks, circling you. Her tail brushes your leg. &amp;quot;But cute. For a Nomad.&amp;quot;
+
+Her golden eyes flick to Kami, who sits at your heel.
+
+&amp;quot;Your wolf is handsome, too. I have a soft spot for canines.&amp;quot;
+
+[[Flirt with Lyra.-&gt;ValleyFemaleSS]]
+[[Just talk.-&gt;ValleyFemaleChat]]
+[[Return.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="610" name="ValleyFemaleChat" tags="" position="700,5700" size="100,100">You chat with Lyra. She tells you about her scouting missions-- flying to the mainland at night, observing from clifftops, reporting to Valia.
+
+&amp;quot;The world is changing out there. Your kind-- the Nomads-- are restless. There&amp;#x27;s talk of war again. And the Magisters...&amp;quot; She looks at you. &amp;quot;Well. You know about the one who took Korrath.&amp;quot;
+
+She&amp;#x27;s sharp, well-informed. A useful contact.
+
+&amp;quot;If you ever need information about the mainland, come find me.&amp;quot;
+
+[[Return.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="611" name="ValleyFemaleSS" tags="dnsc dnsi" position="800,5700" size="100,100">Lyra&amp;#x27;s tail curls around your waist and she pulls you toward her cave with a sly smile. It&amp;#x27;s small and warm inside, lined with soft furs she&amp;#x27;s collected from the mainland.
+
+She lies on her back, her slim body stretching out, pale cream belly exposed. Between her hind legs, her genital slit is already parting, pink and glistening. Unlike the male drakes, her slit doesn&amp;#x27;t conceal a member-- it opens into a warm, slick channel that tightens around your fingers when you press inside.
+
+&amp;quot;Mm. Gentle hands,&amp;quot; she purrs, her tail tightening around your waist. &amp;quot;I like that.&amp;quot;
+
+You slide into her and the heat is extraordinary. Her internal muscles grip and pulse around you in rhythmic waves, her slim body arching beneath you. She&amp;#x27;s vocal-- trilling, crooning, her claws kneading your back through your tunic. Her wings half-spread, trembling.
+
+She pulls you deeper with her tail, her golden eyes locked on yours. &amp;quot;Harder, little Magister.&amp;quot;
+
+You oblige. The rhythm builds until her body seizes, her slit clenching tight around you, a high trill escaping her throat as she climaxes-- slick warmth pulsing around your cock. You follow moments later, cumming deep inside her, your hips pressed flush against her scales.
+
+She holds you against her belly afterward, preening your $hair with her delicate claws.
+
+&amp;quot;Not bad, Magister. Not bad at all.&amp;quot;(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Return.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="612" name="ValleyMale" tags="dnsc dnsi" position="100,5800" size="100,100">The dusty-brown drake stirs when you nudge him. He blinks up at you with sleepy amber eyes, yawning wide enough to show every tooth. He&amp;#x27;s young-- maybe Hran&amp;#x27;s age-- and just as slim, all wiry muscle under smooth scales. Wingless, like Hran. His name is Kael.
+
+&amp;quot;Oh. You&amp;#x27;re the Magister. Hran told me about you.&amp;quot; He stretches, his slim body elongating, his tail uncurling lazily. &amp;quot;He said you were, uh...&amp;quot; He glances away, his neck scales flushing warm. &amp;quot;...fun.&amp;quot;
+
+He&amp;#x27;s nervous. Fidgety. Keeps curling and uncurling his tail.
+
+&amp;quot;I, um... I&amp;#x27;ve never been with a Nomad before. If you wanted to, you know... I wouldn&amp;#x27;t say no.&amp;quot;
+
+[[Take him up on it.-&gt;ValleyMaleSS]]
+[[Just hang out.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="613" name="ValleyMaleSS" tags="dnsc dnsi" position="200,5800" size="100,100">Kael leads you into his cave. It&amp;#x27;s sparse-- a pile of furs, a candle, a stack of training weights. He sits on the furs and looks at you with those wide amber eyes, his tail curled tight around his own feet. Nervous.
+
+&amp;quot;I, uh... you go first? I don&amp;#x27;t really know what to do with Nomads.&amp;quot;
+
+You approach him and run your hand along his slim flank. His scales are warm, smooth, and he shivers at the touch. His slit begins to part without any further prompting-- the thin, pink tip of his member emerging, slick and tapered.
+
+He&amp;#x27;s smaller than the older drakes. His member is slim, ridged, and when you wrap your hand around it, he lets out a choked little gasp, his hips bucking involuntarily.
+
+&amp;quot;O-Oh. That&amp;#x27;s... that&amp;#x27;s different from claws.&amp;quot;
+
+You stroke him steadily, feeling the ridges under your fingers, the warm pulse of blood, the thin clear fluid that beads at the tip and coats your palm. His body trembles-- slim, light, easy to hold. You wrap your other arm around his waist and pull him close, his thin body pressed against yours. He&amp;#x27;s barely heavier than you.
+
+His climax comes fast-- too fast. His member throbs in your hand and thin jets of clear, watery fluid pulse from the tip, splattering across your fingers and his own belly scales. His whole body shakes, his tail lashing, a high-pitched whine escaping his throat. He collapses against you, panting.
+
+&amp;quot;S-Sorry. That was... really fast. I&amp;#x27;m sorry.&amp;quot; His neck scales are dark with flush.
+
+You tell him not to apologise. He nuzzles his snout against your chest.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Return.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="614" name="ZexirAltSS3" tags="dnsi" position="100,5900" size="100,100">It&amp;#x27;s probably not wise, but you decide to visit Zexir at this time of the night. You step into the council chambers, moving quietly past the guards.
+
+You approach the door to Zexir&amp;#x27;s chamber and hear it again-- sounds from within. But this time, it&amp;#x27;s different. The groans are deeper. Zexir&amp;#x27;s voice, rumbling low. And above it, a higher sound-- small, strained, whimpering.
+
+You peek through the crack in the door.
+
+Zexir is on all fours this time, his massive turquoise body hunched over a much smaller figure-- a young drake, pinned beneath the elder dragon&amp;#x27;s bulk. The student&amp;#x27;s slim body is nearly lost beneath Zexir, only his hind legs visible, splayed wide, trembling.
+
+From this angle, you can see Zexir&amp;#x27;s member-- that enormous, ridged shaft-- but this time, it&amp;#x27;s not being taken. It&amp;#x27;s //taking//. The massive cock is pressing into the young drake&amp;#x27;s slit from above, the smaller dragon&amp;#x27;s genital opening stretched obscenely around the elder&amp;#x27;s girth. Only a fraction of Zexir&amp;#x27;s member fits, but the young drake is whimpering and writhing beneath him, his slim body shaking with every gentle, deliberate push.
+
+&amp;quot;Easy, little one,&amp;quot; Zexir murmurs, his voice impossibly gentle for his size. &amp;quot;You&amp;#x27;re doing well.&amp;quot;
+
+The student&amp;#x27;s own member has slipped from his slit alongside Zexir&amp;#x27;s invading shaft-- thin, ridged, dripping clear fluid in a steady stream that pools on the cushion beneath. His legs kick weakly, his claws kneading the fabric. Overwhelmed but willing.
+
+[[Continue watching.-&gt;ZexirAltSS3b]]
+[[Leave quietly.-&gt;CouncilChamber]]</tw-passagedata><tw-passagedata pid="615" name="ZexirAltSS3b" tags="dnsc dnsi" position="200,5900" size="100,100">Zexir rocks his hips with measured patience, each gentle thrust sinking another fraction of an inch into the young drake&amp;#x27;s slit. The student&amp;#x27;s body stretches to accommodate him, internal muscles rippling visibly beneath his scales. His slim body bows under the weight, his tiny whimpers filling the chamber.
+
+&amp;quot;M-Master Zexir... it&amp;#x27;s so //big//...&amp;quot;
+
+&amp;quot;I know, little one. You&amp;#x27;re almost there.&amp;quot;
+
+The student&amp;#x27;s slim member throbs helplessly, clear fluid drooling in a steady stream. His hips twitch in involuntary micro-thrusts against nothing. And then his body seizes-- overwhelmed by the pressure, the stretch, the impossibility of it-- and he climaxes. Thin, watery jets pulse from his cock, spattering his own belly, while Zexir hasn&amp;#x27;t even begun to finish.
+
+Zexir chuckles softly, still moving. &amp;quot;Already? We&amp;#x27;ve barely started.&amp;quot;
+
+The student whimpers, over-sensitive, his spent cock still twitching as Zexir continues his patient assault on the stretched slit. You watch, pressed against the doorframe, your own (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock straining against your shorts](elseif:$fcock is &amp;quot;sheath&amp;quot;)[sheath achingly swollen](elseif:$fcock is &amp;quot;slit&amp;quot;)[slit throbbing with need](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[cloaca pulsing heavily].
+
+Zexir finishes minutes later with a deep, rumbling groan. His massive cock pulses, and you see the young drake&amp;#x27;s belly swell slightly from the volume of seed pumped into his slit. The student lets out a long, breathy sigh, his body going completely limp beneath the elder dragon.
+
+&amp;quot;Good boy,&amp;quot; Zexir murmurs, and gently lifts his bulk away, his member sliding free with a wet sound. Thick fluid oozes from the student&amp;#x27;s stretched slit, pooling beneath him.
+
+You slip away before either notices you.
+
+[[Return.-&gt;CouncilChamber]]</tw-passagedata><tw-passagedata pid="616" name="ErelCollabCanine" tags="dnsc dnsi" position="300,5900" size="100,100">Erel has a new subject today-- a young canine from the island&amp;#x27;s servant population. A slim, sandy-furred dog boy named Wisk, barely taller than you, with large brown eyes and a nervous tail that won&amp;#x27;t stop wagging.
+
+&amp;quot;Erel said it wouldn&amp;#x27;t hurt?&amp;quot; Wisk asks, climbing onto the examination table.
+
+&amp;quot;Not at all,&amp;quot; Erel assures him, preparing his journal. &amp;quot;Just a standard medical study. You&amp;#x27;ll feel perfectly fine afterward.&amp;quot;
+
+Wisk lies down and you extend the green mist. His eyes glaze over. His tail goes limp. His slim body relaxes on the table, breathing slow and even.
+
+Erel begins his examination. Heart rate, reflexes, pupil response. Then lower. Wisk&amp;#x27;s canine sheath sits between his thin thighs. Erel wraps his feathered fingers around it and squeezes gently. The response is immediate-- a tapered pink tip slides free, slick with watery pre.
+
+&amp;quot;Canine anatomy responds similarly to the wolf,&amp;quot; Erel notes, his quill scratching. &amp;quot;Sheath-based housing, tapered tip, knot formation at the base...&amp;quot;
+
+His clinical voice fades as the cock swells in his grip. Wisk&amp;#x27;s member is smaller than Kami&amp;#x27;s but similar in shape-- pink, tapered, with a forming knot. His slim hips twitch reflexively as Erel strokes him.
+
+[[Observe.-&gt;ErelCollabCanineSS]]</tw-passagedata><tw-passagedata pid="617" name="ErelCollabCanineSS" tags="dnsc dnsi" position="400,5900" size="100,100">Erel works Wisk&amp;#x27;s canine member with one hand while taking notes with the other. The notes grow increasingly illegible. The young canine&amp;#x27;s cock is fully hard now, the knot swelling at the base, pre-cum dripping steadily.
+
+&amp;quot;The knot formation is fascinating,&amp;quot; Erel murmurs, his thumb pressing against the bulging base. &amp;quot;It inflates even without conscious input...&amp;quot;
+
+Wisk&amp;#x27;s slim body arches on the table. His tail twitches. His hips buck upward involuntarily. Erel&amp;#x27;s feathered hand speeds up, stroking from tip to knot in long, firm pulls.
+
+The climax hits suddenly-- Wisk&amp;#x27;s cock throbs and spurts thin, clear fluid across his sandy belly fur. Not white, not thick-- clear and watery, like the young drakes. His knot pulses in Erel&amp;#x27;s grip, each spurt accompanied by a twitch of his slim hips and a small, unconscious whimper.
+
+Erel stares at the clear fluid, fascinated.
+
+&amp;quot;Interesting. The younger the subject, the more transparent the ejaculate. This is consistent across species...&amp;quot;
+
+He trails off, realising his avian member has fully emerged from his slit, tenting his smock.
+
+You withdraw the mist. Wisk wakes, stretching.
+
+&amp;quot;Did I fall asleep? Sorry! I was really tired today.&amp;quot; He hops off the table, oblivious, and trots out.
+
+Erel adjusts his smock and clears his throat.(set:$LoveMeter to it + 10)
+
+[[Continue experiments.-&gt;ErelCollabSubjects]]
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="618" name="ErelCollabDrake" tags="dnsc dnsi" position="500,5900" size="100,100">Today&amp;#x27;s subject is a young dragon-- a hatchling in the strictest sense, though &amp;quot;hatchling&amp;quot; on IoD means the equivalent of a young adolescent. His name is Soot, and he&amp;#x27;s a slim, dark-grey drake with stubby horns and wide, curious amber eyes. He&amp;#x27;s eager to help.
+
+&amp;quot;Erel always gives me treats after check-ups,&amp;quot; Soot chirps, settling onto the table. His body is compact, smooth-scaled, with the characteristic draconic slit between slim hindlegs.
+
+Green mist. Soot goes limp, his amber eyes glazing. His small body is warm and light on the table.
+
+Erel examines him, working down to the slit. He parts the soft scales with gentle feathered fingers. The response is slower than the canine-- a gradual emergence, the ridged tip pushing through the slit opening, pink and glistening with natural lubricant.
+
+&amp;quot;Draconic anatomy in the juvenile stage,&amp;quot; Erel notes. &amp;quot;Smaller than adult specimens. Ridges less pronounced. Self-lubricating from emergence...&amp;quot;
+
+He wraps his fingers around the slim, ridged shaft. Soot&amp;#x27;s body twitches, his stubby tail thumping once against the table.
+
+[[Let Erel continue.-&gt;ErelCollabDrakeSS]]</tw-passagedata><tw-passagedata pid="619" name="ErelCollabDrakeSS" tags="dnsc dnsi" position="600,5900" size="100,100">Erel strokes the young dragon&amp;#x27;s ridged member with steady, measured pulls. Soot&amp;#x27;s slim body responds in waves-- his hind legs twitching, his claws kneading the air, small draconic crooning sounds escaping his slack mouth.
+
+The member swells to full size-- still small by dragon standards, barely longer than Erel&amp;#x27;s hand, but the ridges are prominent, flaring under stimulation. Clear fluid oozes from the tip steadily, slicking Erel&amp;#x27;s feathered fingers.
+
+&amp;quot;The lubricant production is remarkable,&amp;quot; Erel breathes, his clinical composure fraying. &amp;quot;Far more copious than mammalian species...&amp;quot;
+
+The young dragon climaxes with a full-body shudder that rocks the table. His ridged member pulses, and thin jets of clear, almost transparent fluid arc from the tip, spattering across his dark belly scales in glistening streaks. His whole body trembles through the aftershocks, his stubby tail thumping rhythmically.
+
+Erel&amp;#x27;s own arousal is undeniable-- his avian member has pushed fully from his slit, the pink shaft glistening. He catches you looking and flushes from crest to tail.
+
+&amp;quot;I... the comparative data is invaluable,&amp;quot; he manages weakly.
+
+You clean Soot. Wake him.
+
+&amp;quot;That was a good nap!&amp;quot; Soot chirps, hopping down. &amp;quot;Same time next week?&amp;quot;
+
+&amp;quot;...Yes,&amp;quot; Erel says faintly. &amp;quot;Same time next week.&amp;quot;(set:$LoveMeter to it + 10)
+
+[[Continue experiments.-&gt;ErelCollabSubjects]]
+[[Return.-&gt;IoDHub]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
