@@ -6206,9 +6206,20 @@ The only other thing you can do here is potentially visit Zexir himself. As head
 
 [[Go to your room.-&gt;IoDRoom]]
 [[Go and see Zexir.-&gt;Zexir1N]]
-[[Return.-&gt;IoDHub]]]</tw-passagedata><tw-passagedata pid="376" name="IODArena" tags="" position="1399,2903" size="100,100">(if:$DN is "day")[(if:(history:) contains "IODArenaD2")[You return to the arena, still hearing that same thundering roar and crashing of bodies against the dirt. That large Dragon, who you've come to know as Raln, seems to keep them in fine shape.
+[[Return.-&gt;IoDHub]]]</tw-passagedata><tw-passagedata pid="376" name="IODArena" tags="" position="1399,2903" size="100,100">(if:$DN is "day")[(if:(history:) contains "IODArenaD2")[You return to the arena. The thundering of bodies crashing into dirt echoes across the hilltop. Raln is there, as always, barking orders at sparring Dragons.
 
-You can't say that you're quite ready to learn to fight yet. You remind yourself to come back later when you're feeling able to spar with such large Dragons.
+He catches sight of you and snorts.
+
+(if:$RalnTrain is 0)[&amp;quot;You again. Ready to stop waddling and start fighting?&amp;quot;
+
+[[Train with Raln.-&gt;RalnTrain1]]](elseif:$RalnTrain is 1)[&amp;quot;Back for more? Good. You&amp;#x27;re not hopeless.&amp;quot;
+
+[[Continue training.-&gt;RalnTrain2]]](elseif:$RalnTrain is 2)[&amp;quot;Magister. Let&amp;#x27;s see if you&amp;#x27;ve been practising.&amp;quot;
+
+[[Advanced training.-&gt;RalnTrain3]]](elseif:$RalnTrain is &gt;=3)[&amp;quot;Magister.&amp;quot; He nods at you with something resembling respect.
+
+[[Talk to Raln.-&gt;RalnChat]]
+(if:$DN is &amp;quot;day&amp;quot;)[[[Spar.-&gt;RalnTrain3]]](else:)[&lt;!--Do Nothing--&gt;]]
 
 [[Return.-&gt;IoDHub]]](else:)[You decide to take a look at the arena that sits not far from the council chambers, atop a hill. You climb up the steps and make your way there.
 
@@ -8777,7 +8788,171 @@ They offer a single item for sale: Adplagam Incense. &amp;quot;Burns with a purp
 
 They pull their hood back up. The conversation is over.
 
-[[Return.-&gt;ScarInn]]</tw-passagedata></tw-storydata>
+[[Return.-&gt;ScarInn]]</tw-passagedata><tw-passagedata pid="563" name="RalnTrain1" tags="dnsc dnsi" position="100,5000" size="100,100">Raln drops from his perch, landing in front of you with a thud that shakes the ground. Up close, he&amp;#x27;s even more imposing-- wingless, but built like a fortress of muscle and scale. Mottled red and brown, jagged horns, and eyes that hold zero patience.
+
+&amp;quot;First lesson. Don&amp;#x27;t die.&amp;quot;
+
+He swipes at you. Not full force-- you can tell he&amp;#x27;s holding back-- but fast enough to knock you sideways if you don&amp;#x27;t move. You dodge, barely. He swipes again. You dodge again, less barely.
+
+&amp;quot;Good. You can move. That&amp;#x27;s more than most Nomads.&amp;quot;
+
+Kami enters the arena and Raln&amp;#x27;s eyes flick to the wolf. He nods approvingly.
+
+&amp;quot;Your beast fights alongside you. That&amp;#x27;s rare. Most Magisters treat their animals like tools. You treat yours like a partner.&amp;quot;
+
+The session lasts an hour. By the end, you&amp;#x27;re bruised, scraped, and your muscles are screaming. But you blocked three out of ten strikes.
+
+&amp;quot;You&amp;#x27;re not entirely hopeless.&amp;quot; High praise, from Raln.(set:$RalnTrain to 1)
+
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="564" name="RalnTrain2" tags="dnsc dnsi" position="200,5000" size="100,100">Raln tosses you a wooden practice sword. Dense hardwood, weighted like the real thing.
+
+&amp;quot;Hold it like //this//, not like you&amp;#x27;re stirring soup.&amp;quot;
+
+He adjusts your grip, his massive clawed hand surprisingly gentle. Then he attacks-- slow, methodical, each strike a lesson.
+
+Block. Parry. Riposte. His voice a constant bark of correction.
+
+&amp;quot;Better. Again.&amp;quot;
+
+Kami lunges at practice dummies alongside you. Raln watches with interest.
+
+&amp;quot;Your beast learns faster than you do.&amp;quot;
+
+By the end, your arms are jelly. Raln examines the practice blade. You left marks on it.
+
+&amp;quot;Not bad. For a Nomad.&amp;quot; Almost a smile.(set:$RalnTrain to 2)
+
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="565" name="RalnTrain3" tags="dnsc dnsi" position="300,5000" size="100,100">No warmup. Raln attacks immediately.
+
+&amp;quot;Integrate. Your powers and your blade are one. Show me.&amp;quot;
+
+You reach out with the green mist while fighting. A hawk dives at Raln&amp;#x27;s face. He bats it aside, but you land a strike on his forearm.
+
+Raln stares at the mark. Then at you. Then at the hawk.
+
+&amp;quot;That&amp;#x27;s... not something I&amp;#x27;ve seen before.&amp;quot;
+
+A grin splits his scarred muzzle.
+
+&amp;quot;You might survive out there after all, Magister.&amp;quot;
+
+He invites you to sit on the arena wall. First time he&amp;#x27;s ever asked you to stay.(set:$RalnTrain to 3)
+
+[[Talk to Raln.-&gt;RalnChat]]
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="566" name="RalnChat" tags="" position="400,5000" size="100,100">Raln sits on the arena wall, massive legs dangling. The whole island spreads below.
+
+&amp;quot;What do you want to know, little one?&amp;quot;
+
+[[&amp;quot;Why are you wingless?&amp;quot;-&gt;RalnChat1]]
+[[&amp;quot;What do you think of Zexir?&amp;quot;-&gt;RalnChat2]]
+[[&amp;quot;Tell me about Valia.&amp;quot;-&gt;RalnChat3]]
+[[&amp;quot;What do you fight for?&amp;quot;-&gt;RalnChat4]]
+[[Leave.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="567" name="RalnChat1" tags="" position="500,5000" size="100,100">Raln is quiet for a long moment.
+
+&amp;quot;Born that way. Genetic. My mother was horrified. My father was... disappointed.&amp;quot;
+
+He flexes one massive arm.
+
+&amp;quot;Couldn&amp;#x27;t fly. So I fought. Got bigger, stronger, //meaner// than any flying Dragon. If I can&amp;#x27;t soar above my enemies, I&amp;#x27;ll crush them beneath my feet.&amp;quot;
+
+His tail swishes.
+
+&amp;quot;I don&amp;#x27;t need wings. Wings are a crutch.&amp;quot; Then, softer: &amp;quot;Though I&amp;#x27;d be lying if I said I never wondered what it feels like.&amp;quot;
+
+[[Ask something else.-&gt;RalnChat]]</tw-passagedata><tw-passagedata pid="568" name="RalnChat2" tags="" position="600,5000" size="100,100">&amp;quot;Zexir?&amp;quot; Raln snorts. &amp;quot;Bleeding heart. Talks too much. Trusts too easily.&amp;quot;
+
+Pause.
+
+&amp;quot;But he&amp;#x27;s kept this island alive for 200 years. And when he fights... you don&amp;#x27;t want to be on the other side.&amp;quot;
+
+Something beyond respect in his voice. Admiration. Maybe love, in the way soldiers love generals.
+
+&amp;quot;Don&amp;#x27;t tell him I said that. His head is big enough.&amp;quot;
+
+[[Ask something else.-&gt;RalnChat]]</tw-passagedata><tw-passagedata pid="569" name="RalnChat3" tags="" position="700,5000" size="100,100">&amp;quot;Valia keeps the records. Every dragon who&amp;#x27;s ever lived here. Every birth, every death, every egg.&amp;quot;
+
+He looks out over the island.
+
+&amp;quot;She&amp;#x27;s older than Zexir. Oldest dragon alive. Doesn&amp;#x27;t fight, doesn&amp;#x27;t lead. Just watches. Writes. Remembers.&amp;quot;
+
+&amp;quot;She&amp;#x27;s complicated. Meet her yourself. The archive is off the council chamber, on the left. Tell her Raln sent you. She&amp;#x27;ll complain, but she&amp;#x27;ll talk.&amp;quot;
+
+[[Ask something else.-&gt;RalnChat]]</tw-passagedata><tw-passagedata pid="570" name="RalnChat4" tags="" position="800,5000" size="100,100">Raln stares at the ocean. Wind ruffles the crest of rough scales along his spine.
+
+&amp;quot;Them.&amp;quot; He gestures at the island below-- town, caves, hatchlings in the plaza. &amp;quot;Every Dragon. Every Nomad. Every hatchling who doesn&amp;#x27;t know what war looks like.&amp;quot;
+
+His claws dig into stone.
+
+&amp;quot;I fight so they don&amp;#x27;t have to. That&amp;#x27;s all there is to it.&amp;quot;
+
+He glances at you.
+
+&amp;quot;I think you understand that. You fight for your wolf the same way.&amp;quot;
+
+[[Ask something else.-&gt;RalnChat]]</tw-passagedata><tw-passagedata pid="571" name="RalnSS" tags="dnsc dnsi" position="100,5100" size="100,100">The arena is empty at night. Moonlight filters through the open roof. You find Raln alone with a massive bowl of mead. He looks up.
+
+&amp;quot;Can&amp;#x27;t sleep.&amp;quot;
+
+You settle against his side-- his scales radiate heat. He&amp;#x27;s been drinking. His usual edge is blunted.
+
+&amp;quot;You&amp;#x27;re not afraid of me. Most Nomads flinch when I move too fast.&amp;quot;
+
+His massive hand reaches down, clawed fingers touching your chin, tilting your face up. The size difference is overwhelming.
+
+&amp;quot;I could hurt you,&amp;quot; he says quietly.
+
+[[Touch his slit.-&gt;RalnSS2]]
+[[Pull back.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="572" name="RalnSS2" tags="dnsc dnsi" position="200,5100" size="100,100">Your hand traces down his warm underbelly to the seam of softer scales between his massive hind legs. You press your palm against his slit and feel the pulse of heat from within.
+
+Raln inhales sharply. His body goes rigid. Claws dig furrows in the dirt.
+
+The slit parts under your fingers and the tip emerges-- thick, ridged, slick. Dragon anatomy. Even partially emerged, it&amp;#x27;s as long as your forearm, thick as your wrist.
+
+You wrap both hands around the shaft and feel it swell against your palms. Raln lets out a rumbling groan that vibrates through the ground. His jaw hangs open, rows of teeth glinting.
+
+He is incredibly gentle. His claws hover near you, trembling with restraint, never touching. He lets you set the pace entirely.
+
+(if:$KamiExped is &gt;=3)[[[Suppress Kami. Offer him to Raln.-&gt;RalnSSKami]]](else:)[&lt;!--Do Nothing--&gt;]
+
+[[Continue.-&gt;RalnSS3]]</tw-passagedata><tw-passagedata pid="573" name="RalnSS3" tags="dnsc dnsi" position="300,5100" size="100,100">You work his member with both hands. Pre-cum oozes from the tip-- thick, warm, copious, slicking your fingers. Each stroke makes the ridges flare. His breathing is ragged, deep rumbles that make your chest vibrate. His tail lashes, gouging dirt. Massive hind legs tremble.
+
+&amp;quot;Magister... I am... close.&amp;quot;
+
+You speed up. His cock throbs massively. With a roar that echoes off the arena walls, Raln cums-- and the volume is //staggering//. Thick ropes erupt from the tip, splattering across the arena floor, splashing your chest and arms. His cock pulses and pulses, each spurt powerful enough to rock your hands.
+
+When it subsides, Raln is panting like a bellows, trembling. His cock slowly retracts into his slit.
+
+He looks down at you, covered in his release. Something vulnerable crosses his scarred face.
+
+&amp;quot;Nobody can know about this.&amp;quot;
+
+But his massive hand gently-- so gently-- wipes your face clean with a cloth. Feather-light for something so powerful.
+
+&amp;quot;Come back tomorrow. For training.&amp;quot; His excuse to see you again.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="574" name="RalnSSKami" tags="dnsc dnsi" position="400,5100" size="100,100">Green mist. Kami slumps at the edge of the arena. Glassy-eyed. Gone.
+
+You drag his limp body to Raln&amp;#x27;s feet and position him-- hindquarters raised, tail draped aside.
+
+Raln looks down at the small wolf, then at you.
+
+&amp;quot;He&amp;#x27;s... very small.&amp;quot;
+
+Raln lowers himself carefully. The size difference is extreme-- his emerging member nearly as long as Kami&amp;#x27;s entire body. He doesn&amp;#x27;t attempt penetration. Instead, he presses his slick, ridged cock against Kami&amp;#x27;s flank and thrusts along his body, the massive shaft sliding between the wolf&amp;#x27;s hind legs.
+
+Despite his absent mind, Kami&amp;#x27;s body responds. Sheath swells. Knotted member slides free, engorging from the friction against his groin. Hind legs twitch reflexively.
+
+Raln groans, frotting against the unconscious wolf. &amp;quot;He likes it more than he lets on.&amp;quot;
+
+Raln cums massively, splattering Kami&amp;#x27;s entire underside. Kami&amp;#x27;s own cock twitches, oozing pre but not finishing.
+
+You withdraw the mist. Kami wakes, disoriented, covered in something warm.
+
+|Kami&gt;[&amp;quot;Master...? I believe something... happened. I feel very... wet.&amp;quot;]
+
+Confused blue eyes. You help him clean off in a water trough. He doesn&amp;#x27;t question it further.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Return.-&gt;IoDHub]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
