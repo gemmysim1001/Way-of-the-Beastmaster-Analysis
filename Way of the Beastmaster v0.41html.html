@@ -1366,7 +1366,7 @@ The room is quaint. There is a window opposite you that looks out onto the coury
 (link:"Rest for the $DN.")[(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)(goto:"InnStaySleep")]
 [[Ask Kami for sex.-&gt;KamiSS1]]
 [[Change Kami's Equipment.-&gt;HolsteinKEquip]]
-(if:$pk is &gt;=1)[[[Experiment with your powers on Kami.-&gt;KamiExp1]]]](elseif:$innsc is &gt;=1)[You head upstairs and wander down to hall to your room number, remember it from the last time you were here. You stop outside Room $RN and slip the key into the lock. You twist it, and step inside.
+(if:$pk is &gt;=1)[(if:$KamiExped is 0)[[[Experiment with your powers on Kami.-&gt;KamiExp1]]](elseif:$KamiExped is 1)[[[Experiment with your powers on Kami again.-&gt;KamiExp2]]](elseif:$KamiExped is &gt;=2)[[[Use your powers on Kami.-&gt;KamiExp3]]]](else:)[&lt;!--Do Nothing--&gt;]](elseif:$innsc is &gt;=1)[You head upstairs and wander down to hall to your room number, remember it from the last time you were here. You stop outside Room $RN and slip the key into the lock. You twist it, and step inside.
 
 All the rooms are the same, so you're unsurprised to find a Bed, a small table to place your things, and a window showing the street below. Kami seems just as familiar with the abode and settles down on the bed, tilting his head at you.
 
@@ -2809,7 +2809,7 @@ Perhaps he was right. If they were after another Magister, it would make sense t
 
 You decided to sleep away the rest of your fears, and Kami curled up beside you. You were glad to have him. Were it not for Kami, you might not even be here.
 
-You think that some of the people you know a little too fondly might be more receptive of you now.(set:$MQ1D to 1)(set:$Spells to it + (a:"Calm"))
+You think that some of the people you know a little too fondly might be more receptive of you now.(set:$MQ1D to 1)(set:$pk to 1)(set:$Spells to it + (a:"Calm"))
 
 [[Complete the Quest.-&gt;Hub]]</tw-passagedata><tw-passagedata pid="134" name="SQ11" tags="" position="1803,795" size="100,100">You decide to take the quest, and you know that you're bound for Streamdale.
 
@@ -3217,7 +3217,7 @@ He currently has $KMH Maximum Health, $KA Attack, $KS Speed and $KR Armour.
 (set:$inv to it + (a:"Strange Mushroom"))
 
 (set:$Spells to (a:))(set:$Spells to it + (a:"Calm"))
-(set:$KamiExped to 0)(set:$KamiBonded to false)
+(set:$pk to 1)(set:$KamiExped to 0)(set:$KamiBonded to false)(set:$ErelCollab to 0)
 (set:$RalnMet to false)(set:$RalnTrain to 0)(set:$SQ3D to 0)(set:$SQ4D to 0)(set:$IoDQ1D to 0)(set:$IoDQ2D to 0)(set:$RowanMet to false)(set:$PellFreed to false)
 (set:$inv to it + (a:"Zexir's Amulet"))</tw-passagedata><tw-passagedata pid="158" name="KEquipHelm" tags="dnsc dnsi" position="25,1868" size="100,100">You look through the gear you currently own to see what you can equip Kami's head with.
 
@@ -4237,6 +4237,8 @@ Slowly, you get to your feet, and plant a hand on the Horse's head, giving him a
 
 (set:$HansBU to false)(set:$WyattBU to false)(set:$MisfitBU to false)(set:$LoveMeter to 0)
 (set:$FiendMet to false)(set:$FiendF to false)
+(set:$pk to 0)(set:$KamiExped to 0)(set:$KamiBonded to false)(set:$ErelCollab to 0)
+(set:$RalnMet to false)(set:$RalnTrain to 0)(set:$SQ3D to 0)(set:$SQ4D to 0)(set:$IoDQ1D to 0)(set:$IoDQ2D to 0)(set:$RowanMet to false)(set:$PellFreed to false)
 }</tw-passagedata><tw-passagedata pid="231" name="HolC" tags="dnsc dnsi" position="1019,888" size="100,100">You nestle in beside Kami on the carriage after paying the toll, and the two of you cuddle as the carriage trundles on, making towards the capital.
 
 It took a few days travel, but that was alright. The Silver Spire looms in the distance and the carriage trundles it's way closer.
@@ -6309,6 +6311,7 @@ It seems as if his shop is open, so you step inside without a second thought. Ka
 "Oh, $name! It's good to see you, and your little friend too. What can I do for you? He's not hurt, is he?"
 
 [[Get to know Erel.-&gt;ErelC]]
+(if:$ErelCollab is &gt;=1)[[[Continue collaborative research.-&gt;ErelCollabSubjects]]](else:)[&lt;!--Do Nothing--&gt;]
 [[Leave.-&gt;IoDHub]]](elseif:$DN is "night")[You decide to visit Erel, the avian animal doctor who helped to nurse Kami back to health.
 
 Unfortunately, it becomes readily apparent that now might not be the best time. Considering that it's the middle of the night, it seems that Erel is asleep. His door is shut tight, and you'd feel bad for knocking so abruptly and waking him.
