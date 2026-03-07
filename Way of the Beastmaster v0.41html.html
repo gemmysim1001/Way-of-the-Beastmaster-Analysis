@@ -53,6 +53,19 @@
   top:50px;
 }
 
+html {
+  height: auto !important;
+  min-height: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-y: auto !important;
+}
+
 body, tw-story
 {
   font-family: 'Oxygen', sans-serif;
@@ -65,7 +78,21 @@ body, tw-story
   box-sizing: border-box;
 }
 
+tw-story {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-y: visible !important;
+}
+
+tw-passage {
+  overflow-y: visible !important;
+  padding-bottom: 2em;
+}
+
 @media screen and (max-width: 768px) {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+  }
   body, tw-story {
     padding: 15px;
     font-size: 15px;
@@ -73,6 +100,11 @@ body, tw-story
   }
   tw-story {
     padding: 3% 5% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+  tw-passage {
+    padding-bottom: 3em;
   }
   .img-container-kami,
   .img-container-contest,
@@ -306,6 +338,19 @@ tw-passage
   top:50px;
 }
 
+html {
+  height: auto !important;
+  min-height: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-y: auto !important;
+}
+
 body, tw-story
 {
   font-family: 'Oxygen', sans-serif;
@@ -318,7 +363,21 @@ body, tw-story
   box-sizing: border-box;
 }
 
+tw-story {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-y: visible !important;
+}
+
+tw-passage {
+  overflow-y: visible !important;
+  padding-bottom: 2em;
+}
+
 @media screen and (max-width: 768px) {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+  }
   body, tw-story {
     padding: 15px;
     font-size: 15px;
@@ -326,6 +385,11 @@ body, tw-story
   }
   tw-story {
     padding: 3% 5% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+  tw-passage {
+    padding-bottom: 3em;
   }
   .img-container-kami,
   .img-container-contest,
