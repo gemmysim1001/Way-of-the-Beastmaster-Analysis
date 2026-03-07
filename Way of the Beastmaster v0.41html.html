@@ -4183,8 +4183,12 @@ You're sitting with Wyatt in the fountain square of Holstein. He doesn't seem to
 (elseif:$LoveMeter is &gt;1000)[Your fate is intertwined with the canine adventurer. Nothing can separate the two of you.]
 }
 
-//It seems that Wyatt has too much adventuring activities lined up to enjoy your company. You'll have to come back later!//
+(if:$LoveMeter is &gt;1000)[[[It seems like Wyatt wants to talk to you about something.-&gt;WyattTrueEnd]]](elseif:$LoveMeter is &lt;=1000)[&lt;!--Do Nothing--&gt;]
 
+[[Ask Wyatt to tell you more about himself.-&gt;WyattRI]]
+(if:(history:) contains "WyattHouse2")[[[Ask Wyatt if you can hang out at his place.-&gt;WyattHouse2]]](else:)[[[Ask Wyatt if you can hang out at his place.-&gt;WyattHouse]]]
+(if:$LoveMeter is &gt;=250)[[[Spar with Wyatt.-&gt;WyattSpar]]](elseif:$LoveMeter is &lt;250)[|Locked&gt;[You don't know Wyatt well enough to do this yet.]]
+(if:$LoveMeter is &gt;=500)[[[Take Wyatt somewhere special.-&gt;WyattRooftop]]](elseif:$LoveMeter is &lt;500)[|Locked&gt;[You don't know Wyatt well enough to do this yet.]]
 [[Break Up.-&gt;WyattRBU]]
 [[Leave.-&gt;Hub]]</tw-passagedata><tw-passagedata pid="239" name="WyattR" tags="dnsc dnsi" position="1944,230" size="100,100">You have something quite important to tell Wyatt, and you linger in front of him, fidgeting. You're finding it hard to get your words out.
 
@@ -7418,7 +7422,351 @@ He stands and stretches his back legs, one at a time. His hindquarters are sligh
 
 He settles back down beside you and rests his head on your lap. You stroke his fur and feel his tail thump gently against the mattress. The bond between you holds. He trusts you completely.(set:$KamiExped to 3)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
 
-(link:&amp;quot;Rest.&amp;quot;)[(if:$location is &amp;quot;Holstein&amp;quot;)[(goto:&amp;quot;InnStaySleep&amp;quot;)](elseif:$location is &amp;quot;Scarhaven&amp;quot;)[(goto:&amp;quot;SIIKRS&amp;quot;)](else:)[(goto:&amp;quot;IoDStaySleep&amp;quot;)]]</tw-passagedata></tw-storydata>
+(link:&amp;quot;Rest.&amp;quot;)[(if:$location is &amp;quot;Holstein&amp;quot;)[(goto:&amp;quot;InnStaySleep&amp;quot;)](elseif:$location is &amp;quot;Scarhaven&amp;quot;)[(goto:&amp;quot;SIIKRS&amp;quot;)](else:)[(goto:&amp;quot;IoDStaySleep&amp;quot;)]]</tw-passagedata><tw-passagedata pid="471" name="WyattRI" tags="" position="100,3600" size="100,100">Wyatt stretches his arms behind his head and leans back, raising an eyebrow at you. He seems amused that you want to know more about him.
+
+&amp;quot;Alright, kid. What do you wanna know?&amp;quot; He asks, his lips curling into that familiar lopsided grin. You settle yourself on his lap and he wraps an arm around your waist to keep you steady.
+
+[[Ask about his mercenary life.-&gt;WyattRI1]]
+[[Ask about his brother.-&gt;WyattRI2]]
+[[Ask about his sexual interests.-&gt;WyattRI3]]
+[[Ask about what he wants from life.-&gt;WyattRI4]]
+[[Ask about his scars.-&gt;WyattRI5]]
+[[You have everything you need to know.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="472" name="WyattRI1" tags="" position="200,3600" size="100,100">(if:(history:) contains &amp;quot;WyattRI1&amp;quot;)[Wyatt rubs the back of his neck.
+
+&amp;quot;I already told you about this, kid. Short version: started at 16, nearly died on my first job guarding a carriage, got good at fighting, been doing it since.&amp;quot;
+
+He shrugs, but gives you an affectionate squeeze.
+
+&amp;quot;It ain&amp;#x27;t glamorous, but it pays.&amp;quot;](else:)[Wyatt seems to consider where to begin, rubbing his chin thoughtfully.
+
+&amp;quot;I left Trystvale when I was 16. Didn&amp;#x27;t have much of a choice-- parents were gone, farm was gone. I hitched a ride on a merchant&amp;#x27;s carriage heading to Holstein and offered to guard it for free, just to get here.&amp;quot;
+
+He laughed, shaking his head.
+
+&amp;quot;First night on the road, bandits hit us. I nearly shit myself, kid. I&amp;#x27;d never held a sword before. One of the other guards threw me one and I just... swung. Kept swinging until they stopped coming.&amp;quot;
+
+His expression softened.
+
+&amp;quot;Turns out I was pretty good at it. The merchant paid me double what the other guards got. Said I had &amp;#x27;raw talent&amp;#x27;. After that, I just kept taking jobs. Six years later, here I am.&amp;quot;
+
+He looked down at you and ruffled your $hair.
+
+&amp;quot;Don&amp;#x27;t ever let anyone tell you that you can&amp;#x27;t do something, kid. I went from sleeping in ditches to having my own place. Sort of.&amp;quot;(set:$LoveMeter to it + 20)]
+
+[[Ask about his brother.-&gt;WyattRI2]]
+[[Ask about his sexual interests.-&gt;WyattRI3]]
+[[Ask about what he wants from life.-&gt;WyattRI4]]
+[[Ask about his scars.-&gt;WyattRI5]]
+[[You have everything you need to know.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="473" name="WyattRI2" tags="" position="300,3600" size="100,100">(if:(history:) contains &amp;quot;WyattRI2&amp;quot;)[&amp;quot;My brother? Already told you about him. He works the night shift at the Spire. He&amp;#x27;s fine. Worries me sometimes, but he&amp;#x27;s fine.&amp;quot;
+
+Wyatt squeezes your shoulder.](else:)[Wyatt&amp;#x27;s expression shifted at the mention of his brother. Not sadness, exactly. More like... worry.
+
+&amp;quot;His name&amp;#x27;s Garrett. He&amp;#x27;s younger than me by a couple years. When I left Trystvale, he came with me. Couldn&amp;#x27;t leave him behind.&amp;quot;
+
+He gestured vaguely toward the alley.
+
+&amp;quot;He got a job at the Spire as a guard. Night shift. The pay&amp;#x27;s decent and he gets to sleep during the day, which is more than I can say for most.&amp;quot;
+
+He was quiet for a moment. His hand found yours and he laced his fingers through them, absently.
+
+&amp;quot;He&amp;#x27;s all I got left, y&amp;#x27;know? If anything happened to him...&amp;quot; He trailed off, jaw tightening. Then he exhaled and put on a smile.
+
+&amp;quot;He&amp;#x27;d like you, by the way. You&amp;#x27;re both annoying.&amp;quot;(set:$LoveMeter to it + 20)]
+
+[[Ask about his mercenary life.-&gt;WyattRI1]]
+[[Ask about his sexual interests.-&gt;WyattRI3]]
+[[Ask about what he wants from life.-&gt;WyattRI4]]
+[[Ask about his scars.-&gt;WyattRI5]]
+[[You have everything you need to know.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="474" name="WyattRI3" tags="" position="400,3600" size="100,100">Wyatt snorts and his cheeks flush a dusty pink beneath his blue-grey fur.
+
+&amp;quot;Haha, no filter on you, huh kid?&amp;quot; He rubbed the back of his neck, avoiding your eyes for a moment.
+
+&amp;quot;I mean... I&amp;#x27;ve had partners. Nothing serious. Mercenary life doesn&amp;#x27;t really lend itself to commitment, you know?&amp;quot;
+
+He glanced down at you, and that familiar crooked grin spread across his muzzle.
+
+&amp;quot;But uh... since you&amp;#x27;re asking...&amp;quot;
+
+Perhaps you should (link:&amp;quot;indulge him.&amp;quot;)[(goto:&amp;quot;WyattRISS&amp;quot;)]
+
+[[Ask about his mercenary life.-&gt;WyattRI1]]
+[[Ask about his brother.-&gt;WyattRI2]]
+[[Ask about what he wants from life.-&gt;WyattRI4]]
+[[Ask about his scars.-&gt;WyattRI5]]
+[[You have everything you need to know.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="475" name="WyattRI4" tags="" position="500,3600" size="100,100">(if:(history:) contains &amp;quot;WyattRI4&amp;quot;)[&amp;quot;What do I want? Same thing as last time you asked, kid. A house, a dog... wait, I already got the dog.&amp;quot;
+
+He glances at Kami, who snorts.](else:)[Wyatt went quiet for a long moment. His thumb traced lazy circles on your hip.
+
+&amp;quot;I dunno, kid. A house? Somewhere quiet. Maybe outside the city.&amp;quot; He stared up at the sky. &amp;quot;A dog? ...I already got a dog.&amp;quot;
+
+He looked at Kami, who was lying nearby with his head on his paws. Kami&amp;#x27;s ear twitched. Wyatt grinned.
+
+&amp;quot;Nah, for real though. I just... want to stop looking over my shoulder. I want to sleep without my sword under my pillow. I want to wake up next to someone and not wonder if it&amp;#x27;s the last time.&amp;quot;
+
+He looked down at you, and his expression softened.
+
+&amp;quot;I think I&amp;#x27;m getting closer to that. Maybe.&amp;quot;(set:$LoveMeter to it + 20)]
+
+[[Ask about his mercenary life.-&gt;WyattRI1]]
+[[Ask about his brother.-&gt;WyattRI2]]
+[[Ask about his sexual interests.-&gt;WyattRI3]]
+[[Ask about his scars.-&gt;WyattRI5]]
+[[You have everything you need to know.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="476" name="WyattRI5" tags="" position="600,3600" size="100,100">(if:(history:) contains &amp;quot;WyattRI5&amp;quot;)[&amp;quot;You already know about the scars, kid. Each one&amp;#x27;s got a story, and none of &amp;#x27;em are pretty.&amp;quot;
+
+He flexes his arm and winks at you.](else:)[You trace a finger along the scar on Wyatt&amp;#x27;s left cheek, and he doesn&amp;#x27;t flinch. His eyes follow your hand.
+
+&amp;quot;That one? First bounty. Some drunk mercenary in a tavern pulled a knife. Got me good before I put him down.&amp;quot;
+
+He pulled up the hem of his shirt, revealing a long, jagged line across his ribs.
+
+&amp;quot;This one&amp;#x27;s from a wolf. Not the talking kind, either.&amp;quot; He glanced at Kami. &amp;quot;No offense.&amp;quot;
+
+|Kami&gt;[&amp;quot;None taken.&amp;quot;]
+
+Wyatt let his shirt drop and put his arm around you again.
+
+&amp;quot;You don&amp;#x27;t stop being scared, kid. You just get used to it. The scars remind me I survived. And I plan to keep surviving.&amp;quot;
+
+He pressed a kiss to the top of your head.(set:$LoveMeter to it + 20)]
+
+[[Ask about his mercenary life.-&gt;WyattRI1]]
+[[Ask about his brother.-&gt;WyattRI2]]
+[[Ask about his sexual interests.-&gt;WyattRI3]]
+[[Ask about what he wants from life.-&gt;WyattRI4]]
+[[You have everything you need to know.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="477" name="WyattRISS" tags="dnsc dnsi" position="700,3600" size="100,100">You&amp;#x27;re still sitting on Wyatt&amp;#x27;s lap in the fountain square. His hand is on your hip and his breath is warm against the top of your head. Kami, appreciatively, turned his head away to give the two of you some privacy, trotting a few paces toward the fountain to lap at the water.
+
+Wyatt&amp;#x27;s hand slides a little lower, his fingers sneaking under the hem of your tunic to press against your bare $skin. You feel goosebumps prickling along your side. His thumb traces small circles on your hip.
+
+&amp;quot;C&amp;#x27;mere,&amp;quot; he murmurs, and pulls you closer so that you&amp;#x27;re straddling his lap. His other hand cups the back of your head, fingers threading through your $hair. He leans in and presses his mouth to yours-- not the hesitant, uncertain kiss from before. This one is sure of itself.
+
+His tongue slides past your lips and you feel his hips shift beneath you. Something thick and firm presses against your inner thigh through the fabric of his pants, and you can feel the warmth of it pulsing steadily. His canine sheath is already swelling.
+
+Wyatt&amp;#x27;s hand dips into the waistband of your shorts, fingers curling around your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[stiffening cock](elseif:$fcock is &amp;quot;sheath&amp;quot;)[warm sheath, feeling the tip emerge](elseif:$fcock is &amp;quot;slit&amp;quot;)[tingling slit, fingers probing the warm entrance](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[throbbing cloaca, pressing gently against the opening]. You stifle a groan against his mouth as his grip tightens, stroking you with a slow, confident rhythm.
+
+You reach between your bodies and fumble with the ties of his pants, freeing his member. It&amp;#x27;s thick and hot in your hand, the tapered canine tip slick with pre-cum. You wrap your fingers around it and stroke, feeling the knot beginning to swell at the base. Wyatt groans quietly against your neck.
+
+The two of you work each other in silence, hidden in plain sight on the edge of the square. Your hand around his cock, his hand around yours. The intimacy of it-- the risk, the trust-- makes every stroke feel electric.
+
+[[Continue.-&gt;WyattRISS2]]</tw-passagedata><tw-passagedata pid="478" name="WyattRISS2" tags="dnsc dnsi" position="800,3600" size="100,100">It doesn&amp;#x27;t take long. Your muscles tense and you feel the pressure building, and Wyatt seems to sense it. He speeds up his strokes, his thumb swirling over the tip, and you bury your face in his chest to muffle the groan that escapes your lips. Your cock throbs in his hand as you cum, (if:$cock is &amp;quot;canine&amp;quot; or &amp;quot;fox&amp;quot;)[your small knot pulsing against his grip,](else:)[&lt;!--Do Nothing--&gt;] spurts of warm fluid splattering against his stomach beneath his shirt.
+
+The sight and feel of it pushes Wyatt over the edge seconds later. His hips buck upward and his cock swells in your grip, the knot bulging fat and hot against your fingers. He lets out a low, rumbling groan as thick ropes of canine cum pulse from the tip, soaking your hand and the front of your tunic.
+
+For a moment, the two of you just sit there, foreheads pressed together, panting. Wyatt lets out a breathless laugh.
+
+&amp;quot;We should, uh... probably clean up before someone notices.&amp;quot;
+
+He wipes his hand on the inside of his shirt and then helps you clean your tunic with a cloth from his belt pouch. His fingers linger on your waist as he fixes your clothes.
+
+&amp;quot;You&amp;#x27;re somethin&amp;#x27; else, kid.&amp;quot; He murmurs, pressing a kiss to the top of your head.(set:$LoveMeter to it + 10)
+
+[[Ask about his mercenary life.-&gt;WyattRI1]]
+[[Ask about his brother.-&gt;WyattRI2]]
+[[Ask about what he wants from life.-&gt;WyattRI4]]
+[[Ask about his scars.-&gt;WyattRI5]]
+[[You have everything you need to know.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="479" name="WyattHouse" tags="" position="100,3700" size="100,100">You ask Wyatt if you can visit his place, and he looks momentarily surprised before shrugging.
+
+&amp;quot;Sure, why not. It ain&amp;#x27;t much, but it&amp;#x27;s home. Sort of.&amp;quot;
+
+He takes your hand and the three of you-- you, Wyatt, and Kami-- make your way through the winding streets toward the alleyway you remember from your nighttime visits. In the daylight, it looks different. Less ominous. Just... run down.
+
+Wyatt pushes open a door at the end of the alley and leads you inside. The apartment is small-- a single room with a cot against one wall, a rough wooden table with two stools, and a fireplace that hasn&amp;#x27;t been cleaned in a while. A training dummy stands in the corner, its stuffing leaking from dozens of sword cuts. Garrett&amp;#x27;s guard uniform hangs neatly by the door-- the only tidy thing in the room.
+
+&amp;quot;Told you it ain&amp;#x27;t much.&amp;quot; Wyatt scratches the back of his neck. Kami trots in and immediately claims the spot by the fireplace, circling twice before lying down.
+
+You tell Wyatt you like it. He smiles-- not the cocky grin, but a real one. Small and warm.
+
+[[Continue.-&gt;WyattHouse2]]</tw-passagedata><tw-passagedata pid="480" name="WyattHouse2" tags="" position="200,3700" size="100,100">(if:(history:) contains &amp;quot;WyattHouse2&amp;quot;)[Wyatt grins when you ask to come back to his place. &amp;quot;Mi casa es su casa, kid. Or whatever.&amp;quot;
+
+He leads you through the familiar route and pushes the door open. Kami pads in and claims his usual spot by the fireplace. Wyatt leans against the doorframe and looks at you.
+
+&amp;quot;So. What&amp;#x27;s on your mind?&amp;quot;](else:)[Wyatt leans against the wall, arms crossed, watching you take in the room. A smirk plays on his lips.
+
+&amp;quot;Make yourself at home, I guess. What do you wanna do?&amp;quot;]
+
+[[Something physical.-&gt;WyattHSS]]
+[[Spar together.-&gt;WyattSparHome]]
+[[Leave.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="481" name="WyattHSS" tags="dnsc dnsi" position="300,3700" size="100,100">The minute the word &amp;quot;physical&amp;quot; leaves your mouth, Wyatt&amp;#x27;s eyes darken and he pushes himself off the wall. He crosses the room in two strides, hooks a hand behind your neck, and kisses you hard. His other hand is already fumbling with the latch on the door.
+
+&amp;quot;Garrett won&amp;#x27;t be back for hours,&amp;quot; he murmurs against your mouth. You can feel his canine member already pressing against your thigh through his pants, thick and insistent.
+
+Kami lifts his head from the fireplace, watching with those ocean blue eyes. His tail thumps once.
+
+[[Let Wyatt take the lead.-&gt;WyattHSSc1]]
+[[Take control yourself.-&gt;WyattHSSc2]]
+(if:$KamiExped is &gt;=1)[[[Invite Kami to join.-&gt;WyattHSSKami]]](else:)[&lt;!--Do Nothing--&gt;]</tw-passagedata><tw-passagedata pid="482" name="WyattHSSc1" tags="dnsc dnsi" position="400,3700" size="100,100">You let Wyatt lead, and he doesn&amp;#x27;t waste time. He lifts you off the ground with those mercenary arms and carries you to the cot, dropping you onto the worn mattress. His shirt comes off in one motion, revealing the scarred, muscular torso you&amp;#x27;ve seen before. His pants follow.
+
+His canine cock stands at full attention, the tapered tip already glistening with pre, the thick knot at the base pulsing gently. He&amp;#x27;s bigger than you remember. He kneels between your legs and pulls your clothes off with practiced efficiency, tossing them to the floor.
+
+&amp;quot;You good, kid?&amp;quot; He asks, even now. Even with his cock throbbing inches from you. Always checking.
+
+You nod, and he grins. He spits into his hand, slicks himself, and presses the tapered tip against your entrance. The stretch is immediate-- Wyatt is thick-- but he goes slow, watching your face the whole time. Inch by inch, he pushes into you, and you feel every ridge, every throb, the heat of him filling you completely.
+
+&amp;quot;Fuck,&amp;quot; he breathes. &amp;quot;You&amp;#x27;re so tight, kid.&amp;quot;
+
+He starts to move. Slow at first, rolling his hips, letting you adjust. Then faster, harder, the cot creaking beneath you. His hands grip your hips as he thrusts, his knot bumping against your entrance with each push, getting fatter, more insistent.
+
+[[Continue.-&gt;WyattHSSc12]]</tw-passagedata><tw-passagedata pid="483" name="WyattHSSc12" tags="dnsc dnsi" position="500,3700" size="100,100">Wyatt&amp;#x27;s pace builds until the cot is rocking with each thrust. His breathing is ragged, his muscles taut, his tail rigid behind him. You can feel his knot pressing harder and harder against your ring, stretching you wider with each push.
+
+&amp;quot;$name... I&amp;#x27;m close,&amp;quot; he groans, and his hips slam forward one final time. The knot pops inside you with a wet stretch that makes your toes curl and your back arch off the mattress. Wyatt lets out a shuddering groan, burying his face in your neck as his cock pulses and throbs inside you.
+
+You can feel it-- the warmth spreading through you as he cums, his knot locking the two of you together. His hips roll in tiny, involuntary thrusts as he rides out the orgasm, murmuring your name against your $skin.
+
+Your own orgasm hits moments later, your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock pulsing and spurting between your bodies](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member throbbing in your sheath as it erupts](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock twitching free from your slit as you release](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member pulsing from your cloaca as you spend yourself], splattering across both your stomachs. Wyatt groans at the sight and his knot pulses harder inside you.
+
+He collapses onto you, heavy and warm, his arms wrapping around your body. His knot slowly deflates and he slips out with a wet sound. He rolls onto his side and pulls you against his chest, nuzzling the top of your head.
+
+&amp;quot;You&amp;#x27;re amazing. You know that, right?&amp;quot;
+
+He holds you there, and you listen to his heartbeat slow.(set:$LoveMeter to it + 30)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Rest together.-&gt;WyattHouse2]]</tw-passagedata><tw-passagedata pid="484" name="WyattHSSc2" tags="dnsc dnsi" position="600,3700" size="100,100">You push Wyatt down onto the cot. He blinks in surprise, then grins up at you-- that cocky, crooked grin, but there&amp;#x27;s a nervous edge to it. His ears flatten just slightly.
+
+&amp;quot;I, uh... I&amp;#x27;ve never really been on //this// end,&amp;quot; he admits, but he doesn&amp;#x27;t stop you.
+
+You strip him slowly, running your hands over his scarred chest, his muscled stomach, the trail of blue-grey fur leading down to his sheath. His cock is already half-out, the tapered tip slick and twitching. You push his thighs apart and he exhales shakily, his tail tucking instinctively beneath him before he forces himself to relax.
+
+You spit into your hand and prepare yourself, your own (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock throbbing at full mast](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member fully extended from your sheath](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock rigid and glistening from your slit](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member jutting from your cloaca]. You press the tip against his entrance and push slowly.
+
+Wyatt sucks in a breath through his teeth. His hands grip the edges of the cot, knuckles white. But he doesn&amp;#x27;t tell you to stop. His cock hardens fully as you press deeper into him, the knot swelling against his belly.
+
+&amp;quot;F-Fuck...&amp;quot; He whispers. His eyes are screwed shut, but his hips tilt up to meet you. He wants this. His body is telling you, even if his pride won&amp;#x27;t.
+
+[[Continue.-&gt;WyattHSSc22]]</tw-passagedata><tw-passagedata pid="485" name="WyattHSSc22" tags="dnsc dnsi" position="700,3700" size="100,100">You thrust into Wyatt with a steady, building rhythm. He grips the sheets, his chest heaving, his cock leaking pre-cum across his stomach in a steady stream. Every thrust makes him grunt, his muscles clenching around you.
+
+&amp;quot;$name...&amp;quot; His voice is strained, vulnerable in a way you&amp;#x27;ve never heard from him. He reaches up and grabs your hand, lacing his fingers through yours, squeezing tight.
+
+His cock pulses once, twice, and then he&amp;#x27;s cumming-- untouched, just from the stimulation inside. His member throbs and erupts across his chest, thick white ropes streaking across his grey fur and pooling in the hollows of his muscles. His knot swells and pulses emptily in the air. He lets out a groan that&amp;#x27;s almost a whimper, his eyes still shut, his hand still gripping yours.
+
+The sight of it-- Wyatt, the experienced mercenary, coming undone beneath you-- pushes you over the edge. You thrust deep one final time and cum inside him, your cock pulsing, filling him with warmth. He gasps at the feeling and his inner muscles clench around you, milking every drop.
+
+You collapse onto his chest. He doesn&amp;#x27;t let go of your hand.
+
+&amp;quot;That was... yeah.&amp;quot; He can&amp;#x27;t finish the sentence. He doesn&amp;#x27;t need to.
+
+He runs his fingers through your $hair with his free hand, staring at the ceiling.(set:$LoveMeter to it + 30)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Rest together.-&gt;WyattHouse2]]</tw-passagedata><tw-passagedata pid="486" name="WyattHSSKami" tags="dnsc dnsi" position="800,3700" size="100,100">You glance over at Kami by the fireplace, and Wyatt follows your gaze.
+
+&amp;quot;Your dog too?&amp;quot; He pauses, then shrugs with a disbelieving grin. &amp;quot;...Alright. I&amp;#x27;m game. Weirdest thing I&amp;#x27;ve done, and I&amp;#x27;ve done some weird shit.&amp;quot;
+
+Kami pads over, his tail wagging cautiously. Wyatt reaches down and scratches behind his ear. &amp;quot;Good boy.&amp;quot; Kami&amp;#x27;s tail thumps harder.
+
+The three of you end up on the cot, which creaks dangerously under the combined weight. Wyatt lies back and you position yourself between his legs, your mouth finding his thickening cock while Kami mounts you from behind. You feel the Wolf&amp;#x27;s forepaws lock around your waist, his hips already thrusting blindly, the tip of his canine member prodding against your backside.
+
+Kami finds his mark and thrusts into you with that familiar, feral urgency. His cock swells inside you rapidly, each buck of his hips pushing you forward onto Wyatt&amp;#x27;s member. The rhythm builds-- Kami thrusting you forward, your mouth sliding down Wyatt&amp;#x27;s shaft, your hands braced on his thighs.
+
+&amp;quot;Holy-- fuck,&amp;quot; Wyatt groans, his fingers tangling in your $hair. &amp;quot;This is so fucked up. Don&amp;#x27;t stop.&amp;quot;
+
+[[Continue.-&gt;WyattHSSKami2]]</tw-passagedata><tw-passagedata pid="487" name="WyattHSSKami2" tags="dnsc dnsi" position="900,3700" size="100,100">Kami&amp;#x27;s pace is relentless, his canine instincts driving him to pound into you with wild, sharp thrusts. His knot bumps and swells against your entrance, getting fatter with each push. You can hear him panting above you, feel the vibration of his growls through your body.
+
+Wyatt cums first. His hips buck upward and he lets out a low moan as his cock throbs in your mouth, spurting thick loads against the back of your throat. You swallow what you can, the rest dripping from your lips.
+
+Kami follows moments later, his knot popping inside you with a wet, sudden stretch. He locks and you feel the familiar flood of warmth, his cock pulsing rhythmically as he empties himself. He lets out a satisfied growl and his body presses down onto your back, heavy and warm.
+
+Your own orgasm tears through you-- caught between the two of them, filled from behind and tasting Wyatt on your tongue. Your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock spurts](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member erupts from your sheath](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock pulses from your slit](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member throbs from your cloaca] onto the sheets below you, untouched.
+
+When Kami&amp;#x27;s knot finally deflates and he pulls out, the three of you are a sweating, panting mess on the tiny cot. Wyatt reaches over and ruffles Kami&amp;#x27;s ears.
+
+&amp;quot;You&amp;#x27;re alright, mutt.&amp;quot;
+
+Kami&amp;#x27;s tail wags, thumping against the wall.(set:$LoveMeter to it + 30)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Rest together.-&gt;WyattHouse2]]</tw-passagedata><tw-passagedata pid="488" name="WyattSparHome" tags="" position="100,3800" size="100,100">You suggest a sparring session, and Wyatt&amp;#x27;s eyes light up.
+
+&amp;quot;Now you&amp;#x27;re talking, kid.&amp;quot;
+
+He grabs two wooden practice swords from behind the training dummy and tosses one to you. It&amp;#x27;s heavier than you expected.
+
+The next half hour is a blur of swings, blocks, and Wyatt laughing at your technique. He doesn&amp;#x27;t go easy on you, but he pulls his strikes. Kami watches from the fireplace with an amused tilt to his head.
+
+&amp;quot;Keep your guard up-- there, like that. Good.&amp;quot;
+
+He sweeps your legs and you land on your back. Before you can get up, he pins you, one hand on your chest, grinning down at you. His fur is damp with sweat and he&amp;#x27;s breathing hard.
+
+&amp;quot;Not bad, kid. Few more sessions and you might actually last a minute.&amp;quot;
+
+He hauls you to your feet and claps you on the back. Your whole body aches, but you feel stronger.(set:$LoveMeter to it + 15)
+
+[[Leave.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="489" name="WyattSpar" tags="" position="200,3800" size="100,100">You ask Wyatt to spar with you, and he jumps at the chance. The two of you head behind the buildings near the fountain square, where a small open patch of dirt serves as an impromptu training ground.
+
+Wyatt strips off his shirt and tosses it aside. &amp;quot;Come at me.&amp;quot;
+
+You do your best, but he&amp;#x27;s faster, stronger, more experienced. He blocks everything you throw, then counters with a sweep that drops you flat on your back. Before you can roll away, he&amp;#x27;s on top of you, one knee on your chest, pinning your wrists with one hand.
+
+His face is inches from yours. His chest heaves. Sweat runs down his neck. His eyes are bright with adrenaline, and something else.
+
+&amp;quot;I win,&amp;quot; he murmurs. But he doesn&amp;#x27;t get up.
+
+[[Kiss him.-&gt;WyattSparSS]]
+[[Tap out.-&gt;WyattSparEnd]]</tw-passagedata><tw-passagedata pid="490" name="WyattSparEnd" tags="" position="300,3800" size="100,100">You tap his arm and he releases you, pulling you to your feet with a grin.
+
+&amp;quot;Good effort, kid. You&amp;#x27;re getting better.&amp;quot;
+
+He ruffles your $hair and hands you a waterskin. The two of you sit in the dirt, catching your breath, and you lean against his shoulder. His arm comes around you.(set:$LoveMeter to it + 20)
+
+[[Head back.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="491" name="WyattSparSS" tags="dnsc dnsi" position="400,3800" size="100,100">You lean up and press your lips to his. He freezes for a half-second, then his hand releases your wrists and slides behind your head, deepening the kiss. His body is hot and slick with sweat against yours.
+
+It&amp;#x27;s fast, urgent, adrenaline-fueled. He pulls your shorts down right there in the dirt while you fumble with his belt. His canine cock springs free, already hard, and he presses you against the side of the building. The stone is cold against your back, his body is furnace-hot against your front.
+
+He lifts you-- those mercenary arms making it effortless-- and you wrap your legs around his waist. He lines up and pushes into you in one smooth thrust, and you bite down on his shoulder to keep from crying out.
+
+The pace is frantic. Hard, fast, semi-public. The thrill of being caught, the sweat, the adrenaline-- it&amp;#x27;s over embarrassingly quickly for both of you. Wyatt cums first with a bitten-off groan, his cock pulsing deep inside you, knot half-formed but not locked. You follow seconds later, your body clenching around him as your orgasm rips through you.
+
+He sets you down gently, both of you panting, and leans his forehead against the wall beside your head.
+
+&amp;quot;We should spar more often,&amp;quot; he says, and you can hear the grin in his voice.(set:$LoveMeter to it + 15)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Head back.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="492" name="WyattRooftop" tags="" position="500,3800" size="100,100">You ask Wyatt to take you somewhere special, and he looks at you for a long moment. Then he nods, slowly.
+
+&amp;quot;Yeah. Alright. I got a place. Come on.&amp;quot;
+
+He takes your hand and leads you through the alley, past his apartment, to a rusted fire escape bolted to the side of a tall building. He tests the first rung, nods, and starts climbing. Kami stays on the ground, looking up at you with a resigned expression.
+
+|Kami&gt;[&amp;quot;I shall wait here, Master. Wolves are not built for ladders.&amp;quot;]
+
+You follow Wyatt up three flights of creaking metal until you emerge onto the rooftop. And the view stops you cold.
+
+Holstein spreads out below you like a painting. The Silver Spire glows faintly in the moonlight, towering over everything. The fountain catches the light, glittering. Beyond the city walls, the Forest of Madness is a dark smudge on the horizon, its trees swaying in a wind you can&amp;#x27;t feel from up here. The sky is clear and filled with more stars than you&amp;#x27;ve ever seen.
+
+Wyatt sits on the edge of the roof, legs dangling. He pats the space beside him.
+
+&amp;quot;I never show anyone this spot.&amp;quot;
+
+[[Continue.-&gt;WyattRooftop2]]</tw-passagedata><tw-passagedata pid="493" name="WyattRooftop2" tags="" position="600,3800" size="100,100">You sit beside him and he puts his arm around you. The city hums softly below, distant and quiet from up here. A cool breeze ruffles your $hair.
+
+For a while, neither of you speaks. Wyatt stares out at the city, his jaw working like he&amp;#x27;s chewing on words he can&amp;#x27;t quite get out.
+
+&amp;quot;I know this is weird,&amp;quot; he says finally, his voice quieter than you&amp;#x27;ve ever heard it. &amp;quot;You&amp;#x27;re a kid. I&amp;#x27;m... whatever I am. But I don&amp;#x27;t care. I stopped caring a while ago.&amp;quot;
+
+He pulls you closer, and you feel his heartbeat through his shirt. Steady. Strong.
+
+&amp;quot;I just know that when I&amp;#x27;m with you, the world feels... smaller. In a good way. Like maybe I don&amp;#x27;t have to fight everything.&amp;quot;
+
+He leans down and presses a kiss to the top of your head. You lean into him and close your eyes. The stars wheel overhead. Kami sits patiently on the street below, a small grey shape looking up at you.
+
+You stay there for a long time.(set:$LoveMeter to it + 50)
+
+[[Head back down.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="494" name="WyattTrueEnd" tags="" position="700,3800" size="100,100">Wyatt says he wants to talk to you about something. He looks nervous, which is alarming because Wyatt //never// looks nervous. His hands are in his pockets and he&amp;#x27;s shifting his weight from foot to foot.
+
+&amp;quot;Look, I, uh... I got you something. It&amp;#x27;s stupid. Don&amp;#x27;t laugh.&amp;quot;
+
+He pulls something from his pocket and holds it out. It&amp;#x27;s a small, scratched, worn leather badge with a bronze clasp. The kind mercenaries pin to their cloaks to show they&amp;#x27;re licensed. His name is carved on the back in rough, uneven letters: //WYATT//.
+
+&amp;quot;This is, uh... I got this when I did my first real job. The one that paid. I&amp;#x27;ve carried it every day since. It&amp;#x27;s all I&amp;#x27;ve got that means anything.&amp;quot;
+
+He places it in your hand and closes your fingers around it. His hand stays on yours.
+
+&amp;quot;I want you to have it. Because //you// mean something to me. More than anything.&amp;quot;
+
+He swallows hard.
+
+&amp;quot;I love you, $name. I mean it.&amp;quot;
+
+You say those three words back, and you watch the tension drain from his shoulders like a weight being lifted. He pulls you into a hug so tight your feet leave the ground.
+
+He doesn&amp;#x27;t let go for a long time.(set:$inv to it + (a:&amp;quot;Mercenary Badge&amp;quot;))
+
+[[Return-&gt;WyattRHub]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
