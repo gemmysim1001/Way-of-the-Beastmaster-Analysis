@@ -4128,8 +4128,12 @@ You're currently standing with him on the porch of his smithy. He sadly looks a 
 (elseif:$LoveMeter is &gt;1000)[The fates of you and Hans are intertwined. Separating them could potentially shatter the cosmos. Probably not.]
 }
 
-//It seems Hans has too much on his plate to do anything fun right now! You'll have to come back later.//
+(if:$LoveMeter is &gt;1000)[[[It seems like Hans wants to talk to you about something.-&gt;HansTrueEnd]]](elseif:$LoveMeter is &lt;=1000)[&lt;!--Do Nothing--&gt;]
 
+[[Ask Hans to tell you more about himself.-&gt;HansRI]]
+(if:(history:) contains "HansHouse2")[[[Ask Hans if you can hang out at his place.-&gt;HansHouse2]]](else:)[[[Ask Hans if you can hang out at his place.-&gt;HansHouse]]]
+(if:$LoveMeter is &gt;=250)[[[Help Hans with a special project.-&gt;HansForge]]](elseif:$LoveMeter is &lt;250)[|Locked&gt;[You don't know Hans well enough to do this yet.]]
+(if:$LoveMeter is &gt;=500)[[[Take Hans outside of town.-&gt;HansPicnic]]](elseif:$LoveMeter is &lt;500)[|Locked&gt;[You don't know Hans well enough to do this yet.]]
 [[Break Up.-&gt;HansRBU]]
 [[Leave.-&gt;ScarHub]]</tw-passagedata><tw-passagedata pid="235" name="MisfitRHub" tags="" position="3397,202" size="100,100">(if:$LoveMeter is &lt; 0)[(set:$LoveMeter to 0)]You're in a relationship with Misfit. He's a nice Rat, and you're rather taken with him. At least, you think so. The two of you are currently standing in his usual alley.
 
@@ -7766,7 +7770,329 @@ You say those three words back, and you watch the tension drain from his shoulde
 
 He doesn&amp;#x27;t let go for a long time.(set:$inv to it + (a:&amp;quot;Mercenary Badge&amp;quot;))
 
-[[Return-&gt;WyattRHub]]</tw-passagedata></tw-storydata>
+[[Return-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="495" name="HansRI" tags="" position="100,3900" size="100,100">Hans puts down his hammer and wipes his hands on his apron. He looks a little surprised that you want to sit and chat, but he waddles over to a stool and hauls himself up, his stubby legs dangling off the ground.
+
+&amp;quot;You... want to know more about me?&amp;quot; He blinks at you, then grins. &amp;quot;Well, uh, okay. Shoot.&amp;quot;
+
+[[Ask about his family.-&gt;HansRI1]]
+[[Ask about Frederick.-&gt;HansRI2]]
+[[Ask about his love life.-&gt;HansRI3]]
+[[Ask about the war.-&gt;HansRI4]]
+[[Ask about his loneliness.-&gt;HansRI5]]
+[[You have everything you need to know.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="496" name="HansRI1" tags="" position="200,3900" size="100,100">(if:(history:) contains &amp;quot;HansRI1&amp;quot;)[&amp;quot;Already told you, kid. Daddy was a blacksmith, his daddy was a blacksmith, his daddy before that... you get the picture. Ma died of the plague. Daddy went a couple years later. Just me now.&amp;quot;
+
+He forces a smile that doesn&amp;#x27;t quite reach his eyes.](else:)[Hans&amp;#x27;s expression softened at the mention of his family. He reached up to scratch behind one of his floppy ears.
+
+&amp;quot;My daddy owned this smithy before me, and his daddy before that. Goes back generations.&amp;quot; He paused, picking at a callus on his palm. &amp;quot;He taught me everything. Used to let me swing the hammer when I was little. Nearly took my own foot off, once. He laughed so hard he fell over.&amp;quot;
+
+His smile faded slowly.
+
+&amp;quot;Ma went first. The plague. Daddy held on for a couple more years, but... I think he just didn&amp;#x27;t want to be here without her. He went quiet at the end. Just stopped talking. Then one morning, he didn&amp;#x27;t wake up.&amp;quot;
+
+He looked down at his thick, stubby fingers.
+
+&amp;quot;I was maybe 14. Frederick helped me keep the smithy going. Brought me orders from the barracks. If it wasn&amp;#x27;t for him, I&amp;#x27;d have starved.&amp;quot;
+
+He looked up at you and forced a grin. &amp;quot;But hey, I&amp;#x27;m still here, right?&amp;quot;(set:$LoveMeter to it + 20)]
+
+[[Ask about Frederick.-&gt;HansRI2]]
+[[Ask about his love life.-&gt;HansRI3]]
+[[Ask about the war.-&gt;HansRI4]]
+[[Ask about his loneliness.-&gt;HansRI5]]
+[[You have everything you need to know.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="497" name="HansRI2" tags="" position="300,3900" size="100,100">(if:(history:) contains &amp;quot;HansRI2&amp;quot;)[&amp;quot;Frederick? He&amp;#x27;s still a pompous cat. Still my best friend. That about covers it.&amp;quot;
+
+He smirks.](else:)[Hans&amp;#x27;s face lit up at the mention of Frederick, and then immediately tried to look casual about it.
+
+&amp;quot;Freddie&amp;#x27;s, uh... he&amp;#x27;s like the big brother I never had. He&amp;#x27;s about 6 or 7 years older than me. When I was a kid, he used to come by the smithy after his training and just... sit. Watch me work. Didn&amp;#x27;t say much. Just sat there.&amp;quot;
+
+He grinned.
+
+&amp;quot;I made his first sword, y&amp;#x27;know. He was 14, just starting in the guard. It was //terrible//. The balance was off, the edge was crooked. But he wore it on his hip like it was the finest blade in all of Orbath.&amp;quot;
+
+His voice dropped.
+
+&amp;quot;When my parents died, he was the one who came. Not anyone else. Just him. He sat with me in the workshop all night and didn&amp;#x27;t say a word. Just... was there.&amp;quot;
+
+He cleared his throat and rubbed his nose vigorously.
+
+&amp;quot;So yeah. He&amp;#x27;s a pompous cat and I love him. Don&amp;#x27;t tell him I said that.&amp;quot;(set:$LoveMeter to it + 20)]
+
+[[Ask about his family.-&gt;HansRI1]]
+[[Ask about his love life.-&gt;HansRI3]]
+[[Ask about the war.-&gt;HansRI4]]
+[[Ask about his loneliness.-&gt;HansRI5]]
+[[You have everything you need to know.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="498" name="HansRI3" tags="" position="400,3900" size="100,100">Hans&amp;#x27;s face went crimson beneath his cream fur. He looked away, then back at you, then away again.
+
+&amp;quot;Well, s&amp;#x27;just, y&amp;#x27;know. I&amp;#x27;ve had my fair share, but not... //had// my fair share?&amp;quot; He tugged at the hem of his apron. &amp;quot;I mean, I&amp;#x27;ve fooled around, but, uh...&amp;quot;
+
+He trailed off, his ears drooping.
+
+&amp;quot;Nobody really... stays. I&amp;#x27;m short, and I smell like iron, and I live in a tiny house behind a smithy. Not exactly prime real estate, y&amp;#x27;know?&amp;quot;
+
+He looked at you, and something vulnerable flickered in his eyes.
+
+&amp;quot;But you&amp;#x27;re here. So maybe I got something going for me after all.&amp;quot;
+
+Perhaps you should (link:&amp;quot;show him.&amp;quot;)[(goto:&amp;quot;HansRISS&amp;quot;)]
+
+[[Ask about his family.-&gt;HansRI1]]
+[[Ask about Frederick.-&gt;HansRI2]]
+[[Ask about the war.-&gt;HansRI4]]
+[[Ask about his loneliness.-&gt;HansRI5]]
+[[You have everything you need to know.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="499" name="HansRI4" tags="" position="500,3900" size="100,100">(if:(history:) contains &amp;quot;HansRI4&amp;quot;)[Hans grimaces. &amp;quot;Already talked about this. I make weapons. People use them. People die. That&amp;#x27;s all there is to say.&amp;quot;](else:)[Hans&amp;#x27;s expression soured, and he was quiet for a long moment. When he spoke, his voice was flat.
+
+&amp;quot;I make swords. Axes. Spearheads. Arrowheads. Whatever the Empire needs, I hammer it out and ship it off. That&amp;#x27;s my job.&amp;quot;
+
+He stared at the anvil.
+
+&amp;quot;I try not to think about it. But sometimes a sword comes back. With blood on it. And I think... I made that. Someone used //my// work to kill someone. Maybe a soldier. Maybe someone&amp;#x27;s daddy.&amp;quot;
+
+He swallowed hard.
+
+&amp;quot;Frederick tells me it&amp;#x27;s not my fault. That I&amp;#x27;m just a craftsman. But at night, when it&amp;#x27;s quiet...&amp;quot;
+
+He trailed off, staring at his hands. Thick, stubby, calloused fingers stained with soot.
+
+&amp;quot;These hands, kid. They build things. And those things hurt people.&amp;quot;
+
+You reach out and take his hand. He squeezes yours tight.(set:$LoveMeter to it + 20)]
+
+[[Ask about his family.-&gt;HansRI1]]
+[[Ask about Frederick.-&gt;HansRI2]]
+[[Ask about his love life.-&gt;HansRI3]]
+[[Ask about his loneliness.-&gt;HansRI5]]
+[[You have everything you need to know.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="500" name="HansRI5" tags="" position="600,3900" size="100,100">(if:(history:) contains &amp;quot;HansRI5&amp;quot;)[&amp;quot;Yeah, yeah, I&amp;#x27;m lonely. You already knew that.&amp;quot; He bumps your shoulder. &amp;quot;Less lonely now, though.&amp;quot;](else:)[Hans looked at his lap. His stubby legs swung from the stool, not quite reaching the floor.
+
+&amp;quot;Night&amp;#x27;s the hardest. Forge goes cold. House goes quiet. Just me and the dark.&amp;quot;
+
+He pulled at a loose thread on his apron.
+
+&amp;quot;I used to talk to the swords. Is that weird? I&amp;#x27;d hold &amp;#x27;em up and say &amp;#x27;You turned out nice, didn&amp;#x27;t you?&amp;#x27; and then I&amp;#x27;d realise I was talking to a piece of metal and feel like an idiot.&amp;quot;
+
+He laughed, but it didn&amp;#x27;t reach his eyes.
+
+&amp;quot;I&amp;#x27;m used to it. Being alone. But that doesn&amp;#x27;t mean I like it.&amp;quot;
+
+He looked at you, and something raw and unguarded crossed his face.
+
+&amp;quot;I&amp;#x27;m glad you&amp;#x27;re here, $name. Really.&amp;quot;(set:$LoveMeter to it + 20)]
+
+[[Ask about his family.-&gt;HansRI1]]
+[[Ask about Frederick.-&gt;HansRI2]]
+[[Ask about his love life.-&gt;HansRI3]]
+[[Ask about the war.-&gt;HansRI4]]
+[[You have everything you need to know.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="501" name="HansRISS" tags="dnsc dnsi" position="100,4000" size="100,100">The forge is still warm. The embers glow orange-red in the hearth, casting long shadows across the workshop. Hans pulls the heavy door shut and the outside world disappears. Just you, him, and the heat.
+
+Kami pads toward the door and trots outside, giving you a final glance before the door closes.
+
+Hans turns to face you, and you can see his hands trembling. Not from cold. He reaches up and unties his apron, letting it fall to the floor with a heavy thud. Beneath it, his bare chest is compact and muscular-- the kind of muscle that comes from years of hammering, not training. Sweat glistens on his cream and auburn fur.
+
+&amp;quot;I, uh...&amp;quot; He swallows. &amp;quot;I want to, y&amp;#x27;know. I just...&amp;quot;
+
+He trails off, and you close the distance between you. You kiss him, and you feel the trembling stop. His thick arms wrap around you, pulling you down to his height-- or pulling himself up to yours. His mouth tastes like iron filings and something sweeter.
+
+His stubby fingers find your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[stiffening member through your shorts](elseif:$fcock is &amp;quot;sheath&amp;quot;)[swelling sheath beneath your pants](elseif:$fcock is &amp;quot;slit&amp;quot;)[warming slit through the fabric](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[throbbing cloaca through your clothes] and he rubs gently, his calloused palms rough against the fabric. His own member is already pressing insistently against his pants-- short, thick, rock-hard.
+
+[[Continue.-&gt;HansRISS2]]</tw-passagedata><tw-passagedata pid="502" name="HansRISS2" tags="dnsc dnsi" position="200,4000" size="100,100">Hans pulls back and presses his forehead against yours. His cheeks are flushed beneath his fur.
+
+&amp;quot;I&amp;#x27;m glad it was you,&amp;quot; he whispers. The same words from his first time, but heavier now. More certain.
+
+His hand wraps around your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[freed cock](elseif:$fcock is &amp;quot;sheath&amp;quot;)[emerging member](elseif:$fcock is &amp;quot;slit&amp;quot;)[slick cock as it slides from your slit](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member as it pushes from your cloaca], and he strokes you with the same steady, rhythmic precision he uses at the anvil. His grip is firm, calloused, //skilled//. You return the favor, wrapping your hand around his thick Corgi cock, feeling it pulse against your palm.
+
+It doesn&amp;#x27;t take long. He presses his face into your chest as he cums, his cock throbbing in your hand, warm spurts coating your fingers. A shaky moan vibrates against your skin. Your own release follows-- his grip tightening at just the right moment, his thumb swirling over the tip, and you spill across his thick fingers with a groan.
+
+He looks up at you, face still flushed, and a slow, dopey smile spreads across his muzzle. He leans up on his toes and kisses you on the chin-- the highest he can reach without you bending down.
+
+&amp;quot;We should, uh... probably clean up before someone comes looking for a horseshoe or something.&amp;quot;(set:$LoveMeter to it + 10)
+
+[[Ask about his family.-&gt;HansRI1]]
+[[Ask about Frederick.-&gt;HansRI2]]
+[[Ask about the war.-&gt;HansRI4]]
+[[Ask about his loneliness.-&gt;HansRI5]]
+[[You have everything you need to know.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="503" name="HansHouse" tags="" position="300,4000" size="100,100">Hans seems delighted that you want to see his place. He strips off his gloves, hangs up his apron, and leads you around the back of the smithy.
+
+The house is small-- smaller than you expected. A single room with a low ceiling, a cot pressed against one wall, a fireplace that shares a chimney with the forge, and a wooden shelf lined with small carved figurines. Animals, mostly. A wolf, a horse, a bird. Each one carefully whittled from scrap wood.
+
+A faded drawing is pinned to the wall above the cot. Two figures-- a broad-shouldered Corgi and a slender female-- holding a much smaller Corgi between them. His parents.
+
+The room is warm from the adjacent forge. It smells like iron, wood smoke, and something faintly sweet-- beeswax candles lined up on the mantle.
+
+&amp;quot;It&amp;#x27;s not much,&amp;quot; Hans says, rubbing the back of his neck. &amp;quot;But it&amp;#x27;s mine.&amp;quot;
+
+Kami trots in and immediately claims the spot by the fireplace. His tail thumps contentedly.
+
+[[Continue.-&gt;HansHouse2]]</tw-passagedata><tw-passagedata pid="504" name="HansHouse2" tags="" position="400,4000" size="100,100">(if:(history:) contains &amp;quot;HansHouse2&amp;quot;)[Hans grins when you come around to his house again. Kami pads straight to his usual spot by the fire. Hans leans against the doorframe.
+
+&amp;quot;What&amp;#x27;s the plan, babe?&amp;quot;](else:)[Hans sits on the edge of his cot, legs dangling. He pats the spot beside him.
+
+&amp;quot;So. What do you wanna do?&amp;quot;]
+
+[[Something intimate.-&gt;HansHSS]]
+[[Ask about the wooden figures.-&gt;HansFigures]]
+[[Leave.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="505" name="HansFigures" tags="" position="500,4000" size="100,100">You point at the carved figurines on the shelf. Hans follows your gaze and his expression softens.
+
+&amp;quot;Oh, those? Just... something I do when the forge is cold. Can&amp;#x27;t always be hammering, y&amp;#x27;know?&amp;quot;
+
+He picks up the carved wolf and turns it in his thick fingers. It&amp;#x27;s remarkably detailed-- you can see individual tufts of fur etched into the wood.
+
+&amp;quot;Started doing it after Ma died. Needed something to do with my hands that wasn&amp;#x27;t making weapons.&amp;quot;
+
+He holds it out to you, and you take it carefully. It&amp;#x27;s warm from his hand.
+
+&amp;quot;That one&amp;#x27;s supposed to be Kami, actually. Made it after I first met you.&amp;quot;
+
+Kami lifts his head from the fireplace and tilts it, staring at his wooden likeness with an unreadable expression.
+
+|Kami&gt;[&amp;quot;It is... a fine likeness, I suppose. Though my snout is not quite that long.&amp;quot;]
+
+Hans laughs. It&amp;#x27;s the most genuinely happy sound you&amp;#x27;ve heard from him.(set:$LoveMeter to it + 15)
+
+[[Leave.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="506" name="HansHSS" tags="dnsc dnsi" position="600,4000" size="100,100">Hans&amp;#x27;s cot is small. Tiny, really. When the two of you lie on it together, there&amp;#x27;s barely an inch of space between you. Hans giggles nervously.
+
+&amp;quot;Wasn&amp;#x27;t exactly built for two people,&amp;quot; he mumbles, but his hand is already on your hip, his stubby fingers sliding under the hem of your tunic.
+
+Kami lifts his head from the fireplace, considers the situation, and then deliberately turns around to face the wall. His tail thumps once.
+
+[[Let Hans take the lead.-&gt;HansHSSc1]]
+[[Be gentle with him.-&gt;HansHSSc2]]
+(if:$KamiExped is &gt;=1)[[[Invite Kami to join.-&gt;HansHSSKami]]](else:)[&lt;!--Do Nothing--&gt;]</tw-passagedata><tw-passagedata pid="507" name="HansHSSc1" tags="dnsc dnsi" position="700,4000" size="100,100">Hans is more confident in his own space. His thick arms wrap around you and he rolls you beneath him-- which is an odd sensation, given that he barely weighs more than you do. But his grip is iron, his hands are sure, and there&amp;#x27;s a fire in his eyes you haven&amp;#x27;t seen outside the forge.
+
+He strips your clothes off with fumbling but eager hands, then shucks his own pants. His cock springs free-- short, thick, and rock-hard, the ruddy tip already glistening. He kneels between your legs and his stubby fingers find your entrance, pressing gently, preparing you with his own saliva.
+
+&amp;quot;Ready?&amp;quot; He asks, and you nod.
+
+He pushes into you with a grunt, and you feel the stretch-- his girth compensates for what he lacks in length. His hips begin to rock, and his stubby legs grip around your waist for leverage. Despite his size, his thrusts are powerful-- the strength of a blacksmith behind every push.
+
+He leans down until his face is inches from yours, his hot breath on your lips.
+
+[[Continue.-&gt;HansHSSc12]]</tw-passagedata><tw-passagedata pid="508" name="HansHSSc12" tags="dnsc dnsi" position="800,4000" size="100,100">Hans picks up speed, his hips slamming against you with surprising force. The cot creaks dangerously and you can hear the wooden frame groaning. His cock pulses inside you, thick and hot, hitting a spot that makes sparks explode behind your eyes.
+
+&amp;quot;$name...&amp;quot; He pants, his face screwed up with concentration and pleasure. His stubby fingers grip the sheets on either side of your head.
+
+He drives forward one final time and you feel him swell-- not a knot, Corgis don&amp;#x27;t have them-- but the base thickens and pulses as he cums with a shuddering whimper. Warmth floods into you, and his hips jerk in tiny, involuntary thrusts as he empties himself.
+
+Your own orgasm hits moments later, your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock erupting between your bodies](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member pulsing from your sheath](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock twitching free from your slit as you release](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member throbbing from your cloaca], splattering across both your stomachs.
+
+Hans collapses onto you. You&amp;#x27;re nose-to-nose, and he&amp;#x27;s panting, his eyes half-closed. A lazy grin spreads across his muzzle.
+
+&amp;quot;You&amp;#x27;re too tall for this bed,&amp;quot; he murmurs, and both of you laugh.(set:$LoveMeter to it + 30)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Rest together.-&gt;HansHouse2]]</tw-passagedata><tw-passagedata pid="509" name="HansHSSc2" tags="dnsc dnsi" position="100,4100" size="100,100">You ease Hans onto his back and he looks up at you with wide, trusting eyes. His ears are flat against his head and his lip trembles just slightly. You lean down and kiss him softly-- his forehead, his nose, his lips.
+
+You undress him slowly, carefully, as if unwrapping something precious. His compact body is all muscle and soft fur, warm to the touch. His cock stands rigid against his belly, short and thick, the tip already slick.
+
+You prepare yourself, slicking your fingers, and position yourself between his legs. He grabs the pillow and buries his face in it as you press the tip of your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member](elseif:$fcock is &amp;quot;slit&amp;quot;)[slick cock](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member] against his entrance.
+
+You push in slowly, and Hans whimpers into the pillow. His back arches and his stubby legs kick involuntarily, but he doesn&amp;#x27;t tell you to stop. His body opens for you, tight and warm, and you slide deeper inch by inch.
+
+&amp;quot;D-Don&amp;#x27;t stop...&amp;quot; His muffled voice comes from the pillow.
+
+[[Continue.-&gt;HansHSSc22]]</tw-passagedata><tw-passagedata pid="510" name="HansHSSc22" tags="dnsc dnsi" position="200,4100" size="100,100">You set a gentle rhythm, one hand on his hip, the other reaching around to stroke his cock. He trembles beneath you, his whole compact body shaking with each thrust. Small, breathy sounds escape the pillow-- whimpers, gasps, your name mumbled against the fabric.
+
+His cock pulses in your hand and you feel him tighten around you. He reaches back with one stubby arm and finds your hand on his hip. His fingers lace through yours. He squeezes.
+
+He cums first-- quietly, a full-body shudder running through him as his cock throbs in your grip, spurting across the sheets beneath him. A thin, high sound escapes his throat that he&amp;#x27;d be mortified about if he could hear it. His inner muscles clamp down around you.
+
+The tightness drags you over the edge. You press deep and release with a groan, pulsing inside him. He whimpers at the warmth and his hand squeezes yours tighter.
+
+You pull out slowly and lie beside him. He rolls over to face you, face flushed and eyes shining. He doesn&amp;#x27;t say anything. He just takes your hand and holds it against his chest, over his hammering heart.
+
+&amp;quot;I love you,&amp;quot; he whispers. So quietly you almost miss it.(set:$LoveMeter to it + 30)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Rest together.-&gt;HansHouse2]]</tw-passagedata><tw-passagedata pid="511" name="HansHSSKami" tags="dnsc dnsi" position="300,4100" size="100,100">You glance toward Kami by the fire. Hans follows your gaze, and his eyes widen.
+
+&amp;quot;He&amp;#x27;s not gonna bite me, is he?&amp;quot;
+
+You assure him Kami is gentle. Kami pads over, his tail swishing cautiously. He sniffs Hans, who flinches, then relaxes when Kami simply nuzzles his hand.
+
+The cot creaks ominously as all three of you arrange yourselves. Hans lies on his back, you kneel between his legs, and Kami mounts you from behind. It&amp;#x27;s cramped, precarious, and Hans is laughing nervously until Kami&amp;#x27;s hips start thrusting.
+
+You feel Kami&amp;#x27;s tapered canine cock find your entrance and push in with that familiar urgency. Each of his thrusts pushes you forward onto Hans-- your mouth finding Hans&amp;#x27;s cock, your hands braced on his thick thighs. Hans gasps and grips the edges of the cot.
+
+&amp;quot;O-Oh fuck, that&amp;#x27;s... that&amp;#x27;s a lot,&amp;quot; Hans stammers, overwhelmed by the sight-- you bobbing on his cock while a Wolf pounds into you from behind.
+
+[[Continue.-&gt;HansHSSKami2]]</tw-passagedata><tw-passagedata pid="512" name="HansHSSKami2" tags="dnsc dnsi" position="400,4100" size="100,100">Kami&amp;#x27;s rhythm is relentless, his paws locked around your waist, his knot swelling and bumping against your entrance with each thrust. Hans is gripping the sides of the cot so hard the wood splinters under his blacksmith grip.
+
+Hans finishes first, his short thick cock throbbing in your mouth as he cums with a strangled moan. You swallow, the taste warm and salty, and Kami pushes you forward with a particularly hard thrust.
+
+Kami&amp;#x27;s knot pops inside you seconds later, locking tight. You feel the familiar flood of warmth as his cock pulses rhythmically, filling you. A long, satisfied growl vibrates through his body and into yours.
+
+Your own orgasm hits untouched-- the double stimulation, Hans in your mouth and Kami swelling inside you-- your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock spurts](elseif:$fcock is &amp;quot;sheath&amp;quot;)[member erupts](elseif:$fcock is &amp;quot;slit&amp;quot;)[cock pulses from your slit](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[member throbs from your cloaca] onto the sheets, untouched.
+
+When Kami deflates and pulls out, the three of you lie there in a tangled heap. Hans stares at the ceiling, blinking.
+
+&amp;quot;Your dog is weird.&amp;quot; He reaches over and cautiously pats Kami&amp;#x27;s head. Kami licks his hand. &amp;quot;...I like him.&amp;quot;(set:$LoveMeter to it + 30)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Rest together.-&gt;HansHouse2]]</tw-passagedata><tw-passagedata pid="513" name="HansForge" tags="" position="500,4100" size="100,100">You ask Hans if you can help him with something special, and his eyes light up. He pulls you into the workshop and gestures at a half-finished piece of metal on the anvil.
+
+&amp;quot;I&amp;#x27;ve been trying to make something. Something that ain&amp;#x27;t a weapon. But I need help-- someone to hold the metal steady while I shape it.&amp;quot;
+
+The forge is blazing. Sweat beads on both of you within minutes. Hans talks you through the process-- when to grip, when to turn, when to brace. His hands cover yours on the tongs, guiding your movements. His chest presses against your back.
+
+The metal glows white-hot, and you can feel the heat on your face. Hans hammers with precise, powerful strokes, and the vibrations travel through the tongs into your arms. It&amp;#x27;s physical, intimate, collaborative.
+
+After half an hour, the piece takes shape: a small figurine. You. Or a rough approximation. Hans holds it up and squints at it critically.
+
+&amp;quot;Eh. It&amp;#x27;ll do.&amp;quot; But he&amp;#x27;s grinning.
+
+He wipes the sweat from your brow with his calloused thumb, his face close to yours. His eyes drop to your lips.
+
+[[Kiss him by the forge.-&gt;HansForgeSS]]
+[[Focus on the work.-&gt;HansForgeEnd]]</tw-passagedata><tw-passagedata pid="514" name="HansForgeEnd" tags="" position="600,4100" size="100,100">You admire the finished figurine together, and Hans places it on the shelf beside the others. He bumps your shoulder with his.
+
+&amp;quot;Good work, partner.&amp;quot;(set:$LoveMeter to it + 20)
+
+[[Return.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="515" name="HansForgeSS" tags="dnsc dnsi" position="700,4100" size="100,100">You kiss him, and the heat of the forge is nothing compared to the heat between you. His thick arms grab your hips and he hoists you onto the workbench-- his strength is absurd for his size. Tools clatter to the floor. He steps between your legs.
+
+It&amp;#x27;s fast. Urgent. The forge crackles beside you, casting orange light across slick fur and sweating skin. Hans yanks your shorts down and pulls his own apron aside, his cock springing free, already achingly hard. He spits into his hand and pushes into you with a grunt, the workbench groaning under the force.
+
+The contrast-- cold metal beneath you, Hans&amp;#x27;s furnace-hot body against your front-- makes your head spin. He thrusts hard and fast, his blacksmith arms braced on the bench, his teeth gritted.
+
+He cums with a strangled &amp;quot;$name--&amp;quot; and you feel him pulse inside you, thick and warm. Your own release follows moments later, coating his stomach.
+
+He pulls out and leans against the anvil, chest heaving, grinning like an idiot.
+
+&amp;quot;Best day at the forge. Ever.&amp;quot;(set:$LoveMeter to it + 15)(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Clean up.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="516" name="HansPicnic" tags="" position="800,4100" size="100,100">You tell Hans you want to take him somewhere outside of town. He stares at you like you&amp;#x27;ve grown a second head.
+
+&amp;quot;Outside? Like... outside the walls?&amp;quot; He looks nervous. &amp;quot;I haven&amp;#x27;t left Scarhaven in years, kid.&amp;quot;
+
+But you take his hand and he doesn&amp;#x27;t pull away. The two of you, with Kami trotting happily behind, walk out through the eastern gate and along a narrow path through the fields. Hans squints in the sunlight, his stubby legs working hard to keep up.
+
+You lead him to a clearing beside a small stream, where wildflowers dot the bank. The grass is soft and the air smells like earth and growth. Hans stands there, looking around, and something changes in his expression.
+
+&amp;quot;Frederick and I used to come here,&amp;quot; he says quietly. &amp;quot;When we were kids. We&amp;#x27;d catch frogs in that stream. He&amp;#x27;d throw them at me and I&amp;#x27;d cry.&amp;quot;
+
+He laughs, and his eyes are wet. He sits down in the grass and pulls you down beside him. Kami rolls in the wildflowers, legs in the air, tongue lolling.
+
+Hans reaches into his pocket and pulls out a small block of wood and a whittling knife. Without a word, he begins carving. You watch his thick, careful fingers shape the wood-- a new figure taking form. Your shape. Your ears, your $hair, your face.
+
+He works in silence for a long time, the stream babbling beside you. When he&amp;#x27;s done, he places the tiny carved figure of you in your palm.
+
+&amp;quot;There. Now you&amp;#x27;ve got one too.&amp;quot;
+
+You lean against him, and he puts his arm around you. The sun is warm. Kami is rolling in flowers. Everything, for just this moment, is perfect.(set:$LoveMeter to it + 50)
+
+[[Head back.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="517" name="HansTrueEnd" tags="" position="100,4200" size="100,100">Hans has been acting strange all day. He keeps dropping his hammer and glancing at you when he thinks you&amp;#x27;re not looking. Finally, he puts down his tools and walks over to you, wiping his hands nervously on his apron.
+
+&amp;quot;I, uh... I made you something. And it took me a long time, so don&amp;#x27;t you dare laugh.&amp;quot;
+
+He reaches behind the anvil and pulls out a leather-wrapped object. He places it in your hands with the care of someone handling a newborn.
+
+You unwrap it. It&amp;#x27;s a sheath for the Magister&amp;#x27;s Dirk-- hand-forged, perfectly proportioned, with intricate scrollwork along the sides. Your name is engraved on the leather strap in small, precise letters. The metalwork is flawless. This isn&amp;#x27;t just a sheath. It&amp;#x27;s a masterpiece.
+
+&amp;quot;Every hit of the hammer,&amp;quot; Hans says quietly, his voice cracking. &amp;quot;I was thinking of you.&amp;quot;
+
+He takes a shaky breath.
+
+&amp;quot;I love you, $name. More than anything. More than the forge, more than this stupid town, more than...&amp;quot; He gestures vaguely at everything. &amp;quot;...all of it.&amp;quot;
+
+You kiss him. He melts into you. His arms wrap around your waist and he holds on like he&amp;#x27;ll never let go.
+
+Kami watches from the doorway, his tail wagging slowly. Even he looks pleased.(set:$inv to it + (a:&amp;quot;Master-forged Dirk Sheath&amp;quot;))
+
+[[Return-&gt;HansRHub]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
