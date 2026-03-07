@@ -6178,7 +6178,8 @@ Most of the buildings around you are quiet and still, their lights off. People a
 [[Head to the Arena.-&gt;IODArena]]
 [[Enter the Icaria Inn.-&gt;IODInn]]
 [[Go to the Dragons Residential Area.-&gt;IoDHouses]]
-[[Head to the Icaria Markets.-&gt;IODShop]]</tw-passagedata><tw-passagedata pid="374" name="ErelHub" tags="" position="1097,2602" size="100,100">(if:$DN is "day")[You decide to visit Erel, the avian animal doctor who helped to nurse Kami back to health.
+[[Head to the Icaria Markets.-&gt;IODShop]]
+(if:(history:) contains "RalnChat3" or "IoDQ1")[[[Visit the Archive.-&gt;ValiaArchive]]](else:)[&lt;!--Do Nothing--&gt;]</tw-passagedata><tw-passagedata pid="374" name="ErelHub" tags="" position="1097,2602" size="100,100">(if:$DN is "day")[You decide to visit Erel, the avian animal doctor who helped to nurse Kami back to health.
 
 It seems as if his shop is open, so you step inside without a second thought. Kami follows in behind you. Much like the other times you've seen him, the counter is empty and the main waiting room is vacant. You patiently tap on the bell that sits on the counter and hear the scraping and tapping of talons against the floor. From the back room, the avian stepped out, his eyes widening at the sight of you.
 
@@ -6272,7 +6273,10 @@ The Inn is quaint and seems to be rather busy, whether it's night or day, filled
 
 Your attention is drawn to the bounty board nearby, and you make your way over. The board is about the same size as others you've seen, but you do note that it's a little more scarce. It arguably doesn't surprise you: you reckon that most of the quests listed are isolated to just the island itself.
 
-To your dismay, it appears that there's nothing particularly available for you right now. You should come back later.
+You scan the board. Two postings catch your eye.
+
+(if:$IoDQ1D is &gt;=1)[The Dark Dragon investigation quest has been completed.](else:)[[[Zexir&amp;#x27;s Request: Investigate traces of the controlled Dragon. (Reward: Amulet or 200 Gold)-&gt;IoDQ1]]]
+(if:$IoDQ2D is &gt;=1)[The hatchling quest has been completed.](else:)[[[Erel&amp;#x27;s Request: Feral Hatchlings in the Eastern Caves. (Reward: 100 Gold)-&gt;IoDQ2]]]
 
 [[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="379" name="IoDHouses" tags="" position="802,2203" size="100,100">You make your way south, moving along the path towards the houses at the very back of the island, south of Icaria.
 
@@ -8952,7 +8956,369 @@ You withdraw the mist. Kami wakes, disoriented, covered in something warm.
 
 Confused blue eyes. You help him clean off in a water trough. He doesn&amp;#x27;t question it further.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
 
-[[Return.-&gt;IoDHub]]</tw-passagedata></tw-storydata>
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="575" name="IoDQ1" tags="dnsc dnsi" position="100,5200" size="100,100">You rip the posting from the board and head to the council chamber. Zexir is there, his massive turquoise form draped across the stone floor. He lifts his head when you enter.
+
+&amp;quot;Ah, child. You took the quest.&amp;quot; His voice rumbles. &amp;quot;A dragon controlled by a Magister. This is unprecedented. I need to understand how it happened.&amp;quot;
+
+He describes the Dark Dragon from the mountain-- the one who nearly killed you. The one the Hooded Mage commanded.
+
+&amp;quot;Investigate the eastern caves. Beyond the residential area. That creature must have rested somewhere on this island before it was turned. Find what you can and report to Valia in the archive. She keeps the records.&amp;quot;
+
+[[Head to the eastern caves.-&gt;IoDQ1Search]]</tw-passagedata><tw-passagedata pid="576" name="IoDQ1Search" tags="dnsc dnsi" position="200,5200" size="100,100">The eastern caves are deeper and darker than the residential ones. You use Volition Light to illuminate the passages. Kami&amp;#x27;s nose works overtime, tracking old scents through the damp stone.
+
+After an hour of searching, you find it: a massive chamber, its ceiling lost in darkness. The walls are scored with claw marks-- enormous, deep, the stone itself cracked from the force. Shed scales litter the floor, black and purple, each one as large as your hand. And on the walls: green residue. Faint, old, but unmistakable.
+
+|Kami&gt;[&amp;quot;Magister magic, Master. The same signature as the forest. And the mountain.&amp;quot;]
+
+Wall carvings in dragon script line one section-- crude, old, scratched into the stone with claws. You can&amp;#x27;t read them.
+
+[[Bring findings to Valia.-&gt;IoDQ1Valia]]</tw-passagedata><tw-passagedata pid="577" name="IoDQ1Valia" tags="dnsc dnsi" position="300,5200" size="100,100">You show the scales and describe the carvings to Valia in the archive. She examines the scales through her spectacles, turning them in her slender claws.
+
+&amp;quot;These scales belong to Korrath.&amp;quot; Her voice is measured, precise. &amp;quot;He vanished 12 years ago. A young adult. Rebellious. Left the island against orders.&amp;quot;
+
+She pulls a scroll from the shelf and unrolls it, revealing a detailed lineage chart.
+
+&amp;quot;Something found him out there. Something... changed him. The green residue confirms it. A Magister bound him.&amp;quot;
+
+She gives you access to her archive for further research.
+
+[[Research Magister-Dragon bonds.-&gt;IoDQ1Archive]]</tw-passagedata><tw-passagedata pid="578" name="IoDQ1Archive" tags="dnsc dnsi" position="400,5200" size="100,100">The archive is vast. You spend hours reading ancient scrolls about the relationship between Magisters and Dragons. Most of it is dry academic history, but one passage stops you cold:
+
+//&amp;quot;When a Magister&amp;#x27;s power corrupts, the bond with beasts becomes chains. The animal loses its will, its identity. It becomes an extension of the Magister-- a weapon, a tool, a slave. The Magister who does this does not merely control. They //consume//.&amp;quot;//
+
+|Kami&gt;[&amp;quot;Master... this is what the Hooded Mage has done to Korrath. He has consumed him.&amp;quot;]
+
+You bring your findings to Zexir.
+
+[[Report to Zexir.-&gt;IoDQ1End]]</tw-passagedata><tw-passagedata pid="579" name="IoDQ1End" tags="dnsc dnsi" position="500,5200" size="100,100">Zexir is disturbed. His massive head sways slowly.
+
+&amp;quot;Korrath... I remember him. Headstrong. Proud. He wanted to see the world beyond this island.&amp;quot;
+
+The ancient dragon closes his eyes.
+
+&amp;quot;And now he is a slave. A weapon wielded by a corrupted Magister.&amp;quot;
+
+He opens his eyes and fixes them on you.
+
+&amp;quot;You have done well, child. The isle is in your debt.&amp;quot;
+
+(if:$inv contains &amp;quot;Zexir's Amulet&amp;quot;)[(set:$coin to $coin + 200)He hands you a pouch of gold. 200, counted precisely.](else:)[(set:$inv to it + (a:&amp;quot;Zexir's Amulet&amp;quot;))He reaches beneath a cushion and retrieves an amulet-- midnight black cabochon in silver finery. &amp;quot;Take this. It will allow you to travel between here and Orbath.&amp;quot;]
+
+(set:$IoDQ1D to 1)
+
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="580" name="IoDQ2" tags="dnsc dnsi" position="100,5300" size="100,100">The posting is from Erel. You find him at his clinic, pacing, his red and white feathers ruffled with worry.
+
+&amp;quot;Oh, $name! Thank goodness. The hatchlings in the eastern caves-- they&amp;#x27;ve gone feral. Won&amp;#x27;t respond to their parents. Snapping, biting, eyes... strange.&amp;quot;
+
+He wrings his feathered hands.
+
+&amp;quot;I&amp;#x27;ve never seen anything like it. But your powers... you can communicate with animals in ways I cannot. Will you help?&amp;quot;
+
+Kami nuzzles Erel&amp;#x27;s hand, and the avian manages a weak smile.
+
+[[Head to the hatchling den.-&gt;IoDQ2Cave]]</tw-passagedata><tw-passagedata pid="581" name="IoDQ2Cave" tags="dnsc dnsi" position="200,5300" size="100,100">The den is in the eastern caves, a different branch than the Dark Dragon&amp;#x27;s chamber. Warmer. Sulfurous. The sound of small, angry snarling echoes off the walls.
+
+Four hatchlings, each no bigger than a large cat, huddle in the back of the cave. Their scales are various shades of green and bronze, their eyes-- normally amber or gold-- tinged with a sickly green glow.
+
+|Kami&gt;[&amp;quot;Master... that green. It is the same as your power. But... wrong. Twisted.&amp;quot;]
+
+Residual Magister magic. The Hooded Mage&amp;#x27;s influence lingered in these caves and corrupted the hatchlings. They snarl at you, tiny jaws snapping.
+
+[[Use your powers to calm them.-&gt;IoDQ2Calm]]</tw-passagedata><tw-passagedata pid="582" name="IoDQ2Calm" tags="dnsc dnsi" position="300,5300" size="100,100">You reach out with the green mist. The hatchlings resist-- snarling, snapping at the tendrils of magic. The corrupted energy fights back, pushing against your will. It&amp;#x27;s like trying to untangle a knot made of smoke.
+
+You push harder. Sweat beads on your forehead. The mist thickens, wrapping around each hatchling, sinking into the corrupted magic and //burning// it away. The green glow in their eyes flickers, dims, and finally fades.
+
+One by one, the hatchlings stop snarling. Their eyes return to normal-- amber, curious, confused. The smallest one chirps and totters toward you, bumping its head against your shin.
+
+You did it. The corruption is gone.
+
+|Kami&gt;[&amp;quot;Your power grows, Master. You purged the other Magister&amp;#x27;s influence.&amp;quot;]
+
+[[Return to Erel.-&gt;IoDQ2Erel]]</tw-passagedata><tw-passagedata pid="583" name="IoDQ2Erel" tags="dnsc dnsi" position="400,5300" size="100,100">Erel meets you at the cave entrance, his medical kit clutched to his chest. He examines the hatchlings with practiced precision-- checking their eyes, their scales, their responses. His concern melts into relief.
+
+&amp;quot;They&amp;#x27;re clean. Whatever was affecting them, your magic dispelled it.&amp;quot;
+
+He looks at you differently now. Not just professional respect-- something warmer, more curious.
+
+&amp;quot;You&amp;#x27;re quite remarkable, you know that?&amp;quot; He adjusts his spectacles. &amp;quot;Your powers work on all animals. Dragons are animals too, at a biological level. The implications for veterinary medicine are... extraordinary.&amp;quot;
+
+The dragon parents arrive, swooping down and nuzzling their hatchlings. The chirping and cooing fills the cave.
+
+[[Walk back with Erel.-&gt;IoDQ2ErelSS]]
+[[Head back alone.-&gt;IoDQ2End]]</tw-passagedata><tw-passagedata pid="584" name="IoDQ2ErelSS" tags="dnsc dnsi" position="500,5300" size="100,100">You walk back to his clinic together. The path is quiet, the ocean breeze warm. Erel is more animated than you&amp;#x27;ve ever seen him-- chattering about the hatchlings, about your magic, about possibilities.
+
+&amp;quot;Would you like to come inside? For tea?&amp;quot; He adjusts his spectacles nervously. &amp;quot;I have... questions. About your abilities. Purely scientific, I assure you.&amp;quot;
+
+Inside the clinic, he pours two cups of herbal tea with slightly trembling feathered hands. You sit across from him on a low bench. Kami curls up by the door.
+
+The tea becomes conversation. The conversation becomes closeness. Erel&amp;#x27;s feathered hand brushes yours when he reaches for his cup, and he doesn&amp;#x27;t pull away.
+
+&amp;quot;I said I wasn&amp;#x27;t interested in people.&amp;quot; He covers his beak with one wing, flustered. &amp;quot;I think... I was wrong about you.&amp;quot;
+
+He removes his medical gloves. His avian hands are delicate, warm, the downy feathers soft against your $skin. He leans closer.
+
+[[Kiss him.-&gt;IoDQ2ErelSS2]]
+[[Pull back.-&gt;IoDQ2End]]</tw-passagedata><tw-passagedata pid="585" name="IoDQ2ErelSS2" tags="dnsc dnsi" position="600,5300" size="100,100">Erel&amp;#x27;s beak presses against your mouth-- not a kiss, exactly, but the avian equivalent. His feathered arms wrap around you, the downy plumage soft and warm against your body. He&amp;#x27;s trembling, but not from cold.
+
+His hands move with clinical precision that gradually becomes something else. He unfastens your tunic and his fingers-- delicate, sure-- trace the lines of your body as if examining a patient, but his breathing gives him away. Shallow, fast, his chest feathers ruffling.
+
+His avian anatomy is different from what you&amp;#x27;re used to. Between his legs, a genital slit parts to reveal a smooth, tapered member, pink and slick, emerging steadily. Smaller than a canine or dragon, but sensitive-- he gasps when your fingers find it.
+
+You wrap your hand around his shaft and stroke, and Erel lets out a high, fluttering trill that he immediately covers with his wing, mortified.
+
+&amp;quot;I don&amp;#x27;t usually-- I mean, this isn&amp;#x27;t--&amp;quot;
+
+You silence him with another kiss and his protests dissolve into soft, breathy trills. His feathered hands find your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[stiffening member](elseif:$fcock is &amp;quot;sheath&amp;quot;)[swelling sheath](elseif:$fcock is &amp;quot;slit&amp;quot;)[warming slit](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[throbbing cloaca] and he touches you with the same careful precision-- learning your body, cataloguing your reactions with that veterinarian&amp;#x27;s attention to detail.
+
+He finishes first-- quietly, a full-body shudder, his member pulsing in your hand, warm seed coating your fingers. He immediately preens your $hair afterward-- instinctive avian grooming behaviour. He can&amp;#x27;t help it.
+
+&amp;quot;Come see me again,&amp;quot; he whispers against your neck. &amp;quot;For the animals, I mean. ...And for tea.&amp;quot;(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
+
+[[Continue.-&gt;IoDQ2End]]</tw-passagedata><tw-passagedata pid="586" name="IoDQ2End" tags="" position="700,5300" size="100,100">(set:$IoDQ2D to 1)(set:$coin to $coin + 100)The quest is complete. The dragon parents left 100 gold with Erel as thanks, and he passes it to you.
+
+Erel&amp;#x27;s clinic now feels different when you visit. Warmer. He smiles wider when he sees you.
+
+(if:(history:) contains &amp;quot;IoDQ2ErelSS2&amp;quot;)[He adjusts his spectacles and his beak curves into something that might be a smile.
+
+&amp;quot;I have been thinking about your abilities, $name. The way your magic interacts with animal physiology... it raises interesting questions.&amp;quot;
+
+He hesitates.
+
+&amp;quot;If you are willing, I would like to conduct some... collaborative research. With your powers and my medical knowledge, we could learn a great deal about how the Magister&amp;#x27;s gift truly works.&amp;quot;
+
+He looks at Kami, then back at you. &amp;quot;Purely scientific, of course.&amp;quot;
+
+[[Agree to collaborate.-&gt;ErelCollab]]](else:)[&lt;!--Do Nothing--&gt;]
+
+[[Return.-&gt;IODInn]]</tw-passagedata><tw-passagedata pid="587" name="ErelCollab" tags="" position="100,5400" size="100,100">You agree, and Erel&amp;#x27;s clinic becomes your new base of operations on the isle. He clears a workspace, sets out instruments, and pulls a fresh journal from his drawer.
+
+&amp;quot;We&amp;#x27;ll start simple. Your suppression ability-- the way you can render an animal unconscious with the green mist. I want to understand the physiological effects.&amp;quot;
+
+He looks at Kami, then at you, with that clinical curiosity.
+
+&amp;quot;I know it may seem... improper. But understanding how the body responds when the mind is absent could help us treat trauma, illness, even the corruption we saw in the hatchlings.&amp;quot;
+
+This is it. Erel is offering to //study// what you can do. To turn your guilty secret into science.
+
+[[Demonstrate on Kami.-&gt;ErelCollabKami]]
+[[Suggest finding other subjects.-&gt;ErelCollabSubjects]]
+[[Not today.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="588" name="ErelCollabKami" tags="dnsc dnsi" position="200,5400" size="100,100">You extend your hand. Green mist curls toward Kami, and the wolf goes slack on the examination table. Erel leans forward immediately, his professional instincts taking over. He checks Kami&amp;#x27;s heartbeat, breathing, pupil response.
+
+&amp;quot;Fascinating. Vital signs are stable. The mind is completely absent, but the autonomic functions continue perfectly. It&amp;#x27;s like a deep anaesthesia, but without any chemical agent.&amp;quot;
+
+He runs his feathered hands along Kami&amp;#x27;s body, noting muscle tone, reflexes. His examination reaches the wolf&amp;#x27;s groin and he pauses, clinical mask firmly in place.
+
+&amp;quot;The... reproductive response. When the mind is suppressed, does the body still respond to stimulation?&amp;quot;
+
+He looks at you over his spectacles. Purely scientific interest. At least, that&amp;#x27;s what he tells himself.
+
+[[Show him.-&gt;ErelCollabKamiSS]]
+[[That&amp;#x27;s enough for today.-&gt;ErelCollab]]</tw-passagedata><tw-passagedata pid="589" name="ErelCollabKamiSS" tags="dnsc dnsi" position="300,5400" size="100,100">You reach down and wrap your fingers around Kami&amp;#x27;s sheath. Erel watches intently, his quill hovering over his journal, spectacles reflecting the candlelight.
+
+The response is immediate. Kami&amp;#x27;s member begins to emerge-- the tapered pink tip sliding free, swelling with blood. You stroke him slowly, and Erel takes notes, his handwriting growing less steady.
+
+&amp;quot;Remarkable. Full tumescence despite complete unconsciousness. The erectile response is entirely reflexive.&amp;quot; He swallows. &amp;quot;The, ah, lubricatory response as well.&amp;quot;
+
+You build Kami to the edge. His knot swells, his hips twitch. Erel is leaning very close now, his breath coming faster, his notes forgotten.
+
+&amp;quot;If you were to bring him to climax... would the ejaculatory response still function?&amp;quot;
+
+[[Deny him. Show the edge response.-&gt;ErelCollabKamiDeny]]
+[[Let him finish. For science.-&gt;ErelCollabKamiFinish]]</tw-passagedata><tw-passagedata pid="590" name="ErelCollabKamiDeny" tags="dnsc dnsi" position="400,5400" size="100,100">You release your grip at the peak. Kami&amp;#x27;s cock pulses dryly, twitching in the air, the knot throbbing. His hips buck once, weakly, and a pitiful whine escapes his slack jaw. The orgasm crests but doesn&amp;#x27;t break-- just empty, aching pulses.
+
+Erel is transfixed. His quill has fallen from his hand. His own avian slit is visibly swollen beneath his medical smock.
+
+&amp;quot;The denial response,&amp;quot; he whispers, his clinical composure cracking. &amp;quot;The body reaches the point of no return, but without conscious involvement, the reflex arc is incomplete. Extraordinary.&amp;quot;
+
+His hand reaches toward Kami&amp;#x27;s twitching member, hovering-- not quite touching. The scientist and the animal lover warring behind his spectacles.
+
+&amp;quot;May I...?&amp;quot;(set:$LoveMeter to it + 10)
+
+[[Let him.-&gt;ErelCollabKamiFinish]]
+[[Wake Kami. End the session.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="591" name="ErelCollabKamiFinish" tags="dnsc dnsi" position="500,5400" size="100,100">Erel&amp;#x27;s feathered fingers wrap around Kami&amp;#x27;s shaft with clinical precision that melts into something hungrier. He strokes with the careful, measured rhythm of someone who has spent years handling animals-- but the flush creeping up his neck feathers tells a different story.
+
+Kami&amp;#x27;s cock throbs in the avian&amp;#x27;s grip. His hips buck. The knot swells fat and firm. And then-- eruption. Thick ropes of canine cum splatter across Erel&amp;#x27;s feathered hands, his smock, the examination table. Kami&amp;#x27;s body shudders with each pulse, his hind legs kicking reflexively, a long whine drifting from his slack jaw.
+
+Erel stares at his cum-covered hands. His beak is slightly open. His own member has emerged fully from his slit, tenting the front of his smock.
+
+&amp;quot;That was... highly informative,&amp;quot; he manages, his voice an octave higher than normal.
+
+He cleans his hands. Then Kami. Then himself. All with meticulous, shaking precision.
+
+You withdraw the green mist. Kami wakes, blinks, stretches.
+
+|Kami&gt;[&amp;quot;Did I fall asleep again, Master? I apologise. This table is quite comfortable.&amp;quot;]
+
+Erel nearly drops his journal.(set:$LoveMeter to it + 10)
+
+[[Continue.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="592" name="ErelCollabEnd" tags="" position="600,5400" size="100,100">Erel straightens his smock and adjusts his spectacles. His professional composure is back, mostly. A feather is out of place on his crest.
+
+&amp;quot;This has been... illuminating. I believe there is much more to learn.&amp;quot;
+
+He looks at you, and the clinical mask slips just slightly to show something warmer underneath.
+
+&amp;quot;Come back any time. I have ideas for further experiments. We could study the suppression effect on different species. Different body types. The IoD has a wide variety of inhabitants...&amp;quot;
+
+He trails off, realising what he&amp;#x27;s suggesting. His beak flushes pink.
+
+&amp;quot;For science, of course.&amp;quot;(set:$ErelCollab to 1)
+
+[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="593" name="ErelCollabSubjects" tags="" position="700,5400" size="100,100">You suggest finding other subjects for the experiments. Erel&amp;#x27;s eyes brighten behind his spectacles.
+
+&amp;quot;Other species would give us comparative data. The IoD has a number of slim-bodied inhabitants-- young drakes, messenger lizards, the servant staff. Many of them are, ah, quite willing to participate in medical studies.&amp;quot;
+
+He pulls a list from his drawer. Names of IoD inhabitants who have volunteered for medical examinations in the past.
+
+&amp;quot;There&amp;#x27;s Pip-- a young gecko servant, very slight. And Tern-- a slim drake who assists in the kitchens. And of course, any of the feral animals on the island could serve as subjects.&amp;quot;
+
+He pauses.
+
+&amp;quot;With your suppression ability and my medical knowledge, we could catalogue the physiological responses of every species on this island.&amp;quot;
+
+His voice drops.
+
+&amp;quot;Every species. Every response. Every... reaction.&amp;quot;
+
+[[Experiment with Pip the gecko.-&gt;ErelCollabPip]]
+[[Experiment with Tern the drake.-&gt;ErelCollabTern]]
+[[Use Kami as the first subject.-&gt;ErelCollabKami]]
+[[Not today.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="594" name="ErelCollabPip" tags="dnsc dnsi" position="100,5500" size="100,100">Pip arrives at the clinic-- a tiny gecko, barely 3 feet tall, with bright green scales and enormous golden eyes. He&amp;#x27;s thin, almost fragile-looking, with a long prehensile tail that curls nervously.
+
+&amp;quot;Erel said you needed me for a study?&amp;quot; His voice is high and reedy. He looks nervous but trusting.
+
+Erel explains: they want to study the Magister&amp;#x27;s suppression ability. Pip would be rendered unconscious-- safely, briefly-- while they observed the physiological effects.
+
+&amp;quot;Will it hurt?&amp;quot;
+
+&amp;quot;Not at all,&amp;quot; Erel assures him. &amp;quot;You&amp;#x27;ll simply fall asleep and wake up feeling fine.&amp;quot;
+
+Pip nods slowly and lies on the examination table. You extend the green mist. His golden eyes go glassy. His slim body goes limp.
+
+Erel begins his examination. Heart rate, breathing, reflexes. Then lower. The gecko&amp;#x27;s genital slit is smooth and warm between his thin legs. Erel probes gently with one feathered finger, and the response is immediate-- a slim, smooth member slides free, translucent-pink and glistening.
+
+&amp;quot;Fascinating,&amp;quot; Erel breathes. &amp;quot;The lizard anatomy responds even faster than the canine.&amp;quot;
+
+[[Observe Erel&amp;#x27;s examination.-&gt;ErelCollabPipSS]]
+[[Wake Pip. Move on.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="595" name="ErelCollabPipSS" tags="dnsc dnsi" position="200,5500" size="100,100">Erel&amp;#x27;s examination becomes increasingly thorough. His feathered fingers stroke the gecko&amp;#x27;s slim member, noting its length, its responsiveness, the way it twitches and pulses under stimulation. Pip&amp;#x27;s tiny body shifts on the table, his tail curling and uncurling reflexively.
+
+You watch, one hand absently resting on Kami&amp;#x27;s head (the wolf is awake for this one, sitting by your legs, watching with those blue eyes). Your other hand has drifted to your own lap, where your (if:$fcock is &amp;quot;flaccid cock&amp;quot;)[cock is stirring](elseif:$fcock is &amp;quot;sheath&amp;quot;)[sheath is swelling](elseif:$fcock is &amp;quot;slit&amp;quot;)[slit is tingling](elseif:$fcock is &amp;quot;cloaca&amp;quot;)[cloaca is throbbing].
+
+Erel brings Pip to climax-- a small, delicate orgasm, the gecko&amp;#x27;s member pulsing a thin stream of clear fluid across his smooth belly scales. His body twitches and his tail lashes once. A tiny squeak escapes his slack mouth.
+
+Erel cleans the gecko carefully and you withdraw the mist. Pip wakes, stretching, oblivious.
+
+&amp;quot;How was it? Did you learn anything?&amp;quot; His golden eyes are wide and innocent.
+
+&amp;quot;Very informative,&amp;quot; Erel says, his voice slightly strained. &amp;quot;Thank you, Pip.&amp;quot;
+
+Pip hops off the table and trots out, tail swishing happily.
+
+Erel turns to you. His avian slit is visibly swollen beneath his smock.
+
+&amp;quot;Shall we continue? There are more subjects to study.&amp;quot;(set:$LoveMeter to it + 10)
+
+[[Continue.-&gt;ErelCollabSubjects]]</tw-passagedata><tw-passagedata pid="596" name="ErelCollabTern" tags="dnsc dnsi" position="300,5500" size="100,100">Tern is a slim drake-- about 5 feet tall, with iridescent blue-green scales and vestigial wing nubs on his back. He&amp;#x27;s lean, almost delicate for a drake, with a long neck and gentle amber eyes. He works in the kitchens and Erel has treated him before.
+
+&amp;quot;Another study, Erel? You know I don&amp;#x27;t mind.&amp;quot; He settles onto the examination table with practiced ease. He&amp;#x27;s done this before. Medical examinations are routine on IoD.
+
+You extend the green mist. Tern&amp;#x27;s eyes glaze over. His lithe body goes slack on the table, his long tail draping over the edge.
+
+Erel works with confidence this time-- he&amp;#x27;s done this before with Pip and knows what to expect. His feathered hands trace down Tern&amp;#x27;s scaled belly to the slit between his hindlegs. It parts easily under his touch, revealing a drake&amp;#x27;s member-- ridged, slightly thicker than the gecko&amp;#x27;s, emerging steadily.
+
+&amp;quot;The draconic anatomy is more robust,&amp;quot; Erel notes, his quill scratching in his journal. &amp;quot;Ridged. Self-lubricating. The slit produces a natural slickness.&amp;quot;
+
+His hands stroke the ridged shaft with clinical thoroughness that slowly, inevitably, becomes something more attentive. Tern&amp;#x27;s body responds-- hips shifting, tail twitching, the ridges flaring under stimulation.
+
+[[Let Erel bring him to climax.-&gt;ErelCollabTernSS]]
+[[Wake Tern.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="597" name="ErelCollabTernSS" tags="dnsc dnsi" position="400,5500" size="100,100">Erel works Tern&amp;#x27;s ridged member with both hands now, his medical gloves discarded, bare feathered fingers slick with the drake&amp;#x27;s natural lubricant. The journal is forgotten. His own avian member has emerged fully, visible through the gap in his smock, twitching with each pulse of the drake&amp;#x27;s cock in his hands.
+
+Tern&amp;#x27;s body builds toward climax-- his hips rocking, his claws kneading the table surface, tiny growls escaping his unconscious throat. The ridges on his member flare wide and Erel&amp;#x27;s grip tightens.
+
+The drake cums with a full-body shudder. His ridged cock pulses powerfully, thick spurts of draconic seed erupting across his scaled belly and Erel&amp;#x27;s hands. The volume is impressive for his size. His tail lashes, his legs kick, and a low rumble vibrates through the table.
+
+Erel is breathing hard. His own member is straining, neglected.
+
+You step forward and wrap your hand around Erel&amp;#x27;s avian cock. He lets out that fluttering trill, his wings half-spreading involuntarily. You stroke him while he&amp;#x27;s still holding Tern&amp;#x27;s softening member in his other hand-- three bodies connected, two conscious, one dreaming.
+
+Erel finishes into your palm with a breathy, broken trill, his feathers ruffling from head to toe.
+
+You clean everything. Wake Tern.
+
+&amp;quot;Good study?&amp;quot; The drake yawns, stretching. &amp;quot;I always feel so rested after your check-ups, Erel.&amp;quot;
+
+Erel manages a strangled &amp;quot;Yes. Very. Informative.&amp;quot;(set:$LoveMeter to it + 15)
+
+[[Continue.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="598" name="ValiaArchive" tags="" position="100,5600" size="100,100">A wing off the council chamber, lit by warm lamplight. Floor-to-ceiling scrolls line the walls, parchment rolls in honeycomb shelves, ancient tomes stacked on reading desks. Dust motes drift in the light. The air smells of old paper and beeswax.
+
+Valia is here-- a slender dragon, smaller than Zexir or Raln, with deep blue scales and a ridge of silver running along her spine. Delicate, almost fragile-looking for a dragon. And perched on her snout: a pair of wire-rimmed spectacles.
+
+She looks up from a scroll and regards you over the spectacle rims.
+
+&amp;quot;Ah. The Magister.&amp;quot; Her voice is dry, precise, like the rustle of old paper. &amp;quot;Zexir told me about you. Raln told me about you. Even Hran told me about you. I suppose I was the only one left.&amp;quot;
+
+She sets down her quill.
+
+&amp;quot;I am Valia. I keep the records. And you have questions. Everyone always does.&amp;quot;
+
+[[Continue.-&gt;ValiaChat]]</tw-passagedata><tw-passagedata pid="599" name="ValiaChat" tags="" position="200,5600" size="100,100">Valia settles onto a reading cushion, her long tail curling around her feet. She adjusts her spectacles and peers at you expectantly.
+
+&amp;quot;Ask, then. I do have work to do.&amp;quot;
+
+[[Ask about the island&amp;#x27;s history.-&gt;ValiaChatc1]]
+[[Ask about Magisters.-&gt;ValiaChatc2]]
+[[Ask about herself.-&gt;ValiaChatc3]]
+(if:$IoDQ1D is 1)[[[Ask about the Dark Dragon (Korrath).-&gt;ValiaChatc4]]](else:)[&lt;!--Do Nothing--&gt;]
+[[Leave.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="600" name="ValiaChatc1" tags="" position="300,5600" size="100,100">&amp;quot;The Isle was founded 200 years ago by dragons fleeing the war. Zexir was among the founders-- younger then, barely an adult.&amp;quot;
+
+She taps a scroll.
+
+&amp;quot;We came here because the world was not safe for our kind. The Nomads wanted us gone. We wanted to live. This island was the compromise.&amp;quot;
+
+She looks out the window toward the ocean.
+
+&amp;quot;We have stayed hidden because the world is still not kind to dragons. But we cannot hide forever. The Hooded Mage proved that when he took Korrath.&amp;quot;
+
+[[Ask something else.-&gt;ValiaChat]]</tw-passagedata><tw-passagedata pid="601" name="ValiaChatc2" tags="" position="400,5600" size="100,100">&amp;quot;Magisters and Dragons have a long history. Not all of it good.&amp;quot;
+
+She pulls a scroll from a high shelf without getting up-- her tail reaches it.
+
+&amp;quot;In the old days, Magisters served as mediators between Dragons and Nomads. They could speak to both. Understand both. They kept the peace.&amp;quot;
+
+Her eyes fix on you.
+
+&amp;quot;The last Magister who visited this island left under suspicious circumstances. That was decades ago. Before your time. Before mine, even.&amp;quot;
+
+&amp;quot;I don&amp;#x27;t trust easily, child. But Zexir vouches for you, and his judgement has kept us alive this long.&amp;quot;
+
+[[Ask something else.-&gt;ValiaChat]]</tw-passagedata><tw-passagedata pid="602" name="ValiaChatc3" tags="" position="500,5600" size="100,100">Valia&amp;#x27;s expression flickers-- surprise, maybe. Nobody asks about her.
+
+&amp;quot;I am the oldest dragon on this island. Older than Zexir by... well. A lady doesn&amp;#x27;t tell.&amp;quot;
+
+A dry smile.
+
+&amp;quot;I chose records over warfare. I have seen too much death to add to it. I would rather preserve what we have.&amp;quot;
+
+She taps her spectacles.
+
+&amp;quot;And my role is &amp;#x27;unspecified&amp;#x27; because I refused to let Raln put &amp;#x27;Librarian&amp;#x27; on the official record. I am an //Archivist//. There is a difference.&amp;quot;
+
+The dryest of dry humor.
+
+[[Ask something else.-&gt;ValiaChat]]</tw-passagedata><tw-passagedata pid="603" name="ValiaChatc4" tags="" position="600,5600" size="100,100">&amp;quot;Korrath.&amp;quot; Valia&amp;#x27;s voice goes flat. She pulls the lineage chart from earlier.
+
+&amp;quot;He was headstrong. Restless. Wanted to see the world beyond the island. Left against Zexir&amp;#x27;s explicit orders.&amp;quot;
+
+She traces a claw along the chart.
+
+&amp;quot;He was 40 years old. Young, for a dragon. And now he is a slave, controlled by a Magister who should never have had that power.&amp;quot;
+
+She looks at you over her spectacles.
+
+&amp;quot;Your kind can command. But command without consent is slavery. Remember that, child. The line between a Magister and a tyrant is thinner than you think.&amp;quot;
+
+The words hang in the air. You think about the green mist. About Kami. About the experiments. About control.
+
+[[Ask something else.-&gt;ValiaChat]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
