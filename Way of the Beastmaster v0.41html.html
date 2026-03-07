@@ -6373,6 +6373,9 @@ You step in through the archway into completely darkness, but the sounds of scuf
 You're admittedly a bit curious.
 
 [[Approach the figure.-&gt;Hran]]
+(if:$RalnTrain is &gt;=3)[You can see another shape further up the hill-- larger, unmistakable. Raln, sitting alone with a bowl.
+
+[[Approach Raln.-&gt;RalnSS]]](else:)[&lt;!--Do Nothing--&gt;]
 [[Leave.-&gt;IoDHub]]]</tw-passagedata><tw-passagedata pid="377" name="IODShop" tags="" position="1399,2598" size="100,100">(if:$DN is "day")[(if:(history:) contains "IODShop")[You return to the market plaza to find it more or less as busy as ever. Nothing seems to have changed much from the last time you were here, but you can't tell for sure unless you get in for a closer look.
 
 You might as well browse, so you decide to make your way in further, slipping into the small crowd of people and scanning the stalls.
@@ -6568,7 +6571,7 @@ As you step into the room, you're greeted to a chamber about the size of the act
 [[Ask if he can teach you how to fight.-&gt;Zexir1DFight]]
 (if:$Spells contains "Volition Light")[[[Ask if he can teach you more magic.-&gt;Zexir1DMagic3]]](else:)[[[Ask if he can teach you Magic.-&gt;Zexir1DMagic]]]
 [[Ask if he can teach you about the Isle.-&gt;Zexir1DIsle]]
-[[Take your leave.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="391" name="Zexir1N" tags="dnsi" position="996,3016" size="100,100">(set:$ZexNight to (random:1,3))(if:$ZexNight is 1)[(goto:"ZexirAltSS1")](elseif:$ZexNight is 2)[(goto:"ZexirAltSS3")](else:)[It's probably not wise, but you decide to visit Zexir at this time of the night. You step into the council chambers and note a number of willing and able volunteers nearby, but they don't notice you in the dark, even with their torches. You move past them towards the end of the hall and turn right, hoping that it's the right way to go.
+[[Take your leave.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="391" name="Zexir1N" tags="dnsi" position="996,3016" size="100,100">(set:$ZexNight to (random:1,4))(if:$ZexNight is 1)[(goto:"ZexirAltSS1")](elseif:$ZexNight is 2)[(goto:"ZexirAltSS3")](elseif:$ZexNight is 3)[(goto:"ZexirAltSS4")](else:)[It's probably not wise, but you decide to visit Zexir at this time of the night. You step into the council chambers and note a number of willing and able volunteers nearby, but they don't notice you in the dark, even with their torches. You move past them towards the end of the hall and turn right, hoping that it's the right way to go.
 
 Your journey leads you towards a small door at the end of a hallway, and Kami moves in beside you, keeping himself low to the ground. You approach the door and listen intently, hearing nothing beyond. Slowly, you grasp the handle and open the door, sneaking inside, with Kami weaving in from between your legs.
 
@@ -9314,6 +9317,8 @@ His voice drops.
 [[Experiment with Wisk the canine.-&gt;ErelCollabCanine]]
 [[Experiment with Soot the young dragon.-&gt;ErelCollabDrake]]
 [[Use Kami as the subject.-&gt;ErelCollabKami]]
+[[Erel wants to personally examine Kami.-&gt;ErelKamiPassionate]]
+[[Erel has a patient he wants to "treat."-&gt;ErelPatientSS]]
 [[Not today.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="594" name="ErelCollabPip" tags="dnsc dnsi" position="100,5500" size="100,100">Pip arrives at the clinic-- a tiny gecko, barely 3 feet tall, with bright green scales and enormous golden eyes. He's thin, almost fragile-looking, with a long prehensile tail that curls nervously.
 
 "Erel said you needed me for a study?" His voice is high and reedy. He looks nervous but trusting.
@@ -9916,7 +9921,152 @@ The three of you collapse onto the furs, panting, slick with sweat and dragon fl
 
 "Come back anytime, Magister."(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
 
-[[Return.-&gt;ValleyCavesDeep]]</tw-passagedata></tw-storydata>
+[[Return.-&gt;ValleyCavesDeep]]</tw-passagedata><tw-passagedata pid="637" name="ErelKamiPassionate" tags="dnsc dnsi" position="100,6300" size="100,100">Erel adjusts his spectacles and clears his throat. He's been fidgeting all morning-- rearranging instruments, straightening scrolls, adjusting the same vial three times. Something is on his mind.
+
+"I've been thinking about your wolf," he says carefully, not meeting your eyes. "About Kami. The data we've collected so far has been... clinical. Observational. But I believe there's more to learn from a more, ah..." He trails off, his beak flushing pink. "...//hands-on// approach."
+
+He looks at Kami, who is curled by the door. Then at you.
+
+"I want to examine him personally. Not just observe the responses. I want to //feel// them. The muscular contractions, the knot inflation, the ejaculatory pressure. From the inside, as it were."
+
+His voice has dropped to barely above a whisper. His avian member is already pressing against the inside of his medical smock, visible through the thin fabric. This isn't science anymore. This is desire wearing a lab coat.
+
+[[Suppress Kami. Let Erel have him.-&gt;ErelKamiPassionate2]]
+[[Not today.-&gt;ErelCollabSubjects]]</tw-passagedata><tw-passagedata pid="638" name="ErelKamiPassionate2" tags="dnsc dnsi" position="200,6300" size="100,100">You extend the green mist. Kami goes slack on the clinic floor, his eyes glazing, his body going limp and warm. You lift him onto the examination table and position him on his back, hind legs spread, forepaws resting above his head.
+
+Erel removes his medical smock with trembling feathered hands. Underneath, his avian body is slim, covered in downy red and white plumage. His slit is already parted, his pink member jutting free, tapered and glistening. He's not large-- avian anatomy is modest-- but his need is unmistakable.
+
+He approaches Kami with the same careful precision he uses on every patient, but his breathing is ragged, his feathers ruffled. His fingers wrap around Kami's sheath and squeeze. The wolf's member begins to emerge immediately-- the tapered pink tip sliding free, swelling steadily.
+
+"Even unconscious, his response is so... eager," Erel whispers, stroking the emerging shaft with his thumb. "The blood flow is remarkable. The tumescence rate..." His clinical language crumbles as Kami's cock swells to full hardness in his grip, the knot beginning to form, watery pre-cum beading at the tip.
+
+Erel doesn't just observe this time. He leans down, opens his beak, and takes the tip of Kami's cock into his mouth. The warm, wet heat makes the wolf's hips twitch reflexively. Erel's long, thin avian tongue wraps around the shaft and strokes, his beak pressing down along the length until the knot bumps against the edges of his bill.
+
+The sounds he makes are not clinical. Soft, breathy trills that vibrate through Kami's cock. His feathered hands stroke the swelling knot, squeeze the heavy balls, trace the perineum. He worships the wolf's member with a passion that has nothing to do with research.
+
+[[Continue.-&gt;ErelKamiPassionate3]]</tw-passagedata><tw-passagedata pid="639" name="ErelKamiPassionate3" tags="dnsc dnsi" position="300,6300" size="100,100">Erel pulls back, a string of pre-cum and saliva connecting his beak to Kami's throbbing cock. His spectacles are fogged. He wipes them with a trembling wing and repositions himself.
+
+He straddles the examination table, positioning his avian slit above Kami's rigid member. His own cock juts forward, dripping, neglected. With one hand bracing on Kami's chest, he lowers himself slowly onto the wolf's cock.
+
+The sound he makes-- a long, shuddering trill that echoes off the clinic walls-- is the most openly passionate thing you've ever heard from the reserved veterinarian. His avian body sinks down, taking the tapered canine cock inside his slit, the ridges of his internal walls gripping and rippling around every inch.
+
+"Oh... oh, //gods//..." The clinical composure is gone. Completely gone. He's shaking, his wings half-spread, his head thrown back. He begins to ride the unconscious wolf's cock with a desperate, rocking rhythm, his hips rolling, his slit swallowing Kami's member to the base.
+
+Kami's body responds despite the suppression. His knot swells against Erel's entrance, bumping and pushing with each downward thrust. His hips twitch upward in involuntary micro-thrusts, meeting the avian halfway. Pre-cum oozes steadily from the junction, slicking the fur and feathers.
+
+Erel rides harder. His own avian cock bobs and drips between them, untouched, leaving thin trails of clear fluid across Kami's belly fur. His claws knead the wolf's chest fur, his beak open, panting, trilling.
+
+[[Continue.-&gt;ErelKamiPassionate4]]</tw-passagedata><tw-passagedata pid="640" name="ErelKamiPassionate4" tags="dnsc dnsi" position="400,6300" size="100,100">Kami's first orgasm hits without warning. His cock pulses and swells inside Erel's slit, the knot inflating, locking them together. Thick ropes of canine cum pump into the avian's body, and Erel lets out a strangled trill, his whole body shuddering at the sensation of being filled.
+
+Erel's own orgasm follows-- his avian cock pulses and spurts thin, clear-pink fluid across Kami's belly fur, spattering the grey coat. His wings flare fully, trembling, as waves of pleasure rock through his slim frame.
+
+But Erel doesn't stop. He keeps rocking his hips, the knot still locked, Kami's cock still pulsing weakly inside him. The oversensitivity is visible in Kami's body-- his hind legs kicking, his muscles clenching, his sheath stretched taut around the swollen knot.
+
+"One more," Erel whispers, his voice wrecked. "I need to feel it one more time."
+
+He grinds down, rotating his hips, his internal muscles deliberately milking the canine cock. Kami's body seizes-- a second orgasm forced from an already-spent body. His cock throbs emptily this time-- dry, aching pulses that wrack his entire frame. His hips buck desperately against the lock. A long, pitiful whine escapes his unconscious throat, high and broken. His cock strains and twitches inside Erel's slit, trying to produce what it's already given, pulsing dryly against the avian's clenching walls.
+
+Erel cries out as he feels the second orgasm inside him-- even though there's almost nothing left to give, the pressure and contractions drag another climax from his own body. His avian member dribbles a thin, clear stream, the last of what he has.
+
+They stay locked together for a long, trembling moment. Erel collapses forward onto Kami's chest, his feathered face buried in wolf fur, gasping.
+
+When the knot finally deflates and Erel slides off with a wet sound, he lies on the table beside the unconscious wolf, staring at the ceiling. His spectacles are hanging from one ear. Cum and clear fluid pool between them.
+
+"That was..." He can't finish the sentence. He adjusts his spectacles. One lens is cracked.
+
+You withdraw the green mist. Kami wakes, blinking.
+
+|Kami&gt;["Master? I had the strangest dream. I feel very... warm inside."]
+
+Erel covers his face with both wings.(set:$LoveMeter to it + 25)
+
+[[Continue.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="641" name="ErelPatientSS" tags="dnsc dnsi" position="500,6300" size="100,100">Erel leads you to the back room of the clinic. On the examination table lies a slim drake-- young, maybe Soot's age, with pale gold scales and a long, thin tail. He's here for a routine check-up, Erel explains. Wing strain.
+
+"This is Ember," Erel says, his voice carefully clinical. "He's been having trouble with his right wing joint. I've been... treating him."
+
+Ember lifts his head and blinks sleepily at you. He's small-- barely 4 feet from snout to haunches, with a narrow build and delicate bone structure. You can see his ribs through his pale scales, the individual bones visible as he breathes. His neck is long and slender, his limbs thin.
+
+"Hey, Erel," Ember yawns. "Is the Magister helping today?"
+
+"In a manner of speaking," Erel says. He looks at you with a question in his eyes. The question isn't about medicine.
+
+[[Suppress Ember. Let Erel "treat" him.-&gt;ErelPatientSS2]]
+[[Just watch Erel's regular examination.-&gt;ErelPatientSSWatch]]
+[[Not today.-&gt;ErelCollabSubjects]]</tw-passagedata><tw-passagedata pid="642" name="ErelPatientSSWatch" tags="dnsc dnsi" position="600,6300" size="100,100">Erel conducts a normal examination. Ember lies on his back, his slim body stretched out on the table. Erel checks his wing joint, his spine, his breathing. His feathered hands move along the young drake's body with practiced ease.
+
+When his hands reach Ember's lower belly, the drake squirms. His slit parts slightly-- an involuntary response to the familiar hands. A thin, pink tip begins to emerge.
+
+"S-Sorry, Erel," Ember stammers, his pale scales flushing. "It always does that when you touch me there."
+
+Erel's clinical mask holds, but his eyes dart to you.
+
+"Perfectly natural," he says smoothly. "The genital response to tactile stimulation is well-documented."
+
+His feathered fingers brush against the emerging member-- seemingly by accident. Ember gasps, his thin hips shifting. The slim, ridged shaft swells further, dripping clear fluid onto the table.
+
+Erel looks at you again. His own slit is visibly swollen beneath his smock.
+
+[[Suppress Ember so Erel can be thorough.-&gt;ErelPatientSS2]]
+[[Leave them be.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="643" name="ErelPatientSS2" tags="dnsc dnsi" position="700,6300" size="100,100">Green mist. Ember's golden eyes glaze over. His slim body goes limp on the table, that thin tail draping over the edge. His half-emerged member retreats slightly as his muscles relax, then begins to swell again under Erel's immediate attention.
+
+The clinical pretence evaporates the moment the drake is unconscious. Erel's hands move with a hungry precision now-- not examining but //exploring//. His feathered fingers trace along the young drake's narrow ribcage, feeling each bone beneath the pale gold scales. His thumbs press into the hollows between Ember's ribs, counting them, stroking them. The drake's body is so slim, so narrow, that Erel's hands nearly span his entire torso.
+
+"He's beautiful," Erel whispers, and it's the first time you've heard him use that word about a patient. His fingers slide lower, past the concave belly, to the parted slit. He opens it gently with both thumbs, exposing the pink inner flesh, the slim ridged cock now fully emerged and glistening.
+
+Erel sheds his smock. His own avian member stands rigid, the pink shaft dripping. He positions himself between Ember's spread hind legs and pushes into the young drake's slit with a long, shuddering trill.
+
+The fit is perfect-- Erel's avian member is slim, tapered, and Ember's slit grips it tightly. The avian begins to thrust, his feathered hips rocking, his hands running up and down the young drake's ribcage, feeling every bone, every ridge of scale, every shiver that passes through the unconscious body.
+
+Ember's slim cock throbs between them, dripping clear fluid with each thrust. His thin legs twitch, his tail curls reflexively. Small, breathy crooning sounds escape his slack mouth-- the body singing even without the mind.
+
+Erel cums with a long, warbling trill, his avian cock pulsing inside Ember's slit, his wings spreading fully. The young drake's body tightens around him and his own slim member throbs-- thin, clear jets spattering his pale belly scales.
+
+Erel pulls out carefully, cleans the young drake with practiced hands, adjusts his position on the table. Straightens his smock. Adjusts his spectacles.
+
+You withdraw the mist. Ember stirs.
+
+"Did I doze off? Sorry, Erel. Your table is really comfy." He stretches, slides off the table. "Same time next week?"
+
+"...Same time next week," Erel echoes faintly.(set:$LoveMeter to it + 15)
+
+[[Continue.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="644" name="ZexirAltSS4" tags="dnsi" position="100,6400" size="100,100">It's probably not wise, but you decide to visit Zexir at this time of the night. You make your way through the dark council chambers, past the sleeping guards, toward the familiar hallway.
+
+The sounds reach you before you reach the door. Different from the other times. A high, feminine keen-- not pleasure, not pain, but something between. Muffled. Stifled.
+
+You press your eye to the crack in the door.
+
+Zexir is there, his massive turquoise form filling the chamber. But this time, beneath him, pinned flat against the enormous cushion, is a young female drake. She's small-- impossibly small compared to Zexir's 10-metre bulk. Her scales are a delicate rose-gold, shimmering in the light of the magical orb overhead. Her body is narrow, fragile-looking, with a long slender neck and thin limbs that barely span the width of Zexir's forearm. You can count every rib through her scales, each one visible with every heaving breath. Her wings-- small, barely developed-- are pinned beneath Zexir's massive forepaw.
+
+Zexir's other forepaw is clamped gently but firmly around her muzzle, holding her jaw shut. Her golden eyes are wide above his claws, glistening but not with tears. Her thin tail lashes beneath his belly, the only part of her body that can still move freely.
+
+Between her spread hind legs, Zexir's enormous cock is pressed against her slit. Only the very tip has entered-- the massive, ridged head stretching her narrow opening obscenely. The size difference is staggering. His member is nearly as long as her entire torso. Her belly shifts visibly where the tip presses inside, the skin taut over her narrow frame.
+
+[[Continue watching.-&gt;ZexirAltSS4b]]
+[[Leave quietly.-&gt;CouncilChamber]]</tw-passagedata><tw-passagedata pid="645" name="ZexirAltSS4b" tags="dnsc dnsi" position="200,6400" size="100,100">Zexir moves with glacial patience. Each push sinks another fraction of his massive cock into the young female's narrow slit. Her body stretches to accommodate him, her ribs flaring with each ragged breath through her clamped muzzle. The thin scales of her belly distend slightly where his girth presses inside, the outline of his ridged shaft faintly visible through her narrow torso.
+
+"Shh," Zexir murmurs, his voice impossibly gentle for a creature his size. His forepaw loosens slightly on her muzzle, and a high, strained whimper escapes. "You're doing so well, little one."
+
+Her own body is responding despite the intensity. Between her spread thighs, her genital slit glistens-- not just from stretch, but from arousal. The natural lubricant flows copiously, slicking Zexir's shaft, easing his entry. Her thin tail wraps around his leg, gripping.
+
+Zexir rocks his hips in tiny, measured thrusts. Each one pushes deeper-- an inch at a time, no more. The young female's body bows beneath him, her narrow back arching, her thin claws kneading the cushion. Her muffled keens are rhythmic now, matching his thrusts.
+
+He clamps her muzzle tighter as his rhythm builds. Her ribs heave, each one stark and visible through rose-gold scales, her narrow chest expanding rapidly. Her eyes squeeze shut. Her hind legs tremble, spread wide around the massive shaft splitting her slit.
+
+Zexir cums with a deep, rolling groan that vibrates through the floor. His enormous cock pulses, and you watch the young female's belly swell-- visibly, unmistakably-- as he fills her narrow body with warmth. Her eyes fly open, wide and glazed, a strangled trill muffled behind his clamped forepaw. Her thin body shudders through her own orgasm, her slit clenching and rippling around his girth, slick fluid and his seed oozing from the stretched junction, pooling beneath her.
+
+Zexir holds still, his cock pulsing inside her, his forepaw slowly releasing her muzzle. She gasps for air, her narrow chest heaving, her ribs standing out starkly with each breath. A thin stream of their mixed fluids trickles from her stretched slit.
+
+"Good girl," Zexir murmurs, and gently-- so gently-- withdraws. His massive cock slides free with a wet sound, and more fluid flows from her gaping slit. She lies there, trembling, her belly still distended, her thin body shaking with aftershocks.
+
+He leans down and nuzzles her delicate snout with his massive muzzle. She nuzzles back, weakly.
+
+"Same time tomorrow, my lord?" she whispers, her voice thin and breathless.
+
+"If you wish, little one."
+
+You slip away from the door. Your own (if:$fcock is "flaccid cock")[cock strains painfully against your shorts](elseif:$fcock is "sheath")[sheath is swollen and aching](elseif:$fcock is "slit")[slit throbs with desperate need](elseif:$fcock is "cloaca")[cloaca pulses heavily].
+
+[[Return.-&gt;CouncilChamber]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
