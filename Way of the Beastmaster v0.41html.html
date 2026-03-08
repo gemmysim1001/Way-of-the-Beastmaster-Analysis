@@ -3384,6 +3384,9 @@ An unknown, white-furred child sits in the far corner.
 (if:(history:) contains "AdpMerchant")[&lt;!--Already met--&gt;](else:)[A hooded figure sits alone in the far corner, nursing a drink. Their features are hidden, but the cut of their robes is foreign.
 
 [[Approach the hooded figure.-&gt;AdpMerchant]]]
+Wes seems more relaxed than he does during the day. He's leaning on the counter, watching the crowd with half-lidded eyes, cloth slung over one shoulder.
+
+[[Chat with Wes.-&gt;WesNight]]
 [[Leave.-&gt;ScarHub]]]</tw-passagedata><tw-passagedata pid="171" name="ScarBarracks" tags="" position="1146,1439" size="100,100">(if:(history:) contains "SBaF" or "SBaB")[You're back at the barracks. It's about as busy as you expected it to be, no matter what time of the day it is. There always seems to be people who aren't on shift, and people who are. Either way, you have your options before you.
 
 You can tell the guards are giving you some suspicious looks, but you can understand that. Very rarely would a child wander into a guardsmen's barracks unnanounced. But you're here for a reason, surely.
@@ -4239,7 +4242,7 @@ Slowly, you get to your feet, and plant a hand on the Horse's head, giving him a
 
 (set:$HansBU to false)(set:$WyattBU to false)(set:$MisfitBU to false)(set:$LoveMeter to 0)
 (set:$FiendMet to false)(set:$FiendF to false)
-(set:$pk to 0)(set:$KamiExped to 0)(set:$KamiBonded to false)(set:$ErelCollab to 0)
+(set:$pk to 0)(set:$KamiExped to 0)(set:$KamiBonded to false)(set:$ErelCollab to 0)(set:$KExpPose to 0)(set:$KExpFinish to 0)
 (set:$RalnMet to false)(set:$RalnTrain to 0)(set:$SQ3D to 0)(set:$SQ4D to 0)(set:$IoDQ1D to 0)(set:$IoDQ2D to 0)(set:$RowanMet to false)(set:$PellFreed to false)
 }</tw-passagedata><tw-passagedata pid="231" name="HolC" tags="dnsc dnsi" position="1019,888" size="100,100">You nestle in beside Kami on the carriage after paying the toll, and the two of you cuddle as the carriage trundles on, making towards the capital.
 
@@ -4260,7 +4263,7 @@ You assure him it's no problem, and a small smile spreads across his face. Come 
 
 [[Continue.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="234" name="HansRHub" tags="" position="3298,2000" size="100,100">(if:$LoveMeter is &lt; 0)[(set:$LoveMeter to 0)]You are in a relationship with Hans. He appears to be a rather loving and friendly Corgi-- you've never known him to be surly with you before. Kami loves his company, too. How sweet!
 
-You're currently standing with him on the porch of his smithy. He sadly looks a little too busy to really do anything with you right now. Perhaps you should try coming back another time.
+You're currently standing with him on the porch of his smithy. He wipes his hands on his apron and gives you a lopsided grin.
 
 {
 (if:$LoveMeter is &gt;=0 and &lt;=250)[Hans is a bit unsure about the future you and he have together.]
@@ -6702,7 +6705,7 @@ You sent a small hint of compassion in his voice as he glares down at you, claws
 
 You bow your head in respect and he grunts, turning from you. He barks orders at the sparring Dragons, who begin their fight anew.
 
-[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="404" name="Hran" tags="" position="1400,3014" size="100,100">You approach the figure in the dark, getting closer and closer.
+(set:$RalnMet to true)[[Return.-&gt;IoDHub]]</tw-passagedata><tw-passagedata pid="404" name="Hran" tags="" position="1400,3014" size="100,100">You approach the figure in the dark, getting closer and closer.
 
 (if:(history:) contains "Hran4")[You soon realise it's Hran, doing his usual nightly training, it seems. You call over to him and he turns to face you, bounding closer.
 
@@ -7582,7 +7585,7 @@ This time, you don't just use your hand.
 
 You kneel behind him, running your hands along his flanks. His fur is soft under your palms. You slide one hand beneath his belly and feel his cock already beginning to emerge-- his body anticipating what's coming, even without a mind to guide it. You wrap your fingers around his swelling shaft and give it a few slow strokes, pre-cum slicking your grip.
 
-Your own (if:$fcock is "flaccid cock")[cock is throbbing, painfully hard.](elseif:$fcock is "sheath")[member slides from your sheath, already at full mast.](elseif:$fcock is "slit")[member pushes free from your slit, slick and rigid.](elseif:$fcock is "cloaca")[cock emerges from your cloaca, pulsing with need.] You spit into your hand and slick yourself up, pressing the (if:$cock is "canine" or "fox")[tapered tip](elseif:$cock is "dragon")[ridged head](else:)[head of your cock] against his dark-skinned pucker.
+Your own (if:$fcock is "flaccid cock")[cock is throbbing, painfully hard.](elseif:$fcock is "sheath")[member slides from your sheath, already at full mast.](elseif:$fcock is "slit")[member pushes free from your slit, slick and rigid.](elseif:$fcock is "cloaca")[cock emerges from your cloaca, pulsing with need.] You spit into your hand and slick yourself up, pressing the (if:$cock is "canine" or $cock is "fox")[tapered tip](elseif:$cock is "dragon")[ridged head](else:)[head of your cock] against his dark-skinned pucker.
 
 You push into him. The tightness is familiar from the conscious KamiSS scenes you've shared before-- that exquisite clench of muscle around your shaft-- but the //feeling// is different. There is no |Kami&gt;["As you wish, Master."] here. No wagging tail. No ocean blue eyes looking back at you. Just the body, warm and yielding and obedient.
 
@@ -7590,11 +7593,11 @@ You thrust deeper, inch by inch, feeling his inner muscles grip and pulse around
 
 You set a rhythm. Slow at first, savouring the heat, the tightness, the forbidden thrill of it. Then faster, harder, your hips slapping against his haunches. His claws knead the sheets reflexively. A thin, unconscious whine drifts from his slack jaw-- not distress, just the body making sounds the mind would never permit.
 
-The pressure builds. You can feel your orgasm approaching, that familiar tightening in your loins. You grip his hips and thrust harder, (if:$cock is "canine" or "fox")[your knot beginning to swell, bumping against his entrance with each thrust. You push harder, and with a wet pop, your knot slides inside, locking you together. The sudden tightness around your base is enough to send you over the edge.](elseif:$cock is "dragon")[burying your ridged cock to the hilt, feeling his muscles grip every ridge. The stimulation is overwhelming.](else:)[burying yourself to the base inside him, feeling the warmth envelop every inch.]
+The pressure builds. You can feel your orgasm approaching, that familiar tightening in your loins. You grip his hips and thrust harder, (if:$cock is "canine" or $cock is "fox")[your knot beginning to swell, bumping against his entrance with each thrust. You push harder, and with a wet pop, your knot slides inside, locking you together. The sudden tightness around your base is enough to send you over the edge.](elseif:$cock is "dragon")[burying your ridged cock to the hilt, feeling his muscles grip every ridge. The stimulation is overwhelming.](else:)[burying yourself to the base inside him, feeling the warmth envelop every inch.]
 
 You cum inside him with a shuddering groan, your cock pulsing and throbbing, filling his insides with warmth. Your hips roll in shallow thrusts as you ride out the orgasm, fingers digging into his fur. His cock twitches beneath him, oozing pre, but he doesn't finish. His body wanted to, but without a mind to push it over the edge, it just... aches.
 
-You pull out slowly, (if:$cock is "canine" or "fox")[waiting for your knot to deflate before carefully withdrawing,](else:)[sliding free with a wet sound,] and watch a thin trickle leak from his used entrance. You clean him carefully with a cloth, wiping away the evidence, smoothing his fur, repositioning him on his side as if he'd simply been sleeping.
+You pull out slowly, (if:$cock is "canine" or $cock is "fox")[waiting for your knot to deflate before carefully withdrawing,](else:)[sliding free with a wet sound,] and watch a thin trickle leak from his used entrance. You clean him carefully with a cloth, wiping away the evidence, smoothing his fur, repositioning him on his side as if he'd simply been sleeping.
 
 You withdraw the green mist. Kami stirs.
 
@@ -7733,7 +7736,7 @@ You reach between your bodies and fumble with the ties of his pants, freeing his
 
 The two of you work each other in silence, hidden in plain sight on the edge of the square. Your hand around his cock, his hand around yours. The intimacy of it-- the risk, the trust-- makes every stroke feel electric.
 
-[[Continue.-&gt;WyattRISS2]]</tw-passagedata><tw-passagedata pid="478" name="WyattRISS2" tags="dnsc dnsi" position="800,3600" size="100,100">It doesn't take long. Your muscles tense and you feel the pressure building, and Wyatt seems to sense it. He speeds up his strokes, his thumb swirling over the tip, and you bury your face in his chest to muffle the groan that escapes your lips. Your cock throbs in his hand as you cum, (if:$cock is "canine" or "fox")[your small knot pulsing against his grip,](else:)[&lt;!--Do Nothing--&gt;] spurts of warm fluid splattering against his stomach beneath his shirt.
+[[Continue.-&gt;WyattRISS2]]</tw-passagedata><tw-passagedata pid="478" name="WyattRISS2" tags="dnsc dnsi" position="800,3600" size="100,100">It doesn't take long. Your muscles tense and you feel the pressure building, and Wyatt seems to sense it. He speeds up his strokes, his thumb swirling over the tip, and you bury your face in his chest to muffle the groan that escapes your lips. Your cock throbs in his hand as you cum, (if:$cock is "canine" or $cock is "fox")[your small knot pulsing against his grip,](else:)[&lt;!--Do Nothing--&gt;] spurts of warm fluid splattering against his stomach beneath his shirt.
 
 The sight and feel of it pushes Wyatt over the edge seconds later. His hips buck upward and his cock swells in your grip, the knot bulging fat and hot against your fingers. He lets out a low, rumbling groan as thick ropes of canine cum pulse from the tip, soaking your hand and the front of your tunic.
 
@@ -7892,7 +7895,7 @@ He ruffles your $hair and hands you a waterskin. The two of you sit in the dirt,
 
 [[Head back.-&gt;WyattRHub]]</tw-passagedata><tw-passagedata pid="491" name="WyattSparSS" tags="dnsc dnsi" position="400,3800" size="100,100">You lean up and press your lips to his. He freezes for a half-second, then his hand releases your wrists and slides behind your head, deepening the kiss. His body is hot and slick with sweat against yours.
 
-It's fast, urgent, adrenaline-fueled. He pulls your shorts down right there in the dirt while you fumble with his belt. His canine cock springs free, already hard, and he presses you against the side of the building. The stone is cold against your back, his body is furnace-hot against your front.
+It's fast, urgent, adrenaline-fueled. He pulls your shorts down right there in the dirt-- (if:$fcock is "flaccid cock")[your cock already hard and jutting upward](elseif:$fcock is "sheath")[your member already pushed free of your sheath, throbbing](elseif:$fcock is "slit")[your member already emerged from your slit, slick and rigid](elseif:$fcock is "cloaca")[your cock already out of your cloaca, flushed and straining]-- while you fumble with his belt. His canine cock springs free, already hard, and he presses you against the side of the building. The stone is cold against your back, his body is furnace-hot against your front.
 
 He lifts you-- those mercenary arms making it effortless-- and you wrap your legs around his waist. He lines up and pushes into you in one smooth thrust, and you bite down on his shoulder to keep from crying out.
 
@@ -8226,7 +8229,7 @@ He wipes the sweat from your brow with his calloused thumb, his face close to yo
 
 [[Return.-&gt;HansRHub]]</tw-passagedata><tw-passagedata pid="515" name="HansForgeSS" tags="dnsc dnsi" position="700,4100" size="100,100">You kiss him, and the heat of the forge is nothing compared to the heat between you. His thick arms grab your hips and he hoists you onto the workbench-- his strength is absurd for his size. Tools clatter to the floor. He steps between your legs.
 
-It's fast. Urgent. The forge crackles beside you, casting orange light across slick fur and sweating skin. Hans yanks your shorts down and pulls his own apron aside, his cock springing free, already achingly hard. He spits into his hand and pushes into you with a grunt, the workbench groaning under the force.
+It's fast. Urgent. The forge crackles beside you, casting orange light across slick fur and sweating skin. Hans yanks your shorts down-- (if:$fcock is "flaccid cock")[your cock springs free, stiff and eager in the firelight](elseif:$fcock is "sheath")[your member surges from your sheath, throbbing in the forge's heat](elseif:$fcock is "slit")[your member pushes from your slit, glistening slick in the orange glow](elseif:$fcock is "cloaca")[your cock emerges from your cloaca, flushed and aching in the warm air]-- and pulls his own apron aside, his cock springing free, already achingly hard. He spits into his hand and pushes into you with a grunt, the workbench groaning under the force.
 
 The contrast-- cold metal beneath you, Hans's furnace-hot body against your front-- makes your head spin. He thrusts hard and fast, his blacksmith arms braced on the bench, his teeth gritted.
 
@@ -8680,6 +8683,8 @@ The stag increases its pace. Kami's whines grow strained. His hips shift involun
 
 The stag finishes inside with a deep grunt and pulls out. Warm fluid trickles down Kami's inner thighs. The stag trots away as if nothing happened.
 
+Your own body has betrayed you too-- (if:$fcock is "flaccid cock")[your cock is hard, pressing uncomfortably against your trousers](elseif:$fcock is "sheath")[your member has pushed from your sheath unbidden, swollen and aching](elseif:$fcock is "slit")[your member has emerged from your slit without permission, slick and rigid](elseif:$fcock is "cloaca")[your cock has slipped from your cloaca, stiff and throbbing despite yourself]. You feel ashamed. You watch anyway.
+
 Kami stands shakily. His member is still hard, achingly so, dripping and swollen. He didn't finish. Left on the edge, aching.
 
 He says nothing. Nuzzles against your leg. Continues walking. The bond between you doesn't break. It never does.
@@ -8723,7 +8728,7 @@ You tell him you care. His grip tightens.
 
 What happens next is tender and slow. Pell is experienced-- Yven has used him, you realise with a sickening clarity-- but this is the first time someone is //gentle// with him. He doesn't know what to do with kindness. When you touch him softly, he flinches. When you don't pull away, he melts.
 
-He's small. Mouse-thin. Trembling hands that fumble with buttons. You let him set the pace, and he goes slowly, hesitatingly, as if waiting for the pain that doesn't come.
+He's small. Mouse-thin. Trembling hands that fumble with buttons. When he pulls your clothes aside, (if:$fcock is "flaccid cock")[your cock is already stiff, but you let him touch it at his own pace](elseif:$fcock is "sheath")[your member slides gently from your sheath, and he stares at it like he's never seen one offered willingly](elseif:$fcock is "slit")[your member emerges from your slit, slick and warm, and his tiny fingers trace it with wonder](elseif:$fcock is "cloaca")[your cock emerges from your cloaca, and he handles it carefully, as if afraid of breaking something]. You let him set the pace, and he goes slowly, hesitatingly, as if waiting for the pain that doesn't come.
 
 He finishes quietly-- barely a sound, just a full-body shudder and a soft exhale against your neck. His small hands grip yours, tight, as if letting go means losing the only kindness he's ever known.
 
@@ -8731,7 +8736,7 @@ He finishes quietly-- barely a sound, just a full-body shudder and a soft exhale
 
 His voice cracks. He's still holding your hand. You brush a tear from his cheek with your thumb, and he leans into the touch like a plant leaning toward sunlight.
 
-You sit together in the dusty shed for a long time. He doesn't let go of your hand.
+You sit together in the dusty shed for a long time. Your body is still warm from the encounter-- (if:$fcock is "flaccid cock")[your cock softening gradually against your thigh](elseif:$fcock is "sheath")[your member slowly retracting into your sheath](elseif:$fcock is "slit")[your member withdrawing back into your slit](elseif:$fcock is "cloaca")[your cock retreating gently into your cloaca]-- but the warmth in your chest is what lingers. He doesn't let go of your hand.
 
 |Kami&gt;["Master."] Kami's voice comes from outside the shed, low and solemn. ["We must make a decision about the Reptile."]
 
@@ -8848,7 +8853,7 @@ Rowan sets you down and turns around, bracing against the wall. You position Kam
 
 You take Rowan from the front, his cervine member slipping into your mouth. A chain-- Kami thrusting into Rowan, Rowan rocking forward into you. The rhythm builds quickly, urgent, outdoors, the risk of being heard adding an electric edge.
 
-Kami cums first, his knot popping half-in and his cock pulsing. Rowan follows seconds later, his member throbbing in your mouth, warm and sweet. You swallow and feel your own release building, stroking yourself to completion between them.
+Kami cums first, his knot popping half-in and his cock pulsing. Rowan follows seconds later, his member throbbing in your mouth, warm and sweet. You swallow and feel your own release building-- (if:$fcock is "flaccid cock")[your cock throbs in your fist as you stroke yourself to completion](elseif:$fcock is "sheath")[your member pulses from your sheath as you grip and stroke yourself over the edge](elseif:$fcock is "slit")[your member, slick from your slit, twitches as you stroke yourself to a shuddering finish](elseif:$fcock is "cloaca")[your cock, flushed from your cloaca, throbs as you stroke yourself to release]-- between them.
 
 The three of you separate, panting, sweating in the cool night air. Rowan leans against the wall, dazed.
 
@@ -8956,7 +8961,7 @@ You guide Frederick to lean over the desk. His tail rises instinctively as you p
 
 Kami finds his mark and pushes in. Frederick's composure shatters-- his claws dig into the desk, scattering maps, and a sound escapes his throat that is decidedly //not// military. His body rocks forward with each of Kami's thrusts.
 
-You take the front, kneeling on the desk, offering yourself to Frederick's mouth. His tongue is rough-- feline-- and skilled. The three of you find a rhythm: Kami driving Frederick forward, Frederick's mouth working on you, the desk creaking dangerously.
+You take the front, kneeling on the desk. Your (if:$fcock is "flaccid cock")[cock is rock-hard, jutting toward Frederick's face](elseif:$fcock is "sheath")[member has pushed fully from your sheath, swollen and dripping](elseif:$fcock is "slit")[member stands rigid from your slit, slick and flushed](elseif:$fcock is "cloaca")[cock has emerged from your cloaca, stiff and pulsing]. You offer yourself to Frederick's mouth. His tongue is rough-- feline-- and skilled. The three of you find a rhythm: Kami driving Frederick forward, Frederick's mouth working on you, the desk creaking dangerously.
 
 Pren sleeps through the entire thing. Somehow.
 
@@ -9099,7 +9104,7 @@ You settle against his side-- his scales radiate heat. He's been drinking. His u
 
 "You're not afraid of me. Most Nomads flinch when I move too fast."
 
-His massive hand reaches down, clawed fingers touching your chin, tilting your face up. The size difference is overwhelming.
+His massive hand reaches down, clawed fingers touching your chin, tilting your face up. The size difference is overwhelming. His heat radiates through your clothes, and you feel your own body respond-- (if:$fcock is "flaccid cock")[your cock stiffening against your trousers](elseif:$fcock is "sheath")[your member pushing from your sheath, throbbing against the fabric](elseif:$fcock is "slit")[your slit aching with need, your member emerging slick beneath your clothes](elseif:$fcock is "cloaca")[your cock emerging from your cloaca, pulsing with heat against your leg].
 
 "I could hurt you," he says quietly.
 
@@ -9110,7 +9115,7 @@ Raln inhales sharply. His body goes rigid. Claws dig furrows in the dirt.
 
 The slit parts under your fingers and the tip emerges-- thick, ridged, slick. Dragon anatomy. Even partially emerged, it's as long as your forearm, thick as your wrist.
 
-You wrap both hands around the shaft and feel it swell against your palms. Raln lets out a rumbling groan that vibrates through the ground. His jaw hangs open, rows of teeth glinting.
+You wrap both hands around the shaft and feel it swell against your palms. Raln lets out a rumbling groan that vibrates through the ground. His jaw hangs open, rows of teeth glinting. Your own arousal is impossible to ignore-- (if:$fcock is "flaccid cock")[your cock strains against your waistband, achingly hard](elseif:$fcock is "sheath")[your member has fully emerged from your sheath, twitching and neglected](elseif:$fcock is "slit")[your member has pushed free of your slit, slick and rigid, dripping](elseif:$fcock is "cloaca")[your cock has emerged fully from your cloaca, throbbing in the cool air].
 
 He is incredibly gentle. His claws hover near you, trembling with restraint, never touching. He lets you set the pace entirely.
 
@@ -9124,7 +9129,7 @@ You speed up. His cock throbs massively. With a roar that echoes off the arena w
 
 When it subsides, Raln is panting like a bellows, trembling. His cock slowly retracts into his slit.
 
-He looks down at you, covered in his release. Something vulnerable crosses his scarred face.
+He looks down at you, covered in his release. Your own (if:$fcock is "flaccid cock")[cock is rock-hard, twitching, untouched and aching](elseif:$fcock is "sheath")[member stands rigid from your sheath, swollen and dripping with need](elseif:$fcock is "slit")[member juts from your slit, slick and throbbing, desperate for release](elseif:$fcock is "cloaca")[cock pulses from your cloaca, flushed and leaking, begging for attention]. Something vulnerable crosses his scarred face.
 
 "Nobody can know about this."
 
@@ -9145,6 +9150,8 @@ Raln lowers himself carefully. The size difference is extreme-- his emerging mem
 Despite his absent mind, Kami's body responds. Sheath swells. Knotted member slides free, engorging from the friction against his groin. Hind legs twitch reflexively.
 
 Raln groans, frotting against the unconscious wolf. "He likes it more than he lets on."
+
+You watch, transfixed. Your own (if:$fcock is "flaccid cock")[cock is painfully hard in your trousers, twitching with every thrust](elseif:$fcock is "sheath")[member has pushed fully from your sheath, straining against your clothes](elseif:$fcock is "slit")[member has emerged rigid from your slit, leaking through the fabric](elseif:$fcock is "cloaca")[cock has slipped from your cloaca, throbbing insistently against your leg].
 
 Raln cums massively, splattering Kami's entire underside. Kami's own cock twitches, oozing pre but not finishing.
 
@@ -9643,7 +9650,7 @@ His climax comes fast-- too fast. His member throbs in your hand and thin jets o
 
 You tell him not to apologise. He nuzzles his snout against your chest.(set:$DN to $DNO)(set:$DNO to $DNO2)(set:$DNO2 to $DN)
 
-[[Return.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="614" name="ZexirAltSS3" tags="dnsi" position="100,5900" size="100,100">It's probably not wise, but you decide to visit Zexir at this time of the night. You step into the council chambers, moving quietly past the guards.
+[[Return.-&gt;ValleyCaves]]</tw-passagedata><tw-passagedata pid="614" name="ZexirAltSS3" tags="dnsc dnsi" position="100,5900" size="100,100">It's probably not wise, but you decide to visit Zexir at this time of the night. You step into the council chambers, moving quietly past the guards.
 
 You approach the door to Zexir's chamber and hear it again-- sounds from within. But this time, it's different. The groans are deeper. Zexir's voice, rumbling low. And above it, a higher sound-- small, strained, whimpering.
 
@@ -10101,7 +10108,7 @@ You withdraw the mist. Ember stirs.
 
 "...Same time next week," Erel echoes faintly.(set:$LoveMeter to it + 15)
 
-[[Continue.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="644" name="ZexirAltSS4" tags="dnsi" position="100,6400" size="100,100">It's probably not wise, but you decide to visit Zexir at this time of the night. You make your way through the dark council chambers, past the sleeping guards, toward the familiar hallway.
+[[Continue.-&gt;ErelCollabEnd]]</tw-passagedata><tw-passagedata pid="644" name="ZexirAltSS4" tags="dnsc dnsi" position="100,6400" size="100,100">It's probably not wise, but you decide to visit Zexir at this time of the night. You make your way through the dark council chambers, past the sleeping guards, toward the familiar hallway.
 
 The sounds reach you before you reach the door. Different from the other times. A high, feminine keen-- not pleasure, not pain, but something between. Muffled. Stifled.
 
@@ -10386,7 +10393,25 @@ You pull out, clean him, close his slit, and reposition him in his sleeping curl
 
 You withdraw the mist. Kael shifts, mumbles something about training weights, and doesn't wake.
 
-[[Return.-&gt;IoDHouses]]</tw-passagedata></tw-storydata>
+[[Return.-&gt;IoDHouses]]</tw-passagedata><tw-passagedata pid="662" name="WesNight" tags="" position="300,6800" size="100,100">"Slow nights make me chatty," Wes says, setting down his cloth. He leans on the counter with both elbows, his massive shoulders bunching. Without the constant stream of daytime orders, he seems almost relaxed. Almost.
+
+"You're up late, kid. Can't sleep?"
+
+He pours you something warm without asking-- some kind of spiced cider. It's good.
+
+(if:(history:) contains "SBSHf")["Frederick was in earlier. Looked like hell. That man works too hard." Wes shakes his head. "Someone oughta tell him he's allowed to sit down."](else:)[&lt;!--Do Nothing--&gt;]
+
+"I hear things, y'know. People talk when they drink. The farmers are nervous-- animals acting strange on the roads. Spooked horses, wolves howling closer than they should." He gives you a look. "But I figure you know something about that, don't you?"
+
+He doesn't push it. That's the thing about Wes-- he's observant, but he doesn't pry.
+
+(if:$PellFreed is true)["Oh, that mouse kid you sent my way?" Wes glances toward the back room. "He's doing alright. Quiet. Works hard. Doesn't eat enough." He pauses. "I don't know what happened to him, and I don't need to. But he's safe here."](else:)[&lt;!--Do Nothing--&gt;]
+
+"You take care of yourself out there, kid. This world ain't kind to small folk."
+
+He picks up his cloth and starts polishing again. The conversation is over, but it feels like something settled between you-- an understanding.
+
+[[Return.-&gt;ScarInn]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
